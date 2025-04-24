@@ -1,0 +1,25 @@
+Training started at: 2025-04-24 17:48:18
+Class 0 count: 32542
+Class 1 count: 584
+Learning Rate      : 0.0004
+Batch Size   : 32
+Epochs : 1
+📊 Total Samples      : 33126
+🧪 Training Samples   : 26500
+🧪 Testing Samples : 6626
+Epoch [1/1], Step [50/829], Loss: 0.8413
+Epoch [1/1], Step [100/829], Loss: 0.7922
+Epoch [1/1], Step [150/829], Loss: 0.8337
+Epoch [1/1], Step [200/829], Loss: 0.7668
+Epoch [1/1], Step [250/829], Loss: 0.7662
+Epoch [1/1], Step [300/829], Loss: 1.9961
+Epoch [1/1], Step [350/829], Loss: 0.7845
+Epoch [1/1], Step [400/829], Loss: 3.2188
+Epoch [1/1], Step [450/829], Loss: 1.9011
+Epoch [1/1], Step [500/829], Loss: 0.8390
+Epoch [1/1], Step [550/829], Loss: 0.8077
+Epoch [1/1], Step [600/829], Loss: 1.9911
+Epoch [1/1], Step [650/829], Loss: 0.7780
+Epoch [1/1], Step [700/829], Loss: 0.7403
+Epoch [1/1], Step [750/829], Loss: 1.6698
+Epoch [1/1], Step [800/829], Loss: 0.7850

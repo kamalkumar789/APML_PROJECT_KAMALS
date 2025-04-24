@@ -1,0 +1,125 @@
+Training started at: 2025-04-23 20:38:15
+📊 Total Samples      : 33126
+🧪 Training Samples   : 26500
+🧪 Testing Samples : 6626
+Epoch [1/100], Step [50/415], Loss: 0.9943
+Epoch [1/100], Step [100/415], Loss: 0.9774
+Epoch [1/100], Step [150/415], Loss: 0.9636
+Epoch [1/100], Step [200/415], Loss: 0.9606
+Epoch [1/100], Step [250/415], Loss: 1.4828
+Epoch [1/100], Step [300/415], Loss: 0.9584
+Epoch [1/100], Step [350/415], Loss: 0.6996
+Epoch [1/100], Step [400/415], Loss: 0.9575
+
+Epoch [1/100] Summary:
+Train Loss   : 1.0253
+Train F1     : 0.0343
+Train Recall : 1.0000
+Train AUC    : 0.9895
+
+Epoch [2/100], Step [50/415], Loss: 1.4803
+Epoch [2/100], Step [100/415], Loss: 0.9572
+Epoch [2/100], Step [150/415], Loss: 0.6956
+Epoch [2/100], Step [200/415], Loss: 0.6967
+Epoch [2/100], Step [250/415], Loss: 0.6952
+Epoch [2/100], Step [300/415], Loss: 0.9560
+Epoch [2/100], Step [350/415], Loss: 0.9559
+Epoch [2/100], Step [400/415], Loss: 1.4793
+
+Epoch [2/100] Summary:
+Train Loss   : 1.0000
+Train F1     : 0.0343
+Train Recall : 1.0000
+Train AUC    : 0.9892
+
+Epoch [3/100], Step [50/415], Loss: 0.9556
+Epoch [3/100], Step [100/415], Loss: 1.2174
+Epoch [3/100], Step [150/415], Loss: 0.9555
+Epoch [3/100], Step [200/415], Loss: 0.6941
+Epoch [3/100], Step [250/415], Loss: 0.6938
+Epoch [3/100], Step [300/415], Loss: 0.6938
+Epoch [3/100], Step [350/415], Loss: 1.4791
+Epoch [3/100], Step [400/415], Loss: 0.9554
+
+Epoch [3/100] Summary:
+Train Loss   : 1.0020
+Train F1     : 0.0343
+Train Recall : 1.0000
+Train AUC    : 0.9788
+
+Epoch [4/100], Step [50/415], Loss: 0.9553
+Epoch [4/100], Step [100/415], Loss: 0.6936
+Epoch [4/100], Step [150/415], Loss: 0.9553
+Epoch [4/100], Step [200/415], Loss: 1.2171
+Epoch [4/100], Step [250/415], Loss: 0.9553
+Epoch [4/100], Step [300/415], Loss: 1.4790
+Epoch [4/100], Step [350/415], Loss: 0.9552
+Epoch [4/100], Step [400/415], Loss: 1.4790
+
+Epoch [4/100] Summary:
+Train Loss   : 0.9946
+Train F1     : 0.0343
+Train Recall : 1.0000
+Train AUC    : 0.9921
+
+Epoch [5/100], Step [50/415], Loss: 0.9552
+Epoch [5/100], Step [100/415], Loss: 0.6934
+Epoch [5/100], Step [150/415], Loss: 0.9552
+Epoch [5/100], Step [200/415], Loss: 0.6934
+Epoch [5/100], Step [250/415], Loss: 0.9552
+Epoch [5/100], Step [300/415], Loss: 0.9552
+Epoch [5/100], Step [350/415], Loss: 1.2171
+Epoch [5/100], Step [400/415], Loss: 0.9552
+
+Epoch [5/100] Summary:
+Train Loss   : 0.9961
+Train F1     : 0.0343
+Train Recall : 1.0000
+Train AUC    : 0.9833
+
+Epoch [6/100], Step [50/415], Loss: 0.9552
+Epoch [6/100], Step [100/415], Loss: 1.2170
+Epoch [6/100], Step [150/415], Loss: 0.9552
+Epoch [6/100], Step [200/415], Loss: 0.9552
+Epoch [6/100], Step [250/415], Loss: 1.2170
+Epoch [6/100], Step [300/415], Loss: 0.9551
+Epoch [6/100], Step [350/415], Loss: 1.2170
+Epoch [6/100], Step [400/415], Loss: 0.6933
+
+Epoch [6/100] Summary:
+Train Loss   : 1.0066
+Train F1     : 0.0343
+Train Recall : 1.0000
+Train AUC    : 0.9934
+
+Epoch [7/100], Step [50/415], Loss: 1.2857
+Epoch [7/100], Step [100/415], Loss: 0.6940
+Epoch [7/100], Step [150/415], Loss: 0.9554
+Epoch [7/100], Step [200/415], Loss: 0.6936
+Epoch [7/100], Step [250/415], Loss: 0.9554
+Epoch [7/100], Step [300/415], Loss: 0.6939
+Epoch [7/100], Step [350/415], Loss: 0.6935
+Epoch [7/100], Step [400/415], Loss: 1.2173
+
+Epoch [7/100] Summary:
+Train Loss   : 0.9958
+Train F1     : 0.0343
+Train Recall : 1.0000
+Train AUC    : 0.9855
+
+Epoch [8/100], Step [50/415], Loss: 0.9553
+Epoch [8/100], Step [100/415], Loss: 0.6934
+Epoch [8/100], Step [150/415], Loss: 1.4793
+Epoch [8/100], Step [200/415], Loss: 0.6937
+Epoch [8/100], Step [250/415], Loss: 0.9553
+Epoch [8/100], Step [300/415], Loss: 0.9552
+Epoch [8/100], Step [350/415], Loss: 0.9555
+Epoch [8/100], Step [400/415], Loss: 1.2172
+
+Epoch [8/100] Summary:
+Train Loss   : 0.9996
+Train F1     : 0.0343
+Train Recall : 1.0000
+Train AUC    : 0.9800
+
+Epoch [9/100], Step [50/415], Loss: 0.9552
