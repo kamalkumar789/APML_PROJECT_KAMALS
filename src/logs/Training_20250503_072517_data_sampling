@@ -1,0 +1,81 @@
+Training started at: 2025-05-03 07:25:17
+Class 0 count: 99
+Class 1 count: 1
+Learning Rate      : 0.0001
+Batch Size   : 32
+Epochs : 10
+Threashold : 0.5
+Total Samples      : 100
+Training Samples   : 80
+Testing Samples : 20
+
+Epoch [1/10] Summary:
+Train Loss   : 1.7295
+Train F1     : 0.0455
+Train Recall : 1.0000
+Train AUC    : 0.7468
+
+
+Epoch [2/10] Summary:
+Train Loss   : 0.8835
+Train F1     : 0.0769
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [3/10] Summary:
+Train Loss   : 0.6357
+Train F1     : 0.0690
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [4/10] Summary:
+Train Loss   : 0.6093
+Train F1     : 0.0714
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [5/10] Summary:
+Train Loss   : 0.5594
+Train F1     : 0.1053
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [6/10] Summary:
+Train Loss   : 0.4942
+Train F1     : 0.1538
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [7/10] Summary:
+Train Loss   : 0.4640
+Train F1     : 0.3333
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [8/10] Summary:
+Train Loss   : 0.4318
+Train F1     : 0.5000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [9/10] Summary:
+Train Loss   : 0.3929
+Train F1     : 0.6667
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [10/10] Summary:
+Train Loss   : 0.3429
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+Training ended at: 2025-05-03 07:25:58

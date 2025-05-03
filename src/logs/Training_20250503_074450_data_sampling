@@ -1,0 +1,10 @@
+Training started at: 2025-05-03 07:44:50
+Class 0 count: 99
+Class 1 count: 1
+Learning Rate      : 0.0001
+Batch Size   : 50
+Epochs : 10
+Threashold : 0.5
+Total Samples      : 100
+Training Samples   : 80
+Testing Samples : 20
