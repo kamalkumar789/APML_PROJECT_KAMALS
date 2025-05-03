@@ -1,0 +1,42 @@
+Training started at: 2025-04-24 18:07:20
+Class 0 count: 32542
+Class 1 count: 584
+Learning Rate      : 0.0001
+Batch Size   : 32
+Epochs : 100
+Total Samples      : 33126
+Training Samples   : 26500
+Testing Samples : 6626
+Epoch [1/100], Step [50/829], Loss: 1.4193
+Epoch [1/100], Step [100/829], Loss: 1.4041
+Epoch [1/100], Step [150/829], Loss: 0.8224
+Epoch [1/100], Step [200/829], Loss: 1.3854
+Epoch [1/100], Step [250/829], Loss: 1.3670
+Epoch [1/100], Step [300/829], Loss: 0.8903
+Epoch [1/100], Step [350/829], Loss: 0.7819
+Epoch [1/100], Step [400/829], Loss: 2.0604
+Epoch [1/100], Step [450/829], Loss: 2.2875
+Epoch [1/100], Step [500/829], Loss: 0.8152
+Epoch [1/100], Step [550/829], Loss: 0.8552
+Epoch [1/100], Step [600/829], Loss: 0.8828
+Epoch [1/100], Step [650/829], Loss: 1.8957
+Epoch [1/100], Step [700/829], Loss: 0.8774
+Epoch [1/100], Step [750/829], Loss: 0.8638
+Epoch [1/100], Step [800/829], Loss: 0.7959
+
+Epoch [1/100] Summary:
+Train Loss   : 1.2452
+Train F1     : 0.0346
+Train Recall : 1.0000
+Train AUC    : 0.7956
+
+Epoch [2/100], Step [50/829], Loss: 2.5233
+Epoch [2/100], Step [100/829], Loss: 1.7797
+Epoch [2/100], Step [150/829], Loss: 0.8560
+Epoch [2/100], Step [200/829], Loss: 0.8315
+Epoch [2/100], Step [250/829], Loss: 2.0370
+Epoch [2/100], Step [300/829], Loss: 0.8136
+Epoch [2/100], Step [350/829], Loss: 2.0299
+Epoch [2/100], Step [400/829], Loss: 0.8548
+Epoch [2/100], Step [450/829], Loss: 0.8494
+Epoch [2/100], Step [500/829], Loss: 0.8254

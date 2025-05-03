@@ -1,0 +1,122 @@
+Epoch [1/5], Step [50/829], Loss: 0.9163
+Epoch [1/5], Step [100/829], Loss: 2.4814
+Epoch [1/5], Step [150/829], Loss: 0.8528
+Epoch [1/5], Step [200/829], Loss: 2.3920
+Epoch [1/5], Step [250/829], Loss: 0.8262
+Epoch [1/5], Step [300/829], Loss: 0.8025
+Epoch [1/5], Step [350/829], Loss: 0.8288
+Epoch [1/5], Step [400/829], Loss: 0.9352
+Epoch [1/5], Step [450/829], Loss: 0.8945
+Epoch [1/5], Step [500/829], Loss: 1.3701
+Epoch [1/5], Step [550/829], Loss: 1.8985
+Epoch [1/5], Step [600/829], Loss: 0.8402
+Epoch [1/5], Step [650/829], Loss: 2.0728
+Epoch [1/5], Step [700/829], Loss: 1.4563
+Epoch [1/5], Step [750/829], Loss: 1.3469
+Epoch [1/5], Step [800/829], Loss: 1.8302
+
+🔁 Epoch [1/5] Summary:
+🔹 Train Loss   : 1.2594
+🔹 Train F1     : 0.0349
+🔹 Train Recall : 1.0000
+🔹 Train AUC    : 0.7818
+
+Epoch [2/5], Step [50/829], Loss: 0.8478
+Epoch [2/5], Step [100/829], Loss: 2.3880
+Epoch [2/5], Step [150/829], Loss: 0.8670
+Epoch [2/5], Step [200/829], Loss: 0.8981
+Epoch [2/5], Step [250/829], Loss: 0.8691
+Epoch [2/5], Step [300/829], Loss: 1.3591
+Epoch [2/5], Step [350/829], Loss: 2.3814
+Epoch [2/5], Step [400/829], Loss: 1.3602
+Epoch [2/5], Step [450/829], Loss: 0.8438
+Epoch [2/5], Step [500/829], Loss: 0.7996
+Epoch [2/5], Step [550/829], Loss: 2.7706
+Epoch [2/5], Step [600/829], Loss: 1.5861
+Epoch [2/5], Step [650/829], Loss: 0.8050
+Epoch [2/5], Step [700/829], Loss: 0.8257
+Epoch [2/5], Step [750/829], Loss: 0.8335
+Epoch [2/5], Step [800/829], Loss: 0.8215
+
+🔁 Epoch [2/5] Summary:
+🔹 Train Loss   : 1.2342
+🔹 Train F1     : 0.0349
+🔹 Train Recall : 1.0000
+🔹 Train AUC    : 0.7966
+
+Epoch [3/5], Step [50/829], Loss: 0.8295
+Epoch [3/5], Step [100/829], Loss: 0.7889
+Epoch [3/5], Step [150/829], Loss: 0.8089
+Epoch [3/5], Step [200/829], Loss: 0.7866
+Epoch [3/5], Step [250/829], Loss: 0.8180
+Epoch [3/5], Step [300/829], Loss: 1.8762
+Epoch [3/5], Step [350/829], Loss: 1.3711
+Epoch [3/5], Step [400/829], Loss: 1.3525
+Epoch [3/5], Step [450/829], Loss: 1.4227
+Epoch [3/5], Step [500/829], Loss: 0.8037
+Epoch [3/5], Step [550/829], Loss: 2.1697
+Epoch [3/5], Step [600/829], Loss: 0.7953
+Epoch [3/5], Step [650/829], Loss: 1.3558
+Epoch [3/5], Step [700/829], Loss: 1.8886
+Epoch [3/5], Step [750/829], Loss: 1.9181
+Epoch [3/5], Step [800/829], Loss: 0.8708
+
+🔁 Epoch [3/5] Summary:
+🔹 Train Loss   : 1.2323
+🔹 Train F1     : 0.0349
+🔹 Train Recall : 1.0000
+🔹 Train AUC    : 0.7968
+
+Epoch [4/5], Step [50/829], Loss: 1.3042
+Epoch [4/5], Step [100/829], Loss: 1.2600
+Epoch [4/5], Step [150/829], Loss: 0.8013
+Epoch [4/5], Step [200/829], Loss: 0.8443
+Epoch [4/5], Step [250/829], Loss: 1.3410
+Epoch [4/5], Step [300/829], Loss: 0.8201
+Epoch [4/5], Step [350/829], Loss: 1.3518
+Epoch [4/5], Step [400/829], Loss: 0.8588
+Epoch [4/5], Step [450/829], Loss: 0.8371
+Epoch [4/5], Step [500/829], Loss: 1.3394
+Epoch [4/5], Step [550/829], Loss: 0.8206
+Epoch [4/5], Step [600/829], Loss: 1.3738
+Epoch [4/5], Step [650/829], Loss: 0.8022
+Epoch [4/5], Step [700/829], Loss: 0.7922
+Epoch [4/5], Step [750/829], Loss: 2.5040
+Epoch [4/5], Step [800/829], Loss: 0.8511
+
+🔁 Epoch [4/5] Summary:
+🔹 Train Loss   : 1.2117
+🔹 Train F1     : 0.0350
+🔹 Train Recall : 1.0000
+🔹 Train AUC    : 0.8100
+
+Epoch [5/5], Step [50/829], Loss: 0.8678
+Epoch [5/5], Step [100/829], Loss: 0.8424
+Epoch [5/5], Step [150/829], Loss: 0.8402
+Epoch [5/5], Step [200/829], Loss: 0.9398
+Epoch [5/5], Step [250/829], Loss: 0.8904
+Epoch [5/5], Step [300/829], Loss: 0.8370
+Epoch [5/5], Step [350/829], Loss: 0.8280
+Epoch [5/5], Step [400/829], Loss: 0.8317
+Epoch [5/5], Step [450/829], Loss: 0.7515
+Epoch [5/5], Step [500/829], Loss: 1.8567
+Epoch [5/5], Step [550/829], Loss: 0.7995
+Epoch [5/5], Step [600/829], Loss: 0.8053
+Epoch [5/5], Step [650/829], Loss: 2.6961
+Epoch [5/5], Step [700/829], Loss: 2.4747
+Epoch [5/5], Step [750/829], Loss: 0.8422
+Epoch [5/5], Step [800/829], Loss: 0.8545
+
+🔁 Epoch [5/5] Summary:
+🔹 Train Loss   : 1.2080
+🔹 Train F1     : 0.0350
+🔹 Train Recall : 1.0000
+🔹 Train AUC    : 0.8247
+
+
+🔥 Test Set Evaluation:
+🔹 Test Loss   : 1.1727
+🔹 Test F1     : 0.0337
+🔹 Test Recall : 0.9912
+🔹 Test AUC    : 0.8390
+

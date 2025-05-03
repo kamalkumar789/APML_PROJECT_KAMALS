@@ -1,0 +1,157 @@
+import torch
+import torch.nn as nn
+import os
+import sys
+import os.path as osp
+from torchvision import transforms
+from torch.utils.data import DataLoader
+from sklearn.metrics import f1_score, recall_score, roc_auc_score
+from dataset_processing.images_dataset import ImagesDataset
+from model.densenet import DenseNet
+from datetime import datetime
+from torch.utils.data import random_split
+from utils.loggers import Logger
+
+batch_size = 64
+learning_rate = 1e-4
+num_epochs = 100
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+
+def test(model, test_dataloader, criterion):
+    """Run inference on the test dataset and compute metrics."""
+    model.eval()
+    running_loss = 0.0
+    all_labels = []
+    all_preds = []
+    all_probs = []
+
+    with torch.no_grad():  # No gradient tracking during testing
+        for images, labels in test_dataloader:
+            images, labels = images.to(device), labels.float().to(device)
+            labels = labels.view(-1, 1)
+
+            outputs = model(images)
+            loss = criterion(outputs, labels)
+
+            running_loss += loss.item()
+
+            probs = torch.sigmoid(outputs).cpu().numpy()
+            preds = (probs > 0.5).astype(int)
+            all_labels.extend(labels.cpu().numpy())
+            all_preds.extend(preds)
+            all_probs.extend(probs)
+
+    # Compute evaluation metrics
+    test_loss = running_loss / len(test_dataloader)
+    test_f1 = f1_score(all_labels, all_preds)
+    test_recall = recall_score(all_labels, all_preds)
+    test_auc = roc_auc_score(all_labels, all_probs)
+
+    print("\nTest Set Evaluation:")
+    print(f"Test Loss   : {test_loss:.4f}")
+    print(f"Test F1     : {test_f1:.4f}")
+    print(f"Test Recall : {test_recall:.4f}")
+    print(f"Test AUC    : {test_auc:.4f}\n")
+
+
+
+def init():
+    log_name = "Training_" + datetime.now().strftime("%Y%m%d_%H%M%S") + "_data_augmentation"
+    sys.stdout = Logger(osp.join("/user/HS401/kk01579/APML_PROJECT/src/logs", log_name))
+
+    start_time = datetime.now()
+    print(f"Training started at: {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
+
+
+    # Path to CSV and folder
+    data_csv = "/user/HS401/kk01579/archive/train.csv"
+    data_folder = "/user/HS401/kk01579/archive/train"
+
+    transform_for_label_0 = transforms.Compose([
+        transforms.Resize((128, 128)),
+        transforms.ToTensor()
+    ])
+
+    transform_for_label_1 = transforms.Compose([
+        transforms.Resize((128, 128)),
+        transforms.RandomHorizontalFlip(),
+        transforms.RandomRotation(15),
+        transforms.ColorJitter(brightness=0.2, contrast=0.2),
+        transforms.RandomAffine(degrees=15, translate=(0.1, 0.1)),
+        transforms.ToTensor(),
+    ])
+
+    full_dataset = ImagesDataset(data_folder, data_csv, transform_for_label_0, transform_for_label_1)
+
+    # Split: 80% train, 20% validation
+    total_size = len(full_dataset)
+    train_size = int(0.8 * total_size)
+    test_size = total_size - train_size
+    train_dataset, test_dataset = random_split(full_dataset, [train_size, test_size])
+
+    train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+
+    model = DenseNet().to(device)
+    pos_weight = torch.tensor([32542 / 584]).to(device)
+    criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
+    optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+
+   
+    print(f"📊 Total Samples      : {total_size}")
+    print(f"🧪 Training Samples   : {train_size}")
+    print(f"🧪 Testing Samples : {test_size}")
+
+    for epoch in range(num_epochs):
+        model.train()
+        running_loss = 0.0
+        all_labels = []
+        all_preds = []
+        all_probs = []
+
+        for batch_idx, (images, labels) in enumerate(train_dataloader):
+            images, labels = images.to(device), labels.float().to(device)
+            labels = labels.view(-1, 1)
+
+            outputs = model(images)
+            loss = criterion(outputs, labels)
+
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+
+            running_loss += loss.item()
+            probs = torch.sigmoid(outputs).detach().cpu().numpy()
+            preds = (probs > 0.5).astype(int)
+            all_labels.extend(labels.cpu().numpy())
+            all_preds.extend(preds)
+            all_probs.extend(probs)
+
+            if (batch_idx + 1) % 50 == 0:
+                print(f"Epoch [{epoch+1}/{num_epochs}], Step [{batch_idx+1}/{len(train_dataloader)}], Loss: {loss.item():.4f}")
+
+        # Training Metrics
+        f1 = f1_score(all_labels, all_preds)
+        recall = recall_score(all_labels, all_preds)
+        auc = roc_auc_score(all_labels, all_probs)
+        epoch_loss = running_loss / len(train_dataloader)
+
+        print(f"\nEpoch [{epoch+1}/{num_epochs}] Summary:")
+        print(f"Train Loss   : {epoch_loss:.4f}")
+        print(f"Train F1     : {f1:.4f}")
+        print(f"Train Recall : {recall:.4f}")
+        print(f"Train AUC    : {auc:.4f}\n")
+    
+    end_time = datetime.now()
+    print(f"Training ended at: {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
+
+    testing_started = datetime.now()
+    print(f"Testing started at: {testing_started.strftime('%Y-%m-%d %H:%M:%S')}")
+
+    # Evaluate on Validation Set
+    test(model, test_dataloader, criterion)
+
+
+if __name__ == "__main__":
+    init()

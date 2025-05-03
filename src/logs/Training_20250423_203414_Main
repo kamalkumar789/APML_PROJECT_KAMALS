@@ -1,0 +1,5 @@
+Training started at: 2025-04-23 20:34:14
+📊 Total Samples      : 33126
+🧪 Training Samples   : 26500
+🧪 Testing Samples : 6626
+Epoch [1/10], Step [50/415], Loss: 0.7518

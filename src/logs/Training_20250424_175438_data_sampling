@@ -1,0 +1,42 @@
+Training started at: 2025-04-24 17:54:38
+Class 0 count: 32542
+Class 1 count: 584
+Learning Rate      : 0.0004
+Batch Size   : 32
+Epochs : 1
+📊 Total Samples      : 33126
+🧪 Training Samples   : 26500
+🧪 Testing Samples : 6626
+Epoch [1/1], Step [50/829], Loss: 0.8835
+Epoch [1/1], Step [100/829], Loss: 0.7622
+Epoch [1/1], Step [150/829], Loss: 1.4789
+Epoch [1/1], Step [200/829], Loss: 0.8580
+Epoch [1/1], Step [250/829], Loss: 0.8785
+Epoch [1/1], Step [300/829], Loss: 1.8671
+Epoch [1/1], Step [350/829], Loss: 0.7842
+Epoch [1/1], Step [400/829], Loss: 1.9009
+Epoch [1/1], Step [450/829], Loss: 0.8080
+Epoch [1/1], Step [500/829], Loss: 0.8899
+Epoch [1/1], Step [550/829], Loss: 1.8567
+Epoch [1/1], Step [600/829], Loss: 0.8205
+Epoch [1/1], Step [650/829], Loss: 0.8188
+Epoch [1/1], Step [700/829], Loss: 0.8227
+Epoch [1/1], Step [750/829], Loss: 1.9898
+Epoch [1/1], Step [800/829], Loss: 2.3721
+
+Epoch [1/1] Summary:
+Train Loss   : 1.3148
+Train F1     : 0.0343
+Train Recall : 0.9957
+Train AUC    : 0.6718
+
+Training ended at: 2025-04-24 17:57:56
+✅ Model saved at: /user/HS401/kk01579/APML_PROJECT/saved_models/densenet121_samplying.pth
+Testing started at: 2025-04-24 17:57:57
+
+Test Set Evaluation:
+Test Loss   : 1.3093
+Test F1     : 0.0351
+Test Recall : 0.9256
+Test AUC    : 0.6826
+

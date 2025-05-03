@@ -1,0 +1,10 @@
+Training started at: 2025-04-22 19:56:11
+📊 Total Samples      : 33126
+🧪 Training Samples   : 26500
+🧪 Testing Samples : 6626
+Error loading image /content/drive/MyDrive/archive/train/ISIC_6326389: [Errno 5] Input/output error: '/content/drive/MyDrive/archive/train/ISIC_6326389.jpg'
+Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount("/content/drive", force_remount=True).
+Training started at: 2025-04-22 20:14:04
+📊 Total Samples      : 33126
+🧪 Training Samples   : 26500
+🧪 Testing Samples : 6626

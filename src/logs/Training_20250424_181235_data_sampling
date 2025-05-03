@@ -1,0 +1,67 @@
+Training started at: 2025-04-24 18:12:35
+Class 0 count: 32542
+Class 1 count: 584
+Learning Rate      : 0.0001
+Batch Size   : 32
+Epochs : 100
+Total Samples      : 33126
+Training Samples   : 26500
+Testing Samples : 6626
+Epoch [1/100], Step [50/829], Loss: 1.5515
+Epoch [1/100], Step [100/829], Loss: 0.8617
+Epoch [1/100], Step [150/829], Loss: 0.7818
+Epoch [1/100], Step [200/829], Loss: 0.7930
+Epoch [1/100], Step [250/829], Loss: 0.8353
+Epoch [1/100], Step [300/829], Loss: 0.7900
+Epoch [1/100], Step [350/829], Loss: 0.7735
+Epoch [1/100], Step [400/829], Loss: 0.8303
+Epoch [1/100], Step [450/829], Loss: 0.8063
+Epoch [1/100], Step [500/829], Loss: 0.8303
+Epoch [1/100], Step [550/829], Loss: 0.9095
+Epoch [1/100], Step [600/829], Loss: 0.8161
+Epoch [1/100], Step [650/829], Loss: 0.8068
+Epoch [1/100], Step [700/829], Loss: 0.8068
+Epoch [1/100], Step [750/829], Loss: 1.3182
+Epoch [1/100], Step [800/829], Loss: 1.3260
+
+Epoch [1/100] Summary:
+Train Loss   : 1.2241
+Train F1     : 0.0332
+Train Recall : 1.0000
+Train AUC    : 0.8019
+
+Epoch [2/100], Step [50/829], Loss: 1.2771
+Epoch [2/100], Step [100/829], Loss: 0.8168
+Epoch [2/100], Step [150/829], Loss: 1.8323
+Epoch [2/100], Step [200/829], Loss: 1.3510
+Epoch [2/100], Step [250/829], Loss: 1.3339
+Epoch [2/100], Step [300/829], Loss: 0.8099
+Epoch [2/100], Step [350/829], Loss: 1.4090
+Epoch [2/100], Step [400/829], Loss: 0.8235
+Epoch [2/100], Step [450/829], Loss: 1.3616
+Epoch [2/100], Step [500/829], Loss: 0.8269
+Epoch [2/100], Step [550/829], Loss: 0.8320
+Epoch [2/100], Step [600/829], Loss: 2.4181
+Epoch [2/100], Step [650/829], Loss: 0.8386
+Epoch [2/100], Step [700/829], Loss: 2.1975
+Epoch [2/100], Step [750/829], Loss: 0.8057
+Epoch [2/100], Step [800/829], Loss: 0.7710
+
+Epoch [2/100] Summary:
+Train Loss   : 1.2016
+Train F1     : 0.0332
+Train Recall : 1.0000
+Train AUC    : 0.8331
+
+Epoch [3/100], Step [50/829], Loss: 0.7754
+Epoch [3/100], Step [100/829], Loss: 0.7831
+Epoch [3/100], Step [150/829], Loss: 0.8620
+Epoch [3/100], Step [200/829], Loss: 1.2938
+Epoch [3/100], Step [250/829], Loss: 0.7859
+Epoch [3/100], Step [300/829], Loss: 0.8630
+Epoch [3/100], Step [350/829], Loss: 0.8241
+Epoch [3/100], Step [400/829], Loss: 0.8031
+Epoch [3/100], Step [450/829], Loss: 1.2885
+Epoch [3/100], Step [500/829], Loss: 0.8415
+Epoch [3/100], Step [550/829], Loss: 1.8349
+Epoch [3/100], Step [600/829], Loss: 0.8429

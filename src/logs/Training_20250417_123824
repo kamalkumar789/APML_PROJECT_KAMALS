@@ -1,0 +1,130 @@
+Epoch [1/5], Step [50/1036], Loss: 1.4382
+Epoch [1/5], Step [100/1036], Loss: 0.9164
+Epoch [1/5], Step [150/1036], Loss: 0.8453
+Epoch [1/5], Step [200/1036], Loss: 1.3925
+Epoch [1/5], Step [250/1036], Loss: 1.9526
+Epoch [1/5], Step [300/1036], Loss: 1.9888
+Epoch [1/5], Step [350/1036], Loss: 1.9293
+Epoch [1/5], Step [400/1036], Loss: 0.8008
+Epoch [1/5], Step [450/1036], Loss: 1.3711
+Epoch [1/5], Step [500/1036], Loss: 0.8154
+Epoch [1/5], Step [550/1036], Loss: 0.7769
+Epoch [1/5], Step [600/1036], Loss: 0.8171
+Epoch [1/5], Step [650/1036], Loss: 1.7222
+Epoch [1/5], Step [700/1036], Loss: 1.3580
+Epoch [1/5], Step [750/1036], Loss: 0.8834
+Epoch [1/5], Step [800/1036], Loss: 1.3446
+Epoch [1/5], Step [850/1036], Loss: 0.7689
+Epoch [1/5], Step [900/1036], Loss: 0.8126
+Epoch [1/5], Step [950/1036], Loss: 1.2734
+Epoch [1/5], Step [1000/1036], Loss: 2.8727
+Epoch [1/5] Summary:
+Loss   : 1.2485
+F1     : 0.0346
+Recall : 1.0000
+AUC    : 0.7918
+
+Epoch [2/5], Step [50/1036], Loss: 0.7978
+Epoch [2/5], Step [100/1036], Loss: 0.8868
+Epoch [2/5], Step [150/1036], Loss: 1.3558
+Epoch [2/5], Step [200/1036], Loss: 0.8218
+Epoch [2/5], Step [250/1036], Loss: 0.8355
+Epoch [2/5], Step [300/1036], Loss: 0.8930
+Epoch [2/5], Step [350/1036], Loss: 1.3248
+Epoch [2/5], Step [400/1036], Loss: 0.8713
+Epoch [2/5], Step [450/1036], Loss: 1.3846
+Epoch [2/5], Step [500/1036], Loss: 0.7610
+Epoch [2/5], Step [550/1036], Loss: 0.7964
+Epoch [2/5], Step [600/1036], Loss: 0.7810
+Epoch [2/5], Step [650/1036], Loss: 1.3886
+Epoch [2/5], Step [700/1036], Loss: 0.7826
+Epoch [2/5], Step [750/1036], Loss: 1.8458
+Epoch [2/5], Step [800/1036], Loss: 0.7536
+Epoch [2/5], Step [850/1036], Loss: 0.8296
+Epoch [2/5], Step [900/1036], Loss: 1.7976
+Epoch [2/5], Step [950/1036], Loss: 1.3278
+Epoch [2/5], Step [1000/1036], Loss: 0.8180
+Epoch [2/5] Summary:
+Loss   : 1.2240
+F1     : 0.0346
+Recall : 1.0000
+AUC    : 0.8207
+
+Epoch [3/5], Step [50/1036], Loss: 1.8393
+Epoch [3/5], Step [100/1036], Loss: 0.8103
+Epoch [3/5], Step [150/1036], Loss: 0.7685
+Epoch [3/5], Step [200/1036], Loss: 0.7776
+Epoch [3/5], Step [250/1036], Loss: 0.7738
+Epoch [3/5], Step [300/1036], Loss: 0.8432
+Epoch [3/5], Step [350/1036], Loss: 2.4713
+Epoch [3/5], Step [400/1036], Loss: 3.6976
+Epoch [3/5], Step [450/1036], Loss: 0.8108
+Epoch [3/5], Step [500/1036], Loss: 2.0378
+Epoch [3/5], Step [550/1036], Loss: 0.8589
+Epoch [3/5], Step [600/1036], Loss: 1.3507
+Epoch [3/5], Step [650/1036], Loss: 0.8394
+Epoch [3/5], Step [700/1036], Loss: 3.0301
+Epoch [3/5], Step [750/1036], Loss: 0.7915
+Epoch [3/5], Step [800/1036], Loss: 0.8747
+Epoch [3/5], Step [850/1036], Loss: 1.9595
+Epoch [3/5], Step [900/1036], Loss: 0.8258
+Epoch [3/5], Step [950/1036], Loss: 0.7959
+Epoch [3/5], Step [1000/1036], Loss: 2.2370
+Epoch [3/5] Summary:
+Loss   : 1.2110
+F1     : 0.0346
+Recall : 1.0000
+AUC    : 0.8189
+
+Epoch [4/5], Step [50/1036], Loss: 0.8371
+Epoch [4/5], Step [100/1036], Loss: 0.8046
+Epoch [4/5], Step [150/1036], Loss: 0.8576
+Epoch [4/5], Step [200/1036], Loss: 0.8494
+Epoch [4/5], Step [250/1036], Loss: 0.8195
+Epoch [4/5], Step [300/1036], Loss: 1.3145
+Epoch [4/5], Step [350/1036], Loss: 0.8096
+Epoch [4/5], Step [400/1036], Loss: 0.7712
+Epoch [4/5], Step [450/1036], Loss: 0.7939
+Epoch [4/5], Step [500/1036], Loss: 0.8030
+Epoch [4/5], Step [550/1036], Loss: 0.7852
+Epoch [4/5], Step [600/1036], Loss: 0.8332
+Epoch [4/5], Step [650/1036], Loss: 1.3366
+Epoch [4/5], Step [700/1036], Loss: 1.3313
+Epoch [4/5], Step [750/1036], Loss: 0.8208
+Epoch [4/5], Step [800/1036], Loss: 0.8374
+Epoch [4/5], Step [850/1036], Loss: 2.2875
+Epoch [4/5], Step [900/1036], Loss: 0.8762
+Epoch [4/5], Step [950/1036], Loss: 0.7903
+Epoch [4/5], Step [1000/1036], Loss: 0.8091
+Epoch [4/5] Summary:
+Loss   : 1.2151
+F1     : 0.0347
+Recall : 1.0000
+AUC    : 0.8116
+
+Epoch [5/5], Step [50/1036], Loss: 1.3604
+Epoch [5/5], Step [100/1036], Loss: 0.8387
+Epoch [5/5], Step [150/1036], Loss: 1.9846
+Epoch [5/5], Step [200/1036], Loss: 0.8236
+Epoch [5/5], Step [250/1036], Loss: 0.8658
+Epoch [5/5], Step [300/1036], Loss: 0.8312
+Epoch [5/5], Step [350/1036], Loss: 0.7784
+Epoch [5/5], Step [400/1036], Loss: 0.7968
+Epoch [5/5], Step [450/1036], Loss: 0.7867
+Epoch [5/5], Step [500/1036], Loss: 0.7923
+Epoch [5/5], Step [550/1036], Loss: 0.8159
+Epoch [5/5], Step [600/1036], Loss: 0.8011
+Epoch [5/5], Step [650/1036], Loss: 2.0358
+Epoch [5/5], Step [700/1036], Loss: 0.8098
+Epoch [5/5], Step [750/1036], Loss: 0.8169
+Epoch [5/5], Step [800/1036], Loss: 0.8382
+Epoch [5/5], Step [850/1036], Loss: 1.9459
+Epoch [5/5], Step [900/1036], Loss: 0.8273
+Epoch [5/5], Step [950/1036], Loss: 1.3435
+Epoch [5/5], Step [1000/1036], Loss: 0.8020
+Epoch [5/5] Summary:
+Loss   : 1.2036
+F1     : 0.0347
+Recall : 1.0000
+AUC    : 0.8408
+

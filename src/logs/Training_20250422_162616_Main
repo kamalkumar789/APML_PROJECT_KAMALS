@@ -1,0 +1,5 @@
+Training started at: 2025-04-22 16:26:16
+📊 Total Samples      : 33126
+🧪 Training Samples   : 26500
+🧪 Testing Samples : 6626
+Error loading image /content/drive/MyDrive/archive/train/ISIC_4077252: [Errno 5] Input/output error: '/content/drive/MyDrive/archive/train/ISIC_4077252.jpg'
