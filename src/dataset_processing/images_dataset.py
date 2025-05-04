@@ -10,6 +10,9 @@ class ImagesDataset(Dataset):
 
         self.image_names = self.data['image_name'].tolist()
         self.labels = self.data['target'].tolist()
+        self.ages = self.data['age_approx'].tolist()
+        self.sex = self.data['sex']
+        self.patientsIds = self.data['patient_id']
 
         self.transform_label_zero = transform_for_label_0
         self.transform_label_one = transform_for_label_1

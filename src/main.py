@@ -14,35 +14,37 @@ from utils.loggers import Logger
 from utils.helper import compute_class_weights
 import random
 from torch.utils.data import Subset
+import matplotlib.pyplot as plt
 
-batch_size = 50
+batch_size = 64
 learning_rate = 0.0001
-num_epochs = 10
+num_epochs = 5
 thresh_hold = 0.5                                                                                                                                                              
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 import matplotlib.pyplot as plt
 
-def plot_training_metrics(train_losses, f1_scores, recall_scores):
+def plot_training_metrics(train_losses, f1_scores, recall_scores, validation_losses):
     import matplotlib
-    min_len = min(len(train_losses), len(f1_scores), len(recall_scores))
+    min_len = min(len(train_losses), len(validation_losses), len(f1_scores), len(recall_scores))
     epochs = range(1, min_len + 1)
 
     plt.figure(figsize=(12, 5))
 
-    # Plot Training Loss
+    # Plot Training and Validation Loss on same plot
     plt.subplot(1, 2, 1)
-    plt.plot(epochs, train_losses[:min_len], label='Train Loss', marker='o', color='blue')
+    plt.plot(epochs, train_losses[:min_len], label='Train Loss', marker='o', color='red')
+    plt.plot(epochs, validation_losses[:min_len], label='Validation Loss', marker='x', color='green')
     plt.xlabel('Epoch')
     plt.ylabel('Loss')
-    plt.title('Training Loss per Epoch')
+    plt.title('Training & Validation Loss per Epoch')
     plt.legend()
     plt.grid(True)
 
     # Plot F1 Score and Recall
     plt.subplot(1, 2, 2)
-    plt.plot(epochs, f1_scores[:min_len], label='F1 Score', marker='o', color='green')
+    plt.plot(epochs, f1_scores[:min_len], label='F1 Score', marker='o', color='blue')
     plt.plot(epochs, recall_scores[:min_len], label='Recall', marker='x', color='orange')
     plt.xlabel('Epoch')
     plt.ylabel('Score')
@@ -59,21 +61,19 @@ def plot_training_metrics(train_losses, f1_scores, recall_scores):
     plt.savefig(save_path)
     print(f"[INFO] Training plot saved to: {save_path}")
 
-    # Only show if in an interactive environment
     if matplotlib.is_interactive():
         plt.show()
 
 
-def test(model, test_dataloader, criterion):
-    """Run inference on the test dataset and compute metrics."""
+def evaluate(model, dataloader, criterion, name="Validation"):
     model.eval()
     running_loss = 0.0
     all_labels = []
     all_preds = []
     all_probs = []
 
-    with torch.no_grad():  # No gradient tracking during testing
-        for images, labels in test_dataloader:
+    with torch.no_grad():
+        for images, labels in dataloader:
             images, labels = images.to(device), labels.float().to(device)
             labels = labels.view(-1, 1)
 
@@ -88,19 +88,19 @@ def test(model, test_dataloader, criterion):
             all_preds.extend(preds)
             all_probs.extend(probs)
 
-    # Compute evaluation metrics
-    test_loss = running_loss / len(test_dataloader)
-    test_f1 = f1_score(all_labels, all_preds)
-    test_recall = recall_score(all_labels, all_preds)
-    test_auc = roc_auc_score(all_labels, all_probs)
+    val_loss = running_loss / len(dataloader)
+    val_f1 = f1_score(all_labels, all_preds)
+    val_recall = recall_score(all_labels, all_preds)
+    val_auc = roc_auc_score(all_labels, all_probs)
 
-    print("\nTest Set Evaluation:")
-    print(f"Test Loss   : {test_loss:.4f}")
-    print(f"Test F1     : {test_f1:.4f}")
-    print(f"Test Recall : {test_recall:.4f}")
-    print(f"Test AUC    : {test_auc:.4f}\n")
+    print(f"\n{name} Evaluation:")
+    print(f"{name} Loss   : {val_loss:.4f}")
+    print(f"{name} F1     : {val_f1:.4f}")
+    print(f"{name} Recall : {val_recall:.4f}")
+    print(f"{name} AUC    : {val_auc:.4f}")
 
- 
+    return val_loss
+
 
 def init():
     log_name = "Training_" + datetime.now().strftime("%Y%m%d_%H%M%S") + "_data_sampling"
@@ -113,6 +113,7 @@ def init():
     f1_scores = []
     recall_scores = []
     train_losses = []
+    validation_losses = []
 
 
     # Path to CSV and folder
@@ -140,18 +141,23 @@ def init():
 
     # full_dataset = ImagesDataset(data_folder, data_csv, transform_for_label_0, transform_for_label_1)
 
-    random.seed(42)
-    # Assume full_dataset is already created
-    indices = random.sample(range(len(full_dataset)), 100)
-    full_dataset = Subset(full_dataset, indices)
+    # random.seed(42)
+
+    # # Assume full_dataset is already created
+    # indices = random.sample(range(len(full_dataset)), 100)
+    # full_dataset = Subset(full_dataset, indices)
 
     # Split: 80% train, 20% validation
+    # Split: 70% train, 15% validation, 15% test
     total_size = len(full_dataset)
-    train_size = int(0.8 * total_size)
-    test_size = total_size - train_size
-    train_dataset, test_dataset = random_split(full_dataset, [train_size, test_size])
+    train_size = int(0.7 * total_size)
+    val_size = int(0.15 * total_size)
+    test_size = total_size - train_size - val_size  # ensures total consistency
+
+    train_dataset, val_dataset, test_dataset = random_split(full_dataset, [train_size, val_size, test_size])
 
     train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
     test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
     model = DenseNet().to(device)
@@ -167,7 +173,9 @@ def init():
 
     print(f"Total Samples      : {total_size}")
     print(f"Training Samples   : {train_size}")
+    print(f"Validation Samples : {val_size}")
     print(f"Testing Samples : {test_size}")
+    
 
 
     for epoch in range(num_epochs):
@@ -207,7 +215,6 @@ def init():
         recall = recall_score(all_labels, all_preds)        
         auc = roc_auc_score(all_labels, all_probs)
         epoch_loss = running_loss / len(train_dataloader)
-        # epoch_loss = running_loss / len(train_dataloader)
         train_losses.append(epoch_loss) 
         f1_scores.append(f1)
         recall_scores.append(recall)
@@ -217,11 +224,14 @@ def init():
         print(f"Train F1     : {f1:.4f}")
         print(f"Train Recall : {recall:.4f}")
         print(f"Train AUC    : {auc:.4f}\n")
+
+        validationLoss = evaluate(model, val_dataloader, criterion, name="Validation")
+        validation_losses.append(validationLoss)
     
     end_time = datetime.now()
     print(f"Training ended at: {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
 
-    plot_training_metrics(train_losses, f1_scores, recall_scores)
+    plot_training_metrics(train_losses, f1_scores, recall_scores, validation_losses)
 
     # ✅ Save the trained model
     # model_save_path = "/user/HS401/kk01579/APML_PROJECT/saved_models/densenet121_samplying.pth"
@@ -234,8 +244,7 @@ def init():
     testing_started = datetime.now()
     print(f"Testing started at: {testing_started.strftime('%Y-%m-%d %H:%M:%S')}")
 
-    # Evaluate on Validation Set
-    test(model, test_dataloader, criterion)
+    evaluate(model, test_dataloader, criterion, name="Test")
 
 
 if __name__ == "__main__":
