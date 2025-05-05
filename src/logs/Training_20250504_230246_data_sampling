@@ -1,0 +1,281 @@
+Training started at: 2025-05-04 23:02:46
+Class 0 count: 99
+Class 1 count: 1
+Learning Rate      : 0.0001
+Batch Size   : 32
+Epochs : 20
+Threashold : 0.5
+Total Samples      : 100
+Training Samples   : 70
+Validation Samples : 15
+Testing Samples : 15
+
+Epoch [1/20] Summary:
+Train Loss   : 1.1942
+Train F1     : 0.0357
+Train Recall : 1.0000
+Train AUC    : 0.9565
+
+
+Validation Evaluation:
+Validation Loss   : 0.5907
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [2/20] Summary:
+Train Loss   : 1.0351
+Train F1     : 0.0377
+Train Recall : 1.0000
+Train AUC    : 0.9855
+
+
+Validation Evaluation:
+Validation Loss   : 0.6521
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [3/20] Summary:
+Train Loss   : 0.7890
+Train F1     : 0.0455
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.6878
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [4/20] Summary:
+Train Loss   : 0.7106
+Train F1     : 0.0741
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.7430
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [5/20] Summary:
+Train Loss   : 0.6297
+Train F1     : 0.0870
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.6971
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [6/20] Summary:
+Train Loss   : 0.5359
+Train F1     : 0.1538
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.6377
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [7/20] Summary:
+Train Loss   : 0.4719
+Train F1     : 0.4000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.6026
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [8/20] Summary:
+Train Loss   : 0.4318
+Train F1     : 0.4000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.5700
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [9/20] Summary:
+Train Loss   : 0.3719
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.5314
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [10/20] Summary:
+Train Loss   : 0.3347
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.5295
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [11/20] Summary:
+Train Loss   : 0.3101
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.5478
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [12/20] Summary:
+Train Loss   : 0.2662
+Train F1     : 0.6667
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.5083
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [13/20] Summary:
+Train Loss   : 0.2396
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.5066
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [14/20] Summary:
+Train Loss   : 0.2320
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.5090
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [15/20] Summary:
+Train Loss   : 0.2036
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.5076
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [16/20] Summary:
+Train Loss   : 0.1874
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.5747
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [17/20] Summary:
+Train Loss   : 0.1726
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.5644
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [18/20] Summary:
+Train Loss   : 0.1520
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.5552
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [19/20] Summary:
+Train Loss   : 0.1478
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.4919
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+
+Epoch [20/20] Summary:
+Train Loss   : 0.1402
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.4046
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : nan
+Training ended at: 2025-05-04 23:02:57
+[INFO] Training plot saved to: Training_20250504_230246_data_sampling.png
+Model saved at: /user/HS401/kk01579/APML_PROJECT_KAMALS/saved_models/densenet121_samplying.pth
+Testing started at: 2025-05-04 23:02:58
+
+Test Evaluation:
+Test Loss   : 0.1454
+Test F1     : 0.0000
+Test Recall : 0.0000
+Test AUC    : nan

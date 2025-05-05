@@ -15,18 +15,16 @@ from utils.helper import compute_class_weights
 import random
 from torch.utils.data import Subset
 import matplotlib.pyplot as plt
+import matplotlib
 
-batch_size = 64
-learning_rate = 0.0001
-num_epochs = 5
+batch_size = 32
+learning_rate = 0.0003
+num_epochs = 10
 thresh_hold = 0.5                                                                                                                                                              
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
-import matplotlib.pyplot as plt
-
-def plot_training_metrics(train_losses, f1_scores, recall_scores, validation_losses):
-    import matplotlib
+def plot_training_metrics(train_losses, f1_scores, recall_scores, validation_losses, filename):
     min_len = min(len(train_losses), len(validation_losses), len(f1_scores), len(recall_scores))
     epochs = range(1, min_len + 1)
 
@@ -57,7 +55,7 @@ def plot_training_metrics(train_losses, f1_scores, recall_scores, validation_los
     plt.figtext(0.15, 0.01, f'Batch Size: {batch_size}', fontsize=10, color='black')
 
     plt.tight_layout()
-    save_path = "training_metrics.png"
+    save_path = filename + ".png"
     plt.savefig(save_path)
     print(f"[INFO] Training plot saved to: {save_path}")
 
@@ -104,8 +102,8 @@ def evaluate(model, dataloader, criterion, name="Validation"):
 
 def init():
     log_name = "Training_" + datetime.now().strftime("%Y%m%d_%H%M%S") + "_data_sampling"
-    # sys.stdout = Logger(osp.join("/user/HS401/kk01579/APML_PROJECT/src/logs", log_name))
-    sys.stdout = Logger(osp.join("/home/kamal/AppliedMachineLearning/APML_PROJECT_KAMALS/src/logs", log_name))
+    sys.stdout = Logger(osp.join("/user/HS401/kk01579/APML_PROJECT_KAMALS/src/logs", log_name))
+    # sys.stdout = Logger(osp.join("/home/kamal/AppliedMachineLearning/APML_PROJECT_KAMALS/src/logs", log_name))
 
     start_time = datetime.now()
     print(f"Training started at: {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
@@ -117,11 +115,11 @@ def init():
 
 
     # Path to CSV and folder
-    # data_csv = "/user/HS401/kk01579/archive/train.csv"
-    # data_folder = "/user/HS401/kk01579/archive/train"
+    data_csv = "/user/HS401/kk01579/archive/train.csv"
+    data_folder = "/user/HS401/kk01579/archive/train"
 
-    data_csv = "/home/kamal/archive/train.csv"
-    data_folder = "/home/kamal/archive/train"
+    # data_csv = "/home/kamal/archive/train.csv"
+    # data_folder = "/home/kamal/archive/train"
 
     transform_for_label_0 = transforms.Compose([
         transforms.Resize((128, 128)),
@@ -137,13 +135,13 @@ def init():
         transforms.ToTensor(),
     ])
 
-    full_dataset = ImagesDataset(data_folder, data_csv, transform_for_label_0, transform_for_label_1)
+    full_dataset = ImagesDataset(data_folder, data_csv, transform_for_label_0, transform_for_label_0)
 
     # full_dataset = ImagesDataset(data_folder, data_csv, transform_for_label_0, transform_for_label_1)
 
     # random.seed(42)
 
-    # # Assume full_dataset is already created
+    # # # Assume full_dataset is already created
     # indices = random.sample(range(len(full_dataset)), 100)
     # full_dataset = Subset(full_dataset, indices)
 
@@ -159,6 +157,7 @@ def init():
     train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
     test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+
 
     model = DenseNet().to(device)
     
@@ -231,11 +230,11 @@ def init():
     end_time = datetime.now()
     print(f"Training ended at: {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
 
-    plot_training_metrics(train_losses, f1_scores, recall_scores, validation_losses)
+    plot_training_metrics(train_losses, f1_scores, recall_scores, validation_losses, filename=log_name)
 
     # ✅ Save the trained model
-    # model_save_path = "/user/HS401/kk01579/APML_PROJECT/saved_models/densenet121_samplying.pth"
-    model_save_path = "/home/kamal/APML_PROJECT/saved_models/densenet121_samplying.pth"
+    model_save_path = "/user/HS401/kk01579/APML_PROJECT_KAMALS/saved_models/densenet121_samplying.pth"
+    # model_save_path = "/home/kamal/APML_PROJECT/saved_models/densenet121_samplying.pth"
 
     os.makedirs(os.path.dirname(model_save_path), exist_ok=True)
     torch.save(model.state_dict(), model_save_path)
