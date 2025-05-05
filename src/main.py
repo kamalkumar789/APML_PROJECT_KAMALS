@@ -7,7 +7,7 @@ from torchvision import transforms
 from torch.utils.data import DataLoader
 from sklearn.metrics import f1_score, recall_score, roc_auc_score
 from dataset_processing.images_dataset import ImagesDataset
-from model.densenet import DenseNet
+from model.densene_metadata import DenseNetWithMetadata
 from datetime import datetime
 from torch.utils.data import random_split
 from utils.loggers import Logger
@@ -124,7 +124,7 @@ def init():
     data_folder = "/home/kamal/archive/train"
 
     transform_for_label_0 = transforms.Compose([
-        transforms.Resize((128, 128)),
+        # transforms.Resize((128, 128)),
         transforms.ToTensor()
     ])
 
@@ -160,7 +160,7 @@ def init():
     val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
     test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
-    model = DenseNet().to(device)
+    model = DenseNetWithMetadata().to(device)
     
     pos_weight = compute_class_weights(full_dataset).to(device) 
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
@@ -187,9 +187,11 @@ def init():
 
         for batch_idx, (images, labels) in enumerate(train_dataloader):
             images, labels = images.to(device), labels.float().to(device)
-            labels = labels.view(-1, 1)
+            metadata = metadata.to(device)
 
-            outputs = model(images)
+            labels = labels.float().to(device).view(-1, 1)
+
+            outputs = model(images, metadata)
             loss = criterion(outputs, labels)
 
             optimizer.zero_grad()

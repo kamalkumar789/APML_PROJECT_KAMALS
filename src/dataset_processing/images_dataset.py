@@ -2,6 +2,7 @@ import os
 import pandas as pd
 from PIL import Image
 from torch.utils.data import Dataset
+import torch
 
 class ImagesDataset(Dataset):
     def __init__(self, image_folder, csv_file, transform_for_label_0=None, transform_for_label_1=None):
@@ -13,6 +14,7 @@ class ImagesDataset(Dataset):
         self.ages = self.data['age_approx'].tolist()
         self.sex = self.data['sex']
         self.patientsIds = self.data['patient_id']
+        self.bodyLocation = self.data['anatom_site_general_challenge']
 
         self.transform_label_zero = transform_for_label_0
         self.transform_label_one = transform_for_label_1
@@ -39,7 +41,20 @@ class ImagesDataset(Dataset):
         elif label == 1 and self.transform_label_one:
             image = self.transform_label_one(image)
 
-        return image, label
+        # Extract metadata
+        age = self.ages[idx]
+        sex = self.sex[idx]
+        body_location = self.bodyLocation[idx]
+
+        # Convert categorical metadata to numerical form (example)
+        sex_tensor = torch.tensor(0 if sex == 'male' else 1, dtype=torch.float32)
+        body_location_tensor = torch.tensor(hash(body_location) % 1000, dtype=torch.float32)  # simple hashing example
+
+        metadata = torch.tensor([age], dtype=torch.float32)
+        metadata = torch.cat([metadata, sex_tensor.view(1), body_location_tensor.view(1)])
+
+        return image, metadata, label
+
 
     def _getLabelByImageName(self, image_name):
         try:
