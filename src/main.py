@@ -5,7 +5,7 @@ import sys
 import os.path as osp
 from torchvision import transforms
 from torch.utils.data import DataLoader
-from sklearn.metrics import f1_score, recall_score, roc_auc_score
+from sklearn.metrics import f1_score, recall_score, roc_auc_score, confusion_matrix
 from dataset_processing.images_dataset import ImagesDataset
 from model.densenet import DenseNet
 from datetime import datetime
@@ -16,21 +16,98 @@ import random
 from torch.utils.data import Subset
 import matplotlib.pyplot as plt
 import matplotlib
+import albumentations as A
+from albumentations.pytorch import ToTensorV2
+import cv2  # Needed for cv2.BORDER_REFLECT
+import numpy as np
+from dataset_processing.focal_loss import FocalLoss
+import seaborn as sns
+from torch.utils.data import ConcatDataset, TensorDataset
+from imblearn.over_sampling import SMOTE
+import torch
+import numpy as np
+from sklearn.utils import shuffle
+from dataset_processing.smote import apply_smote_and_concat
 
 batch_size = 32
-learning_rate = 0.0003
-num_epochs = 10
+learning_rate = 0.0001
+num_epochs = 30
 thresh_hold = 0.5                                                                                                                                                              
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+import torch
+from torch.utils.data import ConcatDataset, TensorDataset
+from torchvision.transforms import ToTensor
 
+# def augment_label_1(dataset, transform, times=3):
+#     augmented_data = []
+#     to_tensor = ToTensor()  # Convert PIL Image to Tensor
+    
+#     for img, label in dataset:
+#         if label == 1:
+#             for _ in range(times):
+#                 # Convert the image to a tensor
+#                 img_tensor = to_tensor(img)
+#                 augmented_data.append((img_tensor, 1))
+    
+#     # Wrap into a dataset
+#     augmented_dataset = TensorDataset(
+#         torch.stack([x[0] for x in augmented_data]),
+#         torch.tensor([x[1] for x in augmented_data])
+#     )
+
+#     # Combine with the original dataset
+#     return ConcatDataset([dataset, augmented_dataset])
+
+
+def plot_confusion_matrix(y_true, y_pred, name):
+    cm = confusion_matrix(y_true, y_pred)
+    print(cm)
+    plt.figure(figsize=(6, 5))
+    sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=[0, 1], yticklabels=[0, 1])
+    plt.title(f'{name} Confusion Matrix')
+    plt.xlabel('Predicted')
+    plt.ylabel('True')
+    plt.tight_layout()
+    plt.savefig(f'{name.lower()}_confusion_matrix.png')
+    print(f"[INFO] Confusion matrix saved to: {name.lower()}_confusion_matrix.png")
+    plt.close()
+
+class TransformedDataset(torch.utils.data.Dataset):
+    def __init__(self, base_dataset, transform_label0=None, transform_label1=None):
+        self.base_dataset = base_dataset
+        self.transform_label0 = transform_label0
+        self.transform_label1 = transform_label1
+
+    def __getitem__(self, idx):
+        image, label = self.base_dataset[idx]
+        
+        # Convert PIL to NumPy if using albumentations
+        if isinstance(image, np.ndarray):
+            image_np = image
+        else:
+            image_np = np.asarray(image)  # Allows a copy if needed # Avoid specifying dtype explicitly        
+
+        if label == 0 and self.transform_label0 is not None:
+            # Assume transform_label0 is torchvision transform
+            image = self.transform_label0(image=image_np)["image"]
+        elif label == 1 and self.transform_label1 is not None:
+            # Assume transform_label1 is albumentations transform
+            image = self.transform_label1(image=image_np)["image"]
+        
+        return image, label
+
+    def __len__(self):
+        return len(self.base_dataset)
+
+# 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
 def plot_training_metrics(train_losses, f1_scores, recall_scores, validation_losses, filename):
     min_len = min(len(train_losses), len(validation_losses), len(f1_scores), len(recall_scores))
     epochs = range(1, min_len + 1)
 
     plt.figure(figsize=(12, 5))
 
-    # Plot Training and Validation Loss on same plot
+    # Plot Traininmalignantidation Loss on same plot
     plt.subplot(1, 2, 1)
     plt.plot(epochs, train_losses[:min_len], label='Train Loss', marker='o', color='red')
     plt.plot(epochs, validation_losses[:min_len], label='Validation Loss', marker='x', color='green')
@@ -97,6 +174,8 @@ def evaluate(model, dataloader, criterion, name="Validation"):
     print(f"{name} Recall : {val_recall:.4f}")
     print(f"{name} AUC    : {val_auc:.4f}")
 
+    plot_confusion_matrix(all_labels, all_preds, name)
+
     return val_loss
 
 
@@ -121,57 +200,78 @@ def init():
     # data_csv = "/home/kamal/archive/train.csv"
     # data_folder = "/home/kamal/archive/train"
 
-    transform_for_label_0 = transforms.Compose([
-        transforms.Resize((128, 128)),
-        transforms.ToTensor()
+    transform_for_label_0 = A.Compose([
+        A.Resize(256, 256),
+        A.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5)),  # Add normalization
+        ToTensorV2()  # This converts to FloatTensor
     ])
 
-    transform_for_label_1 = transforms.Compose([
-        transforms.Resize((128, 128)),
-        transforms.RandomHorizontalFlip(),
-        transforms.RandomRotation(15),
-        transforms.ColorJitter(brightness=0.2, contrast=0.2),
-        transforms.RandomAffine(degrees=15, translate=(0.1, 0.1)),
-        transforms.ToTensor(),
-    ])
+    transform_for_label_1 = A.Compose([
+        A.HorizontalFlip(p=0.5),
+        A.VerticalFlip(p=0.5),
+        A.ShiftScaleRotate(shift_limit=0.05, scale_limit=0.05, rotate_limit=5, border_mode=cv2.BORDER_REFLECT, p=0.5),
+        A.OneOf([
+            A.CLAHE(clip_limit=2.0, p=0.3),
+            A.RandomBrightnessContrast(p=0.3),
+            A.HueSaturationValue(p=0.3),
+        ], p=1.0),
+        A.Resize(256, 256),
+        A.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5)),
+        ToTensorV2()
+    ]) 
 
-    full_dataset = ImagesDataset(data_folder, data_csv, transform_for_label_0, transform_for_label_0)
+    print("\nTransform for label 0:\n", transform_for_label_0)
+    print("\nTransform for label 1:\n", transform_for_label_1)
 
-    # full_dataset = ImagesDataset(data_folder, data_csv, transform_for_label_0, transform_for_label_1)
-
+    full_dataset = ImagesDataset(data_folder, data_csv, None, transform_oversamplying, 5)
     # random.seed(42)
 
     # # # Assume full_dataset is already created
-    # indices = random.sample(range(len(full_dataset)), 100)
+    # indices = random.sample(range(len(full_dataset)), 1500)
     # full_dataset = Subset(full_dataset, indices)
+    
+    # full_dataset = augment_label_1(full_dataset, transform_oversamplying, 10)
+    # full_dataset = ImagesDataset(data_folder, data_csv, transform_for_label_0, transform_for_label_1)
+
+
 
     # Split: 80% train, 20% validation
     # Split: 70% train, 15% validation, 15% test
     total_size = len(full_dataset)
-    train_size = int(0.7 * total_size)
-    val_size = int(0.15 * total_size)
+    train_size = int(0.8 * total_size)
+    val_size = int(0.10 * total_size)
     test_size = total_size - train_size - val_size  # ensures total consistency
 
+    train_images = []
+    train_labels = []
+
     train_dataset, val_dataset, test_dataset = random_split(full_dataset, [train_size, val_size, test_size])
+
+    train_dataset = apply_smote_and_concat(train_dataset, (256,256,3),3)
+
+
+    train_dataset = TransformedDataset(train_dataset, transform_for_label_0, transform_for_label_1)
+    val_dataset = TransformedDataset(val_dataset, transform_for_label_0, transform_for_label_0)
+    test_dataset = TransformedDataset(test_dataset, transform_for_label_0, transform_for_label_0)
 
     train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
     test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
-
+    
 
     model = DenseNet().to(device)
     
-    pos_weight = compute_class_weights(full_dataset).to(device) 
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
-    criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
+    criterion = FocalLoss(alpha=torch.tensor([1.0, 3.0]), gamma=1.0)
+
 
     print(f"Learning Rate      : {learning_rate}")
     print(f"Batch Size   : {batch_size}")
     print(f"Epochs : {num_epochs}")
     print(f"Threashold : {thresh_hold}")
 
-    print(f"Total Samples      : {total_size}")
-    print(f"Training Samples   : {train_size}")
+    print(f"Total Samples      : {len(train_dataset) + val_size + test_size}")
+    print(f"Training Samples   : {len(train_dataset)}")
     print(f"Validation Samples : {val_size}")
     print(f"Testing Samples : {test_size}")
     
@@ -233,7 +333,7 @@ def init():
     plot_training_metrics(train_losses, f1_scores, recall_scores, validation_losses, filename=log_name)
 
     # ✅ Save the trained model
-    model_save_path = "/user/HS401/kk01579/APML_PROJECT_KAMALS/saved_models/densenet121_samplying.pth"
+    model_save_path = "/user/HS401/kk01579/APML_PROJECT_KAMALS/saved_models/densenet121_samplying_0.0001.pth"
     # model_save_path = "/home/kamal/APML_PROJECT/saved_models/densenet121_samplying.pth"
 
     os.makedirs(os.path.dirname(model_save_path), exist_ok=True)
