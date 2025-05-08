@@ -31,7 +31,7 @@ from dataset_processing.smote import apply_smote_and_concat
 
 batch_size = 32
 learning_rate = 0.0001
-num_epochs = 30
+num_epochs = 100
 thresh_hold = 0.5                                                                                                                                                              
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -58,6 +58,35 @@ from torchvision.transforms import ToTensor
 
 #     # Combine with the original dataset
 #     return ConcatDataset([dataset, augmented_dataset])
+
+
+from torch.utils.data import Subset, ConcatDataset
+
+def count_labels_multiple_datasets(*datasets):
+    count_0 = 0
+    count_1 = 0
+
+    for dataset in datasets:
+        if isinstance(dataset, Subset):
+            dataset = dataset.dataset
+        if isinstance(dataset, ConcatDataset):
+            sub_datasets = dataset.datasets
+        else:
+            sub_datasets = [dataset]
+
+        for ds in sub_datasets:
+            for i in range(len(ds)):
+                sample = ds[i]
+                label = sample[1] if isinstance(sample, tuple) else sample['label']
+
+                if label == 0:
+                    count_0 += 1
+                elif label == 1:
+                    count_1 += 1
+
+    print(f"Class 0 count: {count_0}")
+    print(f"Class 1 count: {count_1}")
+    return count_0, count_1
 
 
 def plot_confusion_matrix(y_true, y_pred, name):
@@ -223,32 +252,24 @@ def init():
     print("\nTransform for label 0:\n", transform_for_label_0)
     print("\nTransform for label 1:\n", transform_for_label_1)
 
-    full_dataset = ImagesDataset(data_folder, data_csv, None, transform_oversamplying, 5)
+    full_dataset = ImagesDataset(data_folder, data_csv, None, None)
     # random.seed(42)
 
     # # # Assume full_dataset is already created
-    # indices = random.sample(range(len(full_dataset)), 1500)
+    # indices = random.sample(range(len(full_dataset)), 10000)
     # full_dataset = Subset(full_dataset, indices)
     
-    # full_dataset = augment_label_1(full_dataset, transform_oversamplying, 10)
-    # full_dataset = ImagesDataset(data_folder, data_csv, transform_for_label_0, transform_for_label_1)
-
-
-
-    # Split: 80% train, 20% validation
-    # Split: 70% train, 15% validation, 15% test
     total_size = len(full_dataset)
     train_size = int(0.8 * total_size)
     val_size = int(0.10 * total_size)
     test_size = total_size - train_size - val_size  # ensures total consistency
 
-    train_images = []
-    train_labels = []
-
     train_dataset, val_dataset, test_dataset = random_split(full_dataset, [train_size, val_size, test_size])
+    print(len(train_dataset))
+    train_dataset = apply_smote_and_concat(train_dataset, image_shape=(256, 256, 3), k_neighbors=3)
+    count_labels_multiple_datasets(train_dataset)
 
-    train_dataset = apply_smote_and_concat(train_dataset, (256,256,3),3)
-
+    print(len(train_dataset))
 
     train_dataset = TransformedDataset(train_dataset, transform_for_label_0, transform_for_label_1)
     val_dataset = TransformedDataset(val_dataset, transform_for_label_0, transform_for_label_0)
@@ -258,7 +279,6 @@ def init():
     val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
     test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
     
-
     model = DenseNet().to(device)
     
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
@@ -301,9 +321,6 @@ def init():
             all_labels.extend(labels.cpu().numpy())
             all_preds.extend(preds)
             all_probs.extend(probs)
-            
-            # avg_train_loss = running_loss / len(train_dataloader.dataset)
-            # train_losses.append(avg_train_loss)
 
             if (batch_idx + 1) % 50 == 0:
                 print(f"Epoch [{epoch+1}/{num_epochs}], Step [{batch_idx+1}/{len(train_dataloader)}], Loss: {loss.item():.4f}")
@@ -333,7 +350,7 @@ def init():
     plot_training_metrics(train_losses, f1_scores, recall_scores, validation_losses, filename=log_name)
 
     # ✅ Save the trained model
-    model_save_path = "/user/HS401/kk01579/APML_PROJECT_KAMALS/saved_models/densenet121_samplying_0.0001.pth"
+    model_save_path = "/user/HS401/kk01579/APML_PROJECT_KAMALS/saved_models/densenet121_samplying_smote.pth"
     # model_save_path = "/home/kamal/APML_PROJECT/saved_models/densenet121_samplying.pth"
 
     os.makedirs(os.path.dirname(model_save_path), exist_ok=True)
