@@ -1,0 +1,121 @@
+Training started at: 2025-05-06 12:59:04
+Class 0 count: 32542
+Class 1 count: 584
+Learning Rate      : 0.0001
+Batch Size   : 64
+Epochs : 5
+Threashold : 0.5
+Total Samples      : 33126
+Training Samples   : 23188
+Validation Samples : 4968
+Testing Samples : 4970
+Epoch [1/5], Step [50/363], Loss: 0.1711
+Epoch [1/5], Step [100/363], Loss: 0.1156
+Epoch [1/5], Step [150/363], Loss: 3.5150
+Epoch [1/5], Step [200/363], Loss: 0.1053
+Epoch [1/5], Step [250/363], Loss: 0.0404
+Epoch [1/5], Step [300/363], Loss: 0.0368
+Epoch [1/5], Step [350/363], Loss: 0.0989
+
+Epoch [1/5] Summary:
+Train Loss   : 0.2651
+Train F1     : 0.3900
+Train Recall : 0.9649
+Train AUC    : 0.9847
+
+
+Validation Evaluation:
+Validation Loss   : 2.4436
+Validation F1     : 0.0235
+Validation Recall : 0.0123
+Validation AUC    : 0.6868
+Epoch [2/5], Step [50/363], Loss: 0.0345
+Epoch [2/5], Step [100/363], Loss: 0.0373
+Epoch [2/5], Step [150/363], Loss: 0.0682
+Epoch [2/5], Step [200/363], Loss: 0.0430
+Epoch [2/5], Step [250/363], Loss: 0.0247
+Epoch [2/5], Step [300/363], Loss: 0.0206
+Epoch [2/5], Step [350/363], Loss: 0.0292
+
+Epoch [2/5] Summary:
+Train Loss   : 0.1445
+Train F1     : 0.8616
+Train Recall : 0.9696
+Train AUC    : 0.9923
+
+
+Validation Evaluation:
+Validation Loss   : 3.3764
+Validation F1     : 0.0235
+Validation Recall : 0.0123
+Validation AUC    : 0.6586
+Epoch [3/5], Step [50/363], Loss: 0.1320
+Epoch [3/5], Step [100/363], Loss: 0.0231
+Epoch [3/5], Step [150/363], Loss: 0.0304
+Epoch [3/5], Step [200/363], Loss: 0.0468
+Epoch [3/5], Step [250/363], Loss: 0.0442
+Epoch [3/5], Step [300/363], Loss: 0.0181
+Epoch [3/5], Step [350/363], Loss: 0.0624
+
+Epoch [3/5] Summary:
+Train Loss   : 0.2311
+Train F1     : 0.8148
+Train Recall : 0.9532
+Train AUC    : 0.9797
+
+
+Validation Evaluation:
+Validation Loss   : 2.4858
+Validation F1     : 0.0233
+Validation Recall : 0.0123
+Validation AUC    : 0.7533
+Epoch [4/5], Step [50/363], Loss: 0.0400
+Epoch [4/5], Step [100/363], Loss: 0.0208
+Epoch [4/5], Step [150/363], Loss: 0.0346
+Epoch [4/5], Step [200/363], Loss: 0.0828
+Epoch [4/5], Step [250/363], Loss: 1.9019
+Epoch [4/5], Step [300/363], Loss: 0.1013
+Epoch [4/5], Step [350/363], Loss: 0.0333
+
+Epoch [4/5] Summary:
+Train Loss   : 0.1459
+Train F1     : 0.8689
+Train Recall : 0.9625
+Train AUC    : 0.9923
+
+
+Validation Evaluation:
+Validation Loss   : 2.9713
+Validation F1     : 0.0213
+Validation Recall : 0.0123
+Validation AUC    : 0.7764
+Epoch [5/5], Step [50/363], Loss: 0.0145
+Epoch [5/5], Step [100/363], Loss: 0.0271
+Epoch [5/5], Step [150/363], Loss: 0.0275
+Epoch [5/5], Step [200/363], Loss: 0.0407
+Epoch [5/5], Step [250/363], Loss: 0.0613
+Epoch [5/5], Step [300/363], Loss: 0.0370
+Epoch [5/5], Step [350/363], Loss: 1.2028
+
+Epoch [5/5] Summary:
+Train Loss   : 0.1439
+Train F1     : 0.9469
+Train Recall : 0.9602
+Train AUC    : 0.9939
+
+
+Validation Evaluation:
+Validation Loss   : 2.4929
+Validation F1     : 0.0619
+Validation Recall : 0.0370
+Validation AUC    : 0.7769
+Training ended at: 2025-05-06 13:10:55
+[INFO] Training plot saved to: Training_20250506_125904_data_sampling.png
+Model saved at: /user/HS401/kk01579/APML_PROJECT_KAMALS/saved_models/densenet121_samplying_0.0001.pth
+Testing started at: 2025-05-06 13:10:56
+
+Test Evaluation:
+Test Loss   : 2.3886
+Test F1     : 0.0238
+Test Recall : 0.0132
+Test AUC    : 0.7763

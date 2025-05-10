@@ -6,7 +6,12 @@ class DenseNet(nn.Module):
         super(DenseNet, self).__init__()
         self.densenet = models.densenet121(pretrained=pretrained)
         in_features = self.densenet.classifier.in_features
-        self.densenet.classifier = nn.Linear(in_features, 1)  
+
+        # Add dropout before the final classifier
+        self.densenet.classifier = nn.Sequential(
+            nn.Dropout(p=0.5),
+            nn.Linear(in_features, 1)  # For binary classification
+        )
 
     def forward(self, x):
-        return self.densenet(x) 
+        return self.densenet(x)

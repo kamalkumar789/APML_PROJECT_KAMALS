@@ -1,0 +1,211 @@
+Training started at: 2025-05-09 01:49:04
+
+Transform for label 0:
+ Compose([
+  Resize(p=1.0, height=256, interpolation=1, mask_interpolation=0, width=256),
+  Normalize(p=1.0, max_pixel_value=255.0, mean=(0.5, 0.5, 0.5), normalization='standard', std=(0.5, 0.5, 0.5)),
+  ToTensorV2(p=1.0, transpose_mask=False),
+], p=1.0, bbox_params=None, keypoint_params=None, additional_targets={}, is_check_shapes=True)
+
+Transform for label 1:
+ Compose([
+  ShiftScaleRotate(p=0.5, shift_limit_x=(-0.05, 0.05), shift_limit_y=(-0.05, 0.05), scale_limit=(-0.050000000000000044, 0.050000000000000044), rotate_limit=(-5.0, 5.0), interpolation=1, border_mode=2, fill=0.0, fill_mask=0.0, rotate_method='largest_box', mask_interpolation=0),
+  OneOf([
+    CLAHE(p=0.3, clip_limit=(1.0, 2.0), tile_grid_size=(8, 8)),
+    RandomBrightnessContrast(p=0.3, brightness_by_max=True, brightness_limit=(-0.2, 0.2), contrast_limit=(-0.2, 0.2), ensure_safe_range=False),
+    HueSaturationValue(p=0.3, hue_shift_limit=(-20.0, 20.0), sat_shift_limit=(-30.0, 30.0), val_shift_limit=(-20.0, 20.0)),
+  ], p=1.0),
+  Resize(p=1.0, height=256, interpolation=1, mask_interpolation=0, width=256),
+  Normalize(p=1.0, max_pixel_value=255.0, mean=(0.5, 0.5, 0.5), normalization='standard', std=(0.5, 0.5, 0.5)),
+  ToTensorV2(p=1.0, transpose_mask=False),
+], p=1.0, bbox_params=None, keypoint_params=None, additional_targets={}, is_check_shapes=True)
+Class 0 count: 32542
+Class 1 count: 584
+[INFO] Starting augmentation. Total original samples: 28157
+Class 0 count: 27659
+Class 1 count: 2988
+Class 0 count: 27659
+Class 1 count: 2988
+Learning Rate      : 0.0001
+Batch Size   : 32
+Epochs : 30
+Threashold : 0.4
+Total Samples      : 35616
+Training Samples   : 30647
+Validation Samples : 3312
+Testing Samples : 1657
+Epoch [1/30], Step [50/958], Loss: 0.4688
+Epoch [1/30], Step [100/958], Loss: 0.3714
+Epoch [1/30], Step [150/958], Loss: 0.8052
+Epoch [1/30], Step [200/958], Loss: 1.0091
+Epoch [1/30], Step [250/958], Loss: 0.3969
+Epoch [1/30], Step [300/958], Loss: 0.2968
+Epoch [1/30], Step [350/958], Loss: 0.5566
+Epoch [1/30], Step [400/958], Loss: 0.1894
+Epoch [1/30], Step [450/958], Loss: 0.3903
+Epoch [1/30], Step [500/958], Loss: 0.1795
+Epoch [1/30], Step [550/958], Loss: 0.3638
+Epoch [1/30], Step [600/958], Loss: 0.2334
+Epoch [1/30], Step [650/958], Loss: 0.2112
+Epoch [1/30], Step [700/958], Loss: 0.6974
+Epoch [1/30], Step [750/958], Loss: 0.1687
+Epoch [1/30], Step [800/958], Loss: 0.7085
+Epoch [1/30], Step [850/958], Loss: 0.2070
+Epoch [1/30], Step [900/958], Loss: 0.4088
+Epoch [1/30], Step [950/958], Loss: 0.5612
+
+Epoch [1/30] Summary:
+Train Loss   : 0.4792
+Train F1     : 0.5333
+Train Recall : 0.9244
+Train AUC    : 0.9574
+
+
+Validation Evaluation:
+Validation Loss   : 0.3242
+Validation F1     : 0.1941
+Validation Recall : 0.6316
+Validation AUC    : 0.8931
+[[2977  278]
+ [  21   36]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+Epoch [2/30], Step [50/958], Loss: 0.5981
+Epoch [2/30], Step [100/958], Loss: 0.5147
+Epoch [2/30], Step [150/958], Loss: 0.4396
+Epoch [2/30], Step [200/958], Loss: 0.1876
+Epoch [2/30], Step [250/958], Loss: 0.1239
+Epoch [2/30], Step [300/958], Loss: 0.2502
+Epoch [2/30], Step [350/958], Loss: 0.1458
+Epoch [2/30], Step [400/958], Loss: 0.1558
+Epoch [2/30], Step [450/958], Loss: 0.1134
+Epoch [2/30], Step [500/958], Loss: 0.2476
+Epoch [2/30], Step [550/958], Loss: 0.5900
+Epoch [2/30], Step [600/958], Loss: 0.5514
+Epoch [2/30], Step [650/958], Loss: 0.3482
+Epoch [2/30], Step [700/958], Loss: 0.4606
+Epoch [2/30], Step [750/958], Loss: 0.2979
+Epoch [2/30], Step [800/958], Loss: 0.2145
+Epoch [2/30], Step [850/958], Loss: 0.1623
+Epoch [2/30], Step [900/958], Loss: 0.3723
+Epoch [2/30], Step [950/958], Loss: 0.3717
+
+Epoch [2/30] Summary:
+Train Loss   : 0.3399
+Train F1     : 0.6402
+Train Recall : 0.9411
+Train AUC    : 0.9785
+
+
+Validation Evaluation:
+Validation Loss   : 0.3318
+Validation F1     : 0.2294
+Validation Recall : 0.4386
+Validation AUC    : 0.8933
+[[3119  136]
+ [  32   25]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+Epoch [3/30], Step [50/958], Loss: 0.2588
+Epoch [3/30], Step [100/958], Loss: 0.2972
+Epoch [3/30], Step [150/958], Loss: 0.0467
+Epoch [3/30], Step [200/958], Loss: 0.7979
+Epoch [3/30], Step [250/958], Loss: 0.4403
+Epoch [3/30], Step [300/958], Loss: 0.1886
+Epoch [3/30], Step [350/958], Loss: 0.2159
+Epoch [3/30], Step [400/958], Loss: 0.3402
+Epoch [3/30], Step [450/958], Loss: 0.3715
+Epoch [3/30], Step [500/958], Loss: 0.3630
+Epoch [3/30], Step [550/958], Loss: 0.1178
+Epoch [3/30], Step [600/958], Loss: 0.1009
+Epoch [3/30], Step [650/958], Loss: 1.0027
+Epoch [3/30], Step [700/958], Loss: 0.1467
+Epoch [3/30], Step [750/958], Loss: 0.6711
+Epoch [3/30], Step [800/958], Loss: 0.2174
+Epoch [3/30], Step [850/958], Loss: 0.1232
+Epoch [3/30], Step [900/958], Loss: 0.1131
+Epoch [3/30], Step [950/958], Loss: 0.2513
+
+Epoch [3/30] Summary:
+Train Loss   : 0.2769
+Train F1     : 0.6972
+Train Recall : 0.9528
+Train AUC    : 0.9857
+
+
+Validation Evaluation:
+Validation Loss   : 0.3381
+Validation F1     : 0.1729
+Validation Recall : 0.6842
+Validation AUC    : 0.8918
+[[2900  355]
+ [  18   39]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+Epoch [4/30], Step [50/958], Loss: 0.2080
+Epoch [4/30], Step [100/958], Loss: 0.4809
+Epoch [4/30], Step [150/958], Loss: 0.0938
+Epoch [4/30], Step [200/958], Loss: 0.6611
+Epoch [4/30], Step [250/958], Loss: 0.1205
+Epoch [4/30], Step [300/958], Loss: 0.8885
+Epoch [4/30], Step [350/958], Loss: 0.2681
+Epoch [4/30], Step [400/958], Loss: 0.2980
+Epoch [4/30], Step [450/958], Loss: 0.0825
+Epoch [4/30], Step [500/958], Loss: 0.0442
+Epoch [4/30], Step [550/958], Loss: 0.1876
+Epoch [4/30], Step [600/958], Loss: 0.1774
+Epoch [4/30], Step [650/958], Loss: 0.2472
+Epoch [4/30], Step [700/958], Loss: 0.1396
+Epoch [4/30], Step [750/958], Loss: 0.1260
+Epoch [4/30], Step [800/958], Loss: 0.1902
+Epoch [4/30], Step [850/958], Loss: 0.5322
+Epoch [4/30], Step [900/958], Loss: 0.1603
+Epoch [4/30], Step [950/958], Loss: 0.0703
+
+Epoch [4/30] Summary:
+Train Loss   : 0.2192
+Train F1     : 0.7502
+Train Recall : 0.9665
+Train AUC    : 0.9910
+
+
+Validation Evaluation:
+Validation Loss   : 0.3997
+Validation F1     : 0.2170
+Validation Recall : 0.4035
+Validation AUC    : 0.8795
+[[3123  132]
+ [  34   23]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+Epoch [5/30], Step [50/958], Loss: 0.2234
+Epoch [5/30], Step [100/958], Loss: 0.0345
+Epoch [5/30], Step [150/958], Loss: 0.0997
+Epoch [5/30], Step [200/958], Loss: 0.2499
+Epoch [5/30], Step [250/958], Loss: 0.0935
+Epoch [5/30], Step [300/958], Loss: 0.1307
+Epoch [5/30], Step [350/958], Loss: 0.3615
+Epoch [5/30], Step [400/958], Loss: 0.0589
+Epoch [5/30], Step [450/958], Loss: 0.5402
+Epoch [5/30], Step [500/958], Loss: 0.1097
+Epoch [5/30], Step [550/958], Loss: 0.0841
+Epoch [5/30], Step [600/958], Loss: 0.1251
+Epoch [5/30], Step [650/958], Loss: 0.1690
+Epoch [5/30], Step [700/958], Loss: 0.2515
+Epoch [5/30], Step [750/958], Loss: 0.0314
+Epoch [5/30], Step [800/958], Loss: 0.3102
+Epoch [5/30], Step [850/958], Loss: 0.5438
+Epoch [5/30], Step [900/958], Loss: 0.1833
+Epoch [5/30], Step [950/958], Loss: 0.0974
+
+Epoch [5/30] Summary:
+Train Loss   : 0.1935
+Train F1     : 0.7705
+Train Recall : 0.9672
+Train AUC    : 0.9930
+
+
+Validation Evaluation:
+Validation Loss   : 0.4287
+Validation F1     : 0.1667
+Validation Recall : 0.4386
+Validation AUC    : 0.8459
+[[3037  218]
+ [  32   25]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png

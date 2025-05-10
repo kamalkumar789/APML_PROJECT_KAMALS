@@ -1,0 +1,123 @@
+Training started at: 2025-05-08 16:15:22
+
+Transform for label 0:
+ Compose([
+  Resize(p=1.0, height=256, interpolation=1, mask_interpolation=0, width=256),
+  Normalize(p=1.0, max_pixel_value=255.0, mean=(0.5, 0.5, 0.5), normalization='standard', std=(0.5, 0.5, 0.5)),
+  ToTensorV2(p=1.0, transpose_mask=False),
+], p=1.0, bbox_params=None, keypoint_params=None, additional_targets={}, is_check_shapes=True)
+
+Transform for label 1:
+ Compose([
+  ShiftScaleRotate(p=0.5, shift_limit_x=(-0.05, 0.05), shift_limit_y=(-0.05, 0.05), scale_limit=(-0.050000000000000044, 0.050000000000000044), rotate_limit=(-5.0, 5.0), interpolation=1, border_mode=2, fill=0.0, fill_mask=0.0, rotate_method='largest_box', mask_interpolation=0),
+  OneOf([
+    CLAHE(p=0.3, clip_limit=(1.0, 2.0), tile_grid_size=(8, 8)),
+    RandomBrightnessContrast(p=0.3, brightness_by_max=True, brightness_limit=(-0.2, 0.2), contrast_limit=(-0.2, 0.2), ensure_safe_range=False),
+    HueSaturationValue(p=0.3, hue_shift_limit=(-20.0, 20.0), sat_shift_limit=(-30.0, 30.0), val_shift_limit=(-20.0, 20.0)),
+  ], p=1.0),
+  Resize(p=1.0, height=256, interpolation=1, mask_interpolation=0, width=256),
+  Normalize(p=1.0, max_pixel_value=255.0, mean=(0.5, 0.5, 0.5), normalization='standard', std=(0.5, 0.5, 0.5)),
+  ToTensorV2(p=1.0, transpose_mask=False),
+], p=1.0, bbox_params=None, keypoint_params=None, additional_targets={}, is_check_shapes=True)
+Class 0 count: 99
+Class 1 count: 1
+[INFO] Starting augmentation. Total original samples: 80
+[INFO] Dataset type: <class 'torch.utils.data.dataset.Subset'>
+[DEBUG] Sample image shape: torch.Size([256, 3, 256])
+[INFO] Printing shapes of all images in subset_dataset:
+Image 0 shape: torch.Size([256, 3, 256])
+Image 1 shape: torch.Size([256, 3, 256])
+Image 2 shape: torch.Size([256, 3, 256])
+Image 3 shape: torch.Size([256, 3, 256])
+Image 4 shape: torch.Size([256, 3, 256])
+Image 5 shape: torch.Size([256, 3, 256])
+Image 6 shape: torch.Size([256, 3, 256])
+Image 7 shape: torch.Size([256, 3, 256])
+Image 8 shape: torch.Size([256, 3, 256])
+Image 9 shape: torch.Size([256, 3, 256])
+Image 10 shape: torch.Size([256, 3, 256])
+Image 11 shape: torch.Size([256, 3, 256])
+Image 12 shape: torch.Size([256, 3, 256])
+Image 13 shape: torch.Size([256, 3, 256])
+Image 14 shape: torch.Size([256, 3, 256])
+Image 15 shape: torch.Size([256, 3, 256])
+Image 16 shape: torch.Size([256, 3, 256])
+Image 17 shape: torch.Size([256, 3, 256])
+Image 18 shape: torch.Size([256, 3, 256])
+Image 19 shape: torch.Size([256, 3, 256])
+Image 20 shape: torch.Size([256, 3, 256])
+Image 21 shape: torch.Size([256, 3, 256])
+Image 22 shape: torch.Size([256, 3, 256])
+Image 23 shape: torch.Size([256, 3, 256])
+Image 24 shape: torch.Size([256, 3, 256])
+Image 25 shape: torch.Size([256, 3, 256])
+Image 26 shape: torch.Size([256, 3, 256])
+Image 27 shape: torch.Size([256, 3, 256])
+Image 28 shape: torch.Size([256, 3, 256])
+Image 29 shape: torch.Size([256, 3, 256])
+Image 30 shape: torch.Size([256, 3, 256])
+Image 31 shape: torch.Size([256, 3, 256])
+Image 32 shape: torch.Size([256, 3, 256])
+Image 33 shape: torch.Size([256, 3, 256])
+Image 34 shape: torch.Size([256, 3, 256])
+Image 35 shape: torch.Size([256, 3, 256])
+Image 36 shape: torch.Size([256, 3, 256])
+Image 37 shape: torch.Size([256, 3, 256])
+Image 38 shape: torch.Size([256, 3, 256])
+Image 39 shape: torch.Size([256, 3, 256])
+Image 40 shape: torch.Size([256, 3, 256])
+Image 41 shape: torch.Size([256, 3, 256])
+Image 42 shape: torch.Size([256, 3, 256])
+Image 43 shape: torch.Size([256, 3, 256])
+Image 44 shape: torch.Size([256, 3, 256])
+Image 45 shape: torch.Size([256, 3, 256])
+Image 46 shape: torch.Size([256, 3, 256])
+Image 47 shape: torch.Size([256, 3, 256])
+Image 48 shape: torch.Size([256, 3, 256])
+Image 49 shape: torch.Size([256, 3, 256])
+Image 50 shape: torch.Size([256, 3, 256])
+Image 51 shape: torch.Size([256, 3, 256])
+Image 52 shape: torch.Size([256, 3, 256])
+Image 53 shape: torch.Size([256, 3, 256])
+Image 54 shape: torch.Size([256, 3, 256])
+Image 55 shape: torch.Size([256, 3, 256])
+Image 56 shape: torch.Size([256, 3, 256])
+Image 57 shape: torch.Size([256, 3, 256])
+Image 58 shape: torch.Size([256, 3, 256])
+Image 59 shape: torch.Size([256, 3, 256])
+Image 60 shape: torch.Size([256, 3, 256])
+Image 61 shape: torch.Size([256, 3, 256])
+Image 62 shape: torch.Size([256, 3, 256])
+Image 63 shape: torch.Size([256, 3, 256])
+Image 64 shape: torch.Size([256, 3, 256])
+Image 65 shape: torch.Size([256, 3, 256])
+Image 66 shape: torch.Size([256, 3, 256])
+Image 67 shape: torch.Size([256, 3, 256])
+Image 68 shape: torch.Size([256, 3, 256])
+Image 69 shape: torch.Size([256, 3, 256])
+Image 70 shape: torch.Size([256, 3, 256])
+Image 71 shape: torch.Size([256, 3, 256])
+Image 72 shape: torch.Size([256, 3, 256])
+Image 73 shape: torch.Size([256, 3, 256])
+Image 74 shape: torch.Size([256, 3, 256])
+Image 75 shape: torch.Size([256, 3, 256])
+Image 76 shape: torch.Size([256, 3, 256])
+Image 77 shape: torch.Size([256, 3, 256])
+Image 78 shape: torch.Size([256, 3, 256])
+Image 79 shape: torch.Size([256, 3, 256])
+Image 80 shape: torch.Size([256, 3, 256])
+Image 81 shape: torch.Size([256, 3, 256])
+Image 82 shape: torch.Size([256, 3, 256])
+Image 83 shape: torch.Size([256, 3, 256])
+84
+Class 0 count: 79
+Class 1 count: 5
+84
+Learning Rate      : 0.0001
+Batch Size   : 32
+Epochs : 10
+Threashold : 0.5
+Total Samples      : 104
+Training Samples   : 84
+Validation Samples : 10
+Testing Samples : 10
