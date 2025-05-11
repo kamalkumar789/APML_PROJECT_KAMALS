@@ -39,7 +39,7 @@ from utils.helper import compute_class_weights
 
 batch_size = 32
 learning_rate = 0.0001
-num_epochs = 30
+num_epochs = 10
 thresh_hold = 0.5                                                                                                                                                              
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -156,8 +156,8 @@ def plot_confusion_matrix(y_true, y_pred, name):
     plt.xlabel('Predicted')
     plt.ylabel('True')
     plt.tight_layout()
-    plt.savefig(f'/user/HS401/kk01579/APML_PROJECT_KAMALS/src/visuals/{name.lower()}_confusion_matrix_classweights.png')
-    print(f"[INFO] Confusion matrix saved to: {name.lower()}_confusion_matrix.png")
+    plt.savefig(f'/user/HS401/kk01579/APML_PROJECT_KAMALS/src/visuals/{name.lower()}_confusion_matrix_classweights_main_1.png')
+    print(f"[INFO] Confusion matrix saved to: {name.lower()}_confusion_matrix_main_1.png")
     plt.close()
 
 class TransformedDataset(torch.utils.data.Dataset):
@@ -324,7 +324,7 @@ def init():
     
     
 
-    full_dataset = duplicate_and_augment_dataset(full_dataset, label=1)
+    # full_dataset = duplicate_and_augment_dataset(full_dataset, label=1)
     total_size = len(full_dataset)
     train_size = int(0.80 * total_size)
     val_size = int(0.10 * total_size)
@@ -332,10 +332,7 @@ def init():
 
     train_dataset, val_dataset, test_dataset = random_split(full_dataset, [train_size, val_size, test_size])
 
-    # print(train_dataset[0].shape)
-    count_labels_multiple_datasets(train_dataset)
-
-    train_dataset = TransformedDataset(train_dataset, transform_for_label_0, transform_for_label_1)    
+    train_dataset = TransformedDataset(train_dataset, transform_for_label_0, transform_for_label_0)    
     val_dataset = TransformedDataset(val_dataset, transform_for_label_0, transform_for_label_0)
     test_dataset = TransformedDataset(test_dataset, transform_for_label_0, transform_for_label_0)
 
@@ -343,7 +340,7 @@ def init():
     val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
     test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
     
-    model = DenseNet().to(device)
+    model = DenseNet(pretrained=False).to(device)
     
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
     pos_weight = compute_class_weights(train_dataset)
@@ -417,11 +414,12 @@ def init():
     plot_training_metrics(train_losses, f1_scores, recall_scores, validation_losses, validation_f1s,  filename=log_name)
 
     # ✅ Save the trained model
-    model_save_path = "/user/HS401/kk01579/APML_PROJECT_KAMALS/saved_models/densenet121_samplying_50_702010.pth"
+    model_save_path = "/user/HS401/kk01579/APML_PROJECT_KAMALS/saved_models/densenet121_samplying_50_702010_new.pth"
     # model_save_path = "/home/kamal/APML_PROJECT/saved_models/densenet121_samplying.pth"
 
     os.makedirs(os.path.dirname(model_save_path), exist_ok=True)
     torch.save(model.state_dict(), model_save_path)
+    
     print(f"Model saved at: {model_save_path}")
 
     testing_started = datetime.now()
