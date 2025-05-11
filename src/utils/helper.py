@@ -3,15 +3,28 @@ import torch
 
 def compute_class_weights(dataset):
     targets = []
-    for _, label in dataset:
-        targets.append(int(label)) 
-    
+
+    # Collect all labels
+    for _, _, label in dataset:
+        try:
+            targets.append(int(label))
+        except:
+            print(f"{_}")
+            raise ValueError(f"Invalid label value: {label}")
+
+    # Count label frequencies
     counter = Counter(targets)
-    count_0 = counter[0]
-    count_1 = counter[1]
+    count_0 = counter.get(0, 0)
+    count_1 = counter.get(1, 0)
 
-    print(f"Class 0 count: {count_0}")
-    print(f"Class 1 count: {count_1}")
 
+    # Safety check
+    if count_1 == 0:
+        raise ValueError("Class 1 has zero samples; cannot compute pos_weight.")
+    if count_0 == 0:
+        raise ValueError("Class 0 has zero samples; cannot compute pos_weight.")
+
+    # Compute positive weight for BCEWithLogitsLoss
     pos_weight = torch.tensor([count_0 / count_1], dtype=torch.float)
+
     return pos_weight

@@ -10,7 +10,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 import seaborn as sns
 import matplotlib
-
+from model.densene_metadata import DenseNetWithMetadata
 import torch
 import torch.nn as nn
 from torch.utils.data import (
@@ -74,52 +74,6 @@ class CustomDataset(Dataset):
 
 
 
-def duplicate_and_augment_dataset(dataset, label=1):
-
-    original_data = []
-    augmented_data = []
-
-    # Define 5 different augmentation pipelines
-    augmentations = [
-        A.Compose([A.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5)), A. ToTensorV2()]),
-        A.Compose([A.VerticalFlip(p=1.0), ToTensorV2()]),
-        A.Compose([A.HorizontalFlip(p=1.0), A.VerticalFlip(p=1.0), ToTensorV2()]),
-        A.Compose([A.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5)), A.Resize(256, 256), A. ToTensorV2()]),
-    ]
-
-    # Simple tensor conversion (for original images)
-    to_tensor_transform = A.Compose([ToTensorV2()])
-
-    print(f"[INFO] Starting augmentation. Total original samples: {len(dataset)}")
-
-    for idx, (image, target_label) in enumerate(dataset):
-        # Convert image to numpy
-        if isinstance(image, np.ndarray):
-            image_np = image
-        elif isinstance(image, torch.Tensor):
-            image_np = image.permute(1, 2, 0).numpy()  # Convert CxHxW to HxWxC
-        elif isinstance(image, Image.Image):
-            image_np = np.array(image)
-        else:
-            raise TypeError(f"Unsupported image type: {type(image)}")
-
-        # Apply ToTensorV2 for original
-        original_image = to_tensor_transform(image=image_np)["image"]
-        original_data.append((original_image, target_label))
-
-        # Apply different augmentations for specified label
-        if target_label == label:
-            for aug in augmentations:
-                augmented_image = aug(image=image_np)["image"]
-                augmented_data.append((augmented_image, target_label))
-
-    # Combine and create dataset
-    final_data = original_data + augmented_data
-    final_dataset = CustomDataset(final_data, transform=to_tensor_transform)
-
-    return final_dataset
-
-
 def count_labels_multiple_datasets(*datasets):
     count_0 = 0
     count_1 = 0
@@ -167,27 +121,26 @@ class TransformedDataset(torch.utils.data.Dataset):
         self.transform_label1 = transform_label1
 
     def __getitem__(self, idx):
-        image, label = self.base_dataset[idx]
-
+        image, metadata, label = self.base_dataset[idx]  # make sure base_dataset returns metadata!
+        
         # Convert PIL to NumPy if using albumentations
         if isinstance(image, torch.Tensor):
-            image_np = image.permute(1, 2, 0).cpu().numpy()  # [C, H, W] → [H, W, C]
+            image_np = image.permute(1, 2, 0).cpu().numpy()
         elif isinstance(image, Image.Image):
             image_np = np.array(image)
         elif isinstance(image, np.ndarray):
             image_np = image
         else:
             raise TypeError(f"Unsupported image type: {type(image)}")
-        
+
+        # Apply transforms based on label
         if label == 0 and self.transform_label0 is not None:
-            # Assume transform_label0 is torchvision transform
             image = self.transform_label0(image=image_np)["image"]
         elif label == 1 and self.transform_label1 is not None:
-            # Assume transform_label1 is albumentations transform
             image = self.transform_label1(image=image_np)["image"]
 
-        return image, label
-
+        return image, metadata, label
+    
     def __len__(self):
         return len(self.base_dataset)
 
@@ -232,45 +185,82 @@ def plot_training_metrics(train_losses, f1_scores, recall_scores, validation_los
         plt.show()
 
 
-def evaluate(model, dataloader, criterion, name="Validation"):
-    model.eval()
+def evaluate(model, dataloader, criterion, name="Validation", thresh_hold=0.5):
+    model.eval()  # Set the model to evaluation mode
     running_loss = 0.0
     all_labels = []
     all_preds = []
     all_probs = []
 
-    with torch.no_grad():
-        for images, labels in dataloader:
-            images, labels = images.to(device), labels.float().to(device)
-            labels = labels.view(-1, 1)
+    with torch.no_grad():  # Disable gradient calculation for evaluation
+        for batch_idx, (images, metadata, labels) in enumerate(dataloader):
+            images, labels = images.to(device), labels.float().to(device)  # Move to device and convert labels to float
+            labels = labels.view(-1, 1)  # Reshape labels to match model output
 
-            outputs = model(images)
+            # Check for NaN or Inf values in the images
+            if torch.isnan(images).any() or torch.isinf(images).any():
+                print(f"NaN or Inf detected in images at batch {batch_idx}")
+                continue  # Skip this batch
+
+            # Check for NaN or Inf in metadata
+            age_tensor = metadata['age'].to(device)
+            sex_tensor = metadata['sex'].to(device)
+
+            if torch.isnan(age_tensor).any() or torch.isinf(age_tensor).any():
+                print(f"NaN or Inf detected in 'age' tensor at batch {batch_idx}")
+                continue  # Skip this batch
+
+            if torch.isnan(sex_tensor).any() or torch.isinf(sex_tensor).any():
+                print(f"NaN or Inf detected in 'sex' tensor at batch {batch_idx}")
+                continue  # Skip this batch
+
+            # Combine them into a single tensor: stack them horizontally (dim=1)
+            meta_tensor = torch.stack([age_tensor, sex_tensor], dim=1).to(device)
+
+            # Ensure the meta_tensor is of the correct dtype (float32)
+            meta_tensor = meta_tensor.to(torch.float32)
+
+            # Ensure images are in the correct dtype (float32)
+            images = images.to(torch.float32)
+
+            # Forward pass through the model
+            outputs = model(images, meta_tensor)
+
+            # Check for NaN or Inf in model outputs
+            if torch.isnan(outputs).any() or torch.isinf(outputs).any():
+                print(f"NaN or Inf detected in model outputs at batch {batch_idx}")
+                continue  # Skip this batch
+
             loss = criterion(outputs, labels)
-
             running_loss += loss.item()
 
+            # Apply sigmoid to the model outputs to get probabilities
             probs = torch.sigmoid(outputs).cpu().numpy()
-            preds = (probs > thresh_hold).astype(int)
+            preds = (probs > thresh_hold).astype(int)  # Apply threshold to get binary predictions
+
+            # Store the true labels, predictions, and probabilities
             all_labels.extend(labels.cpu().numpy())
             all_preds.extend(preds)
             all_probs.extend(probs)
 
+    # Calculate the average loss and evaluation metrics
     val_loss = running_loss / len(dataloader)
     val_f1 = f1_score(all_labels, all_preds)
     val_recall = recall_score(all_labels, all_preds)
     val_auc = roc_auc_score(all_labels, all_probs)
 
+    # Print evaluation results
     print(f"\n{name} Evaluation:")
     print(f"{name} Loss   : {val_loss:.4f}")
     print(f"{name} F1     : {val_f1:.4f}")
     print(f"{name} Recall : {val_recall:.4f}")
     print(f"{name} AUC    : {val_auc:.4f}")
 
+    # If evaluating on the test set, plot confusion matrix
     if name == "Test":
         plot_confusion_matrix(all_labels, all_preds, name)
 
     return val_loss, val_f1
-
 
 def init():
     log_name = "Training_" + datetime.now().strftime("%Y%m%d_%H%M%S") + "_data_sampling"
@@ -319,12 +309,11 @@ def init():
     # random.seed(42)
 
     # # # Assume full_dataset is already created
-    # indices = random.sample(range(len(full_dataset)), 1000)
+    # indices = random.sample(range(len(full_dataset)), 500)
     # full_dataset = Subset(full_dataset, indices)
     
     
 
-    full_dataset = duplicate_and_augment_dataset(full_dataset, label=1)
     total_size = len(full_dataset)
     train_size = int(0.80 * total_size)
     val_size = int(0.10 * total_size)
@@ -332,8 +321,7 @@ def init():
 
     train_dataset, val_dataset, test_dataset = random_split(full_dataset, [train_size, val_size, test_size])
 
-    # print(train_dataset[0].shape)
-    count_labels_multiple_datasets(train_dataset)
+  
 
     train_dataset = TransformedDataset(train_dataset, transform_for_label_0, transform_for_label_1)    
     val_dataset = TransformedDataset(val_dataset, transform_for_label_0, transform_for_label_0)
@@ -343,7 +331,7 @@ def init():
     val_dataloader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
     test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
     
-    model = DenseNet().to(device)
+    model = DenseNetWithMetadata(metadata_input_size=2).to(device)
     
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
     pos_weight = compute_class_weights(train_dataset)
@@ -368,18 +356,44 @@ def init():
         all_preds = []
         all_probs = []
 
-        for batch_idx, (images, labels) in enumerate(train_dataloader):
-            images, labels = images.to(device), labels.float().to(device)
+        for batch_idx, (images, metadata, labels) in enumerate(train_dataloader):
+            images = images.to(device).to(torch.float32)
+            labels = labels.float().to(device).view(-1, 1)
 
-            labels = labels.view(-1, 1)
+            # Extract and clean metadata
+            age_tensor = metadata['age'].float()
+            sex_tensor = metadata['sex'].float()
 
-            outputs = model(images)
+            # Replace NaNs and Infs
+            age_tensor = torch.nan_to_num(age_tensor, nan=0.0, posinf=1.0, neginf=0.0)
+            sex_tensor = torch.nan_to_num(sex_tensor, nan=0.0, posinf=1.0, neginf=0.0)
+
+            # Normalize age (optional, based on your data range)
+            age_tensor = age_tensor / 100.0  # Normalize age to [0, 1] if original range is 0–100
+
+            # Combine metadata
+            meta_tensor = torch.stack([age_tensor, sex_tensor], dim=1).to(device)
+
+            # Forward pass
+            outputs = model(images, meta_tensor)
+
+            # Replace NaN/Inf in outputs before loss
+            if torch.isnan(outputs).any() or torch.isinf(outputs).any():
+                print("NaN or Inf in model output")
+                continue  # Skip this batch
+
             loss = criterion(outputs, labels)
 
+            if torch.isnan(loss) or torch.isinf(loss):
+                print("NaN or Inf in loss")
+                continue  # Skip this batch
+
+            # Backward pass and optimization
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
 
+            # Metrics
             running_loss += loss.item()
             probs = torch.sigmoid(outputs).detach().cpu().numpy()
             preds = (probs > thresh_hold).astype(int)
@@ -390,13 +404,13 @@ def init():
             if (batch_idx + 1) % 50 == 0:
                 print(f"Epoch [{epoch+1}/{num_epochs}], Step [{batch_idx+1}/{len(train_dataloader)}], Loss: {loss.item():.4f}")
 
-        
-        # Training Metrics
+        # Epoch metrics
         f1 = f1_score(all_labels, all_preds)
-        recall = recall_score(all_labels, all_preds)        
+        recall = recall_score(all_labels, all_preds)
         auc = roc_auc_score(all_labels, all_probs)
         epoch_loss = running_loss / len(train_dataloader)
-        train_losses.append(epoch_loss) 
+
+        train_losses.append(epoch_loss)
         f1_scores.append(f1)
         recall_scores.append(recall)
 
@@ -406,18 +420,18 @@ def init():
         print(f"Train Recall : {recall:.4f}")
         print(f"Train AUC    : {auc:.4f}\n")
 
+        # Validation
         validationLoss, val_f1 = evaluate(model, val_dataloader, criterion, name="Validation")
         validation_losses.append(validationLoss)
         validation_f1s.append(val_f1)
 
-    
     end_time = datetime.now()
     print(f"Training ended at: {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
 
     plot_training_metrics(train_losses, f1_scores, recall_scores, validation_losses, validation_f1s,  filename=log_name)
 
     # ✅ Save the trained model
-    model_save_path = "/user/HS401/kk01579/APML_PROJECT_KAMALS/saved_models/densenet121_samplying_50_702010.pth"
+    model_save_path = "/user/HS401/kk01579/APML_PROJECT_KAMALS/saved_models/densenet121_samplying_cnnmetadata.pth"
     # model_save_path = "/home/kamal/APML_PROJECT/saved_models/densenet121_samplying.pth"
 
     os.makedirs(os.path.dirname(model_save_path), exist_ok=True)
