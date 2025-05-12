@@ -4,7 +4,7 @@ from PIL import Image
 from torch.utils.data import Dataset
 
 class ImagesDataset(Dataset):
-    def __init__(self, image_folder, csv_file, transform_for_label_0=None, transform_for_label_1=None):
+    def __init__(self, image_folder, csv_file):
         self.image_folder = image_folder
         self.data = pd.read_csv(csv_file)
 
@@ -13,9 +13,6 @@ class ImagesDataset(Dataset):
         self.ages = self.data['age_approx'].tolist()
         self.sex = self.data['sex']
         self.patientsIds = self.data['patient_id']
-
-        self.transform_label_zero = transform_for_label_0
-        self.transform_label_one = transform_for_label_1
 
     def __len__(self):
         return len(self.image_names)
