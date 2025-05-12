@@ -1,0 +1,421 @@
+Training started at: 2025-05-05 17:21:37
+Class 0 count: 32542
+Class 1 count: 584
+Learning Rate      : 0.0001
+Batch Size   : 64
+Epochs : 20
+Threashold : 0.5
+Total Samples      : 33126
+Training Samples   : 23188
+Validation Samples : 4968
+Testing Samples : 4970
+Epoch [1/20], Step [50/363], Loss: 0.1439
+Epoch [1/20], Step [100/363], Loss: 0.0637
+Epoch [1/20], Step [150/363], Loss: 0.1060
+Epoch [1/20], Step [200/363], Loss: 0.0504
+Epoch [1/20], Step [250/363], Loss: 0.0952
+Epoch [1/20], Step [300/363], Loss: 0.0666
+Epoch [1/20], Step [350/363], Loss: 0.0416
+
+Epoch [1/20] Summary:
+Train Loss   : 0.2221
+Train F1     : 0.5657
+Train Recall : 0.9690
+Train AUC    : 0.9833
+
+
+Validation Evaluation:
+Validation Loss   : 0.1552
+Validation F1     : 0.9565
+Validation Recall : 0.9625
+Validation AUC    : 0.9833
+Epoch [2/20], Step [50/363], Loss: 0.0302
+Epoch [2/20], Step [100/363], Loss: 0.0361
+Epoch [2/20], Step [150/363], Loss: 0.0463
+Epoch [2/20], Step [200/363], Loss: 1.1132
+Epoch [2/20], Step [250/363], Loss: 0.0339
+Epoch [2/20], Step [300/363], Loss: 0.0300
+Epoch [2/20], Step [350/363], Loss: 0.0388
+
+Epoch [2/20] Summary:
+Train Loss   : 0.1349
+Train F1     : 0.9410
+Train Recall : 0.9690
+Train AUC    : 0.9923
+
+
+Validation Evaluation:
+Validation Loss   : 0.1591
+Validation F1     : 0.9222
+Validation Recall : 0.9625
+Validation AUC    : 0.9837
+Epoch [3/20], Step [50/363], Loss: 0.0104
+Epoch [3/20], Step [100/363], Loss: 0.0425
+Epoch [3/20], Step [150/363], Loss: 0.0522
+Epoch [3/20], Step [200/363], Loss: 0.0198
+Epoch [3/20], Step [250/363], Loss: 0.1177
+Epoch [3/20], Step [300/363], Loss: 0.0669
+Epoch [3/20], Step [350/363], Loss: 0.0726
+
+Epoch [3/20] Summary:
+Train Loss   : 0.1817
+Train F1     : 0.9019
+Train Recall : 0.9524
+Train AUC    : 0.9890
+
+
+Validation Evaluation:
+Validation Loss   : 0.1209
+Validation F1     : 0.9811
+Validation Recall : 0.9750
+Validation AUC    : 0.9973
+Epoch [4/20], Step [50/363], Loss: 0.0199
+Epoch [4/20], Step [100/363], Loss: 0.0166
+Epoch [4/20], Step [150/363], Loss: 0.0317
+Epoch [4/20], Step [200/363], Loss: 0.0405
+Epoch [4/20], Step [250/363], Loss: 0.0421
+Epoch [4/20], Step [300/363], Loss: 0.0275
+Epoch [4/20], Step [350/363], Loss: 0.1050
+
+Epoch [4/20] Summary:
+Train Loss   : 0.1341
+Train F1     : 0.9476
+Train Recall : 0.9690
+Train AUC    : 0.9923
+
+
+Validation Evaluation:
+Validation Loss   : 0.1288
+Validation F1     : 0.9873
+Validation Recall : 0.9750
+Validation AUC    : 0.9948
+Epoch [5/20], Step [50/363], Loss: 0.0266
+Epoch [5/20], Step [100/363], Loss: 0.0174
+Epoch [5/20], Step [150/363], Loss: 0.0072
+Epoch [5/20], Step [200/363], Loss: 0.0143
+Epoch [5/20], Step [250/363], Loss: 0.0192
+Epoch [5/20], Step [300/363], Loss: 0.0257
+Epoch [5/20], Step [350/363], Loss: 0.0284
+
+Epoch [5/20] Summary:
+Train Loss   : 0.0968
+Train F1     : 0.9661
+Train Recall : 0.9833
+Train AUC    : 0.9928
+
+
+Validation Evaluation:
+Validation Loss   : 0.0564
+Validation F1     : 0.8927
+Validation Recall : 0.9875
+Validation AUC    : 0.9998
+Epoch [6/20], Step [50/363], Loss: 1.9370
+Epoch [6/20], Step [100/363], Loss: 0.0214
+Epoch [6/20], Step [150/363], Loss: 0.0223
+Epoch [6/20], Step [200/363], Loss: 0.0307
+Epoch [6/20], Step [250/363], Loss: 0.0399
+Epoch [6/20], Step [300/363], Loss: 0.0245
+Epoch [6/20], Step [350/363], Loss: 0.0808
+
+Epoch [6/20] Summary:
+Train Loss   : 0.1834
+Train F1     : 0.9261
+Train Recall : 0.9548
+Train AUC    : 0.9865
+
+
+Validation Evaluation:
+Validation Loss   : 0.0923
+Validation F1     : 1.0000
+Validation Recall : 1.0000
+Validation AUC    : 1.0000
+Epoch [7/20], Step [50/363], Loss: 0.0744
+Epoch [7/20], Step [100/363], Loss: 0.0260
+Epoch [7/20], Step [150/363], Loss: 0.0337
+Epoch [7/20], Step [200/363], Loss: 0.0387
+Epoch [7/20], Step [250/363], Loss: 0.0298
+Epoch [7/20], Step [300/363], Loss: 0.0213
+Epoch [7/20], Step [350/363], Loss: 0.0442
+
+Epoch [7/20] Summary:
+Train Loss   : 0.1170
+Train F1     : 0.9347
+Train Recall : 0.9714
+Train AUC    : 0.9950
+
+
+Validation Evaluation:
+Validation Loss   : 0.1306
+Validation F1     : 0.9873
+Validation Recall : 0.9750
+Validation AUC    : 0.9862
+Epoch [8/20], Step [50/363], Loss: 0.0249
+Epoch [8/20], Step [100/363], Loss: 0.0144
+Epoch [8/20], Step [150/363], Loss: 0.0121
+Epoch [8/20], Step [200/363], Loss: 0.0104
+Epoch [8/20], Step [250/363], Loss: 0.0310
+Epoch [8/20], Step [300/363], Loss: 0.0671
+Epoch [8/20], Step [350/363], Loss: 0.0344
+
+Epoch [8/20] Summary:
+Train Loss   : 0.1175
+Train F1     : 0.9808
+Train Recall : 0.9738
+Train AUC    : 0.9929
+
+
+Validation Evaluation:
+Validation Loss   : 0.1311
+Validation F1     : 0.9809
+Validation Recall : 0.9625
+Validation AUC    : 0.9919
+Epoch [9/20], Step [50/363], Loss: 0.0251
+Epoch [9/20], Step [100/363], Loss: 0.0386
+Epoch [9/20], Step [150/363], Loss: 0.0103
+Epoch [9/20], Step [200/363], Loss: 0.0289
+Epoch [9/20], Step [250/363], Loss: 0.0401
+Epoch [9/20], Step [300/363], Loss: 0.0245
+Epoch [9/20], Step [350/363], Loss: 0.0244
+
+Epoch [9/20] Summary:
+Train Loss   : 0.1290
+Train F1     : 0.9261
+Train Recall : 0.9690
+Train AUC    : 0.9938
+
+
+Validation Evaluation:
+Validation Loss   : 0.2150
+Validation F1     : 0.9677
+Validation Recall : 0.9375
+Validation AUC    : 0.9851
+Epoch [10/20], Step [50/363], Loss: 0.0516
+Epoch [10/20], Step [100/363], Loss: 0.0766
+Epoch [10/20], Step [150/363], Loss: 0.0308
+Epoch [10/20], Step [200/363], Loss: 0.0100
+Epoch [10/20], Step [250/363], Loss: 0.0131
+Epoch [10/20], Step [300/363], Loss: 0.0144
+Epoch [10/20], Step [350/363], Loss: 0.0178
+
+Epoch [10/20] Summary:
+Train Loss   : 0.1186
+Train F1     : 0.9600
+Train Recall : 0.9714
+Train AUC    : 0.9942
+
+
+Validation Evaluation:
+Validation Loss   : 0.1760
+Validation F1     : 0.9744
+Validation Recall : 0.9500
+Validation AUC    : 0.9920
+Epoch [11/20], Step [50/363], Loss: 0.0416
+Epoch [11/20], Step [100/363], Loss: 0.0558
+Epoch [11/20], Step [150/363], Loss: 0.0741
+Epoch [11/20], Step [200/363], Loss: 0.0794
+Epoch [11/20], Step [250/363], Loss: 0.0476
+Epoch [11/20], Step [300/363], Loss: 0.0305
+Epoch [11/20], Step [350/363], Loss: 0.0281
+
+Epoch [11/20] Summary:
+Train Loss   : 0.1642
+Train F1     : 0.8825
+Train Recall : 0.9571
+Train AUC    : 0.9913
+
+
+Validation Evaluation:
+Validation Loss   : 0.1240
+Validation F1     : 0.8902
+Validation Recall : 0.9625
+Validation AUC    : 0.9968
+Epoch [12/20], Step [50/363], Loss: 0.0549
+Epoch [12/20], Step [100/363], Loss: 0.0352
+Epoch [12/20], Step [150/363], Loss: 0.0292
+Epoch [12/20], Step [200/363], Loss: 0.0308
+Epoch [12/20], Step [250/363], Loss: 0.0194
+Epoch [12/20], Step [300/363], Loss: 0.0819
+Epoch [12/20], Step [350/363], Loss: 0.0472
+
+Epoch [12/20] Summary:
+Train Loss   : 0.1544
+Train F1     : 0.9020
+Train Recall : 0.9643
+Train AUC    : 0.9896
+
+
+Validation Evaluation:
+Validation Loss   : 0.1061
+Validation F1     : 0.9873
+Validation Recall : 0.9750
+Validation AUC    : 0.9938
+Epoch [13/20], Step [50/363], Loss: 0.0232
+Epoch [13/20], Step [100/363], Loss: 0.0233
+Epoch [13/20], Step [150/363], Loss: 0.0321
+Epoch [13/20], Step [200/363], Loss: 0.0373
+Epoch [13/20], Step [250/363], Loss: 0.0326
+Epoch [13/20], Step [300/363], Loss: 0.0265
+Epoch [13/20], Step [350/363], Loss: 0.0138
+
+Epoch [13/20] Summary:
+Train Loss   : 0.1134
+Train F1     : 0.9294
+Train Recall : 0.9714
+Train AUC    : 0.9955
+
+
+Validation Evaluation:
+Validation Loss   : 0.0123
+Validation F1     : 1.0000
+Validation Recall : 1.0000
+Validation AUC    : 1.0000
+Epoch [14/20], Step [50/363], Loss: 0.0329
+Epoch [14/20], Step [100/363], Loss: 0.0178
+Epoch [14/20], Step [150/363], Loss: 0.0548
+Epoch [14/20], Step [200/363], Loss: 0.0445
+Epoch [14/20], Step [250/363], Loss: 0.0223
+Epoch [14/20], Step [300/363], Loss: 0.0366
+Epoch [14/20], Step [350/363], Loss: 0.0380
+
+Epoch [14/20] Summary:
+Train Loss   : 0.1435
+Train F1     : 0.9666
+Train Recall : 0.9643
+Train AUC    : 0.9909
+
+
+Validation Evaluation:
+Validation Loss   : 0.0328
+Validation F1     : 1.0000
+Validation Recall : 1.0000
+Validation AUC    : 1.0000
+Epoch [15/20], Step [50/363], Loss: 0.0397
+Epoch [15/20], Step [100/363], Loss: 0.0276
+Epoch [15/20], Step [150/363], Loss: 0.0139
+Epoch [15/20], Step [200/363], Loss: 0.0371
+Epoch [15/20], Step [250/363], Loss: 0.0315
+Epoch [15/20], Step [300/363], Loss: 0.0268
+Epoch [15/20], Step [350/363], Loss: 0.0318
+
+Epoch [15/20] Summary:
+Train Loss   : 0.1498
+Train F1     : 0.9146
+Train Recall : 0.9690
+Train AUC    : 0.9904
+
+
+Validation Evaluation:
+Validation Loss   : 0.0285
+Validation F1     : 0.9639
+Validation Recall : 1.0000
+Validation AUC    : 1.0000
+Epoch [16/20], Step [50/363], Loss: 2.6489
+Epoch [16/20], Step [100/363], Loss: 0.0421
+Epoch [16/20], Step [150/363], Loss: 0.0536
+Epoch [16/20], Step [200/363], Loss: 0.0445
+Epoch [16/20], Step [250/363], Loss: 0.1016
+Epoch [16/20], Step [300/363], Loss: 0.0572
+Epoch [16/20], Step [350/363], Loss: 0.0396
+
+Epoch [16/20] Summary:
+Train Loss   : 0.1585
+Train F1     : 0.9525
+Train Recall : 0.9548
+Train AUC    : 0.9920
+
+
+Validation Evaluation:
+Validation Loss   : 0.1465
+Validation F1     : 0.8541
+Validation Recall : 0.9875
+Validation AUC    : 0.9895
+Epoch [17/20], Step [50/363], Loss: 0.0452
+Epoch [17/20], Step [100/363], Loss: 0.0555
+Epoch [17/20], Step [150/363], Loss: 0.0384
+Epoch [17/20], Step [200/363], Loss: 0.0476
+Epoch [17/20], Step [250/363], Loss: 0.0184
+Epoch [17/20], Step [300/363], Loss: 0.0336
+Epoch [17/20], Step [350/363], Loss: 0.0208
+
+Epoch [17/20] Summary:
+Train Loss   : 0.1647
+Train F1     : 0.9439
+Train Recall : 0.9619
+Train AUC    : 0.9873
+
+
+Validation Evaluation:
+Validation Loss   : 0.1559
+Validation F1     : 0.9744
+Validation Recall : 0.9500
+Validation AUC    : 0.9906
+Epoch [18/20], Step [50/363], Loss: 0.0445
+Epoch [18/20], Step [100/363], Loss: 0.0479
+Epoch [18/20], Step [150/363], Loss: 0.0396
+Epoch [18/20], Step [200/363], Loss: 0.0408
+Epoch [18/20], Step [250/363], Loss: 0.0305
+Epoch [18/20], Step [300/363], Loss: 0.0257
+Epoch [18/20], Step [350/363], Loss: 0.0351
+
+Epoch [18/20] Summary:
+Train Loss   : 0.1383
+Train F1     : 0.9678
+Train Recall : 0.9667
+Train AUC    : 0.9920
+
+
+Validation Evaluation:
+Validation Loss   : 0.1174
+Validation F1     : 0.9873
+Validation Recall : 0.9750
+Validation AUC    : 0.9884
+Epoch [19/20], Step [50/363], Loss: 0.0641
+Epoch [19/20], Step [100/363], Loss: 0.0339
+Epoch [19/20], Step [150/363], Loss: 0.0317
+Epoch [19/20], Step [200/363], Loss: 0.0363
+Epoch [19/20], Step [250/363], Loss: 0.0231
+Epoch [19/20], Step [300/363], Loss: 0.0456
+Epoch [19/20], Step [350/363], Loss: 0.0350
+
+Epoch [19/20] Summary:
+Train Loss   : 0.1429
+Train F1     : 0.9794
+Train Recall : 0.9643
+Train AUC    : 0.9912
+
+
+Validation Evaluation:
+Validation Loss   : 0.1146
+Validation F1     : 0.9750
+Validation Recall : 0.9750
+Validation AUC    : 0.9972
+Epoch [20/20], Step [50/363], Loss: 0.0709
+Epoch [20/20], Step [100/363], Loss: 0.0400
+Epoch [20/20], Step [150/363], Loss: 0.0284
+Epoch [20/20], Step [200/363], Loss: 0.0438
+Epoch [20/20], Step [250/363], Loss: 0.0350
+Epoch [20/20], Step [300/363], Loss: 0.0457
+Epoch [20/20], Step [350/363], Loss: 0.0479
+
+Epoch [20/20] Summary:
+Train Loss   : 0.1693
+Train F1     : 0.9684
+Train Recall : 0.9500
+Train AUC    : 0.9904
+
+
+Validation Evaluation:
+Validation Loss   : 0.0647
+Validation F1     : 0.9875
+Validation Recall : 0.9875
+Validation AUC    : 0.9982
+Training ended at: 2025-05-05 18:08:06
+[INFO] Training plot saved to: Training_20250505_172137_data_sampling.png
+Model saved at: /user/HS401/kk01579/APML_PROJECT_KAMALS/saved_models/densenet121_samplying.pth
+Testing started at: 2025-05-05 18:08:07
+
+Test Evaluation:
+Test Loss   : 0.0622
+Test F1     : 0.9881
+Test Recall : 0.9881
+Test AUC    : 0.9988

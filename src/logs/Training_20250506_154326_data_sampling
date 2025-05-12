@@ -1,0 +1,74 @@
+Training started at: 2025-05-06 15:43:26
+Class 0 count: 32542
+Class 1 count: 584
+Learning Rate      : 0.0001
+Batch Size   : 64
+Epochs : 5
+Threashold : 0.5
+Total Samples      : 33126
+Training Samples   : 26500
+Validation Samples : 3312
+Testing Samples : 3314
+Epoch [1/5], Step [50/415], Loss: 0.7894
+Epoch [1/5], Step [100/415], Loss: 2.1256
+Epoch [1/5], Step [150/415], Loss: 2.4547
+Epoch [1/5], Step [200/415], Loss: 0.7108
+Epoch [1/5], Step [250/415], Loss: 0.5955
+Epoch [1/5], Step [300/415], Loss: 0.8067
+Epoch [1/5], Step [350/415], Loss: 0.3614
+Epoch [1/5], Step [400/415], Loss: 0.3150
+
+Epoch [1/5] Summary:
+Train Loss   : 0.8231
+Train F1     : 0.1094
+Train Recall : 0.8589
+Train AUC    : 0.8912
+
+
+Validation Evaluation:
+Validation Loss   : 1.2612
+Validation F1     : 0.1438
+Validation Recall : 0.5323
+Validation AUC    : 0.8301
+Epoch [2/5], Step [50/415], Loss: 2.0385
+Epoch [2/5], Step [100/415], Loss: 0.4369
+Epoch [2/5], Step [150/415], Loss: 0.3551
+Epoch [2/5], Step [200/415], Loss: 0.4640
+Epoch [2/5], Step [250/415], Loss: 0.3538
+Epoch [2/5], Step [300/415], Loss: 0.9494
+Epoch [2/5], Step [350/415], Loss: 0.3689
+Epoch [2/5], Step [400/415], Loss: 0.3349
+
+Epoch [2/5] Summary:
+Train Loss   : 0.6061
+Train F1     : 0.1636
+Train Recall : 0.8989
+Train AUC    : 0.9420
+
+
+Validation Evaluation:
+Validation Loss   : 1.6465
+Validation F1     : 0.1719
+Validation Recall : 0.4839
+Validation AUC    : 0.8395
+Epoch [3/5], Step [50/415], Loss: 1.2165
+Epoch [3/5], Step [100/415], Loss: 0.5249
+Epoch [3/5], Step [150/415], Loss: 0.4492
+Epoch [3/5], Step [200/415], Loss: 0.4825
+Epoch [3/5], Step [250/415], Loss: 0.2708
+Epoch [3/5], Step [300/415], Loss: 0.8385
+Epoch [3/5], Step [350/415], Loss: 1.5152
+Epoch [3/5], Step [400/415], Loss: 0.4503
+
+Epoch [3/5] Summary:
+Train Loss   : 0.5829
+Train F1     : 0.1867
+Train Recall : 0.9074
+Train AUC    : 0.9477
+
+
+Validation Evaluation:
+Validation Loss   : 1.2299
+Validation F1     : 0.1398
+Validation Recall : 0.6774
+Validation AUC    : 0.8334

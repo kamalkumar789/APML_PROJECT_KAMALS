@@ -1,0 +1,2430 @@
+Training started at: 2025-05-08 14:25:46
+
+Transform for label 0:
+ Compose([
+  Resize(p=1.0, height=256, interpolation=1, mask_interpolation=0, width=256),
+  Normalize(p=1.0, max_pixel_value=255.0, mean=(0.5, 0.5, 0.5), normalization='standard', std=(0.5, 0.5, 0.5)),
+  ToTensorV2(p=1.0, transpose_mask=False),
+], p=1.0, bbox_params=None, keypoint_params=None, additional_targets={}, is_check_shapes=True)
+
+Transform for label 1:
+ Compose([
+  ShiftScaleRotate(p=0.5, shift_limit_x=(-0.05, 0.05), shift_limit_y=(-0.05, 0.05), scale_limit=(-0.050000000000000044, 0.050000000000000044), rotate_limit=(-5.0, 5.0), interpolation=1, border_mode=2, fill=0.0, fill_mask=0.0, rotate_method='largest_box', mask_interpolation=0),
+  OneOf([
+    CLAHE(p=0.3, clip_limit=(1.0, 2.0), tile_grid_size=(8, 8)),
+    RandomBrightnessContrast(p=0.3, brightness_by_max=True, brightness_limit=(-0.2, 0.2), contrast_limit=(-0.2, 0.2), ensure_safe_range=False),
+    HueSaturationValue(p=0.3, hue_shift_limit=(-20.0, 20.0), sat_shift_limit=(-30.0, 30.0), val_shift_limit=(-20.0, 20.0)),
+  ], p=1.0),
+  Resize(p=1.0, height=256, interpolation=1, mask_interpolation=0, width=256),
+  Normalize(p=1.0, max_pixel_value=255.0, mean=(0.5, 0.5, 0.5), normalization='standard', std=(0.5, 0.5, 0.5)),
+  ToTensorV2(p=1.0, transpose_mask=False),
+], p=1.0, bbox_params=None, keypoint_params=None, additional_targets={}, is_check_shapes=True)
+[INFO] Starting augmentation of dataset. Total original samples: 26500
+[DEBUG] Sample 36 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 36 - Augmentation 1 successful.
+[INFO] Sample 36 - Augmentation 2 successful.
+[INFO] Sample 36 - Augmentation 3 successful.
+[INFO] Sample 36 - Augmentation 4 successful.
+[DEBUG] Sample 68 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 68 - Augmentation 1 successful.
+[INFO] Sample 68 - Augmentation 2 successful.
+[INFO] Sample 68 - Augmentation 3 successful.
+[INFO] Sample 68 - Augmentation 4 successful.
+[DEBUG] Sample 176 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 176 - Augmentation 1 successful.
+[INFO] Sample 176 - Augmentation 2 successful.
+[INFO] Sample 176 - Augmentation 3 successful.
+[INFO] Sample 176 - Augmentation 4 successful.
+[DEBUG] Sample 297 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 297 - Augmentation 1 successful.
+[INFO] Sample 297 - Augmentation 2 successful.
+[INFO] Sample 297 - Augmentation 3 successful.
+[INFO] Sample 297 - Augmentation 4 successful.
+[DEBUG] Sample 298 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 298 - Augmentation 1 successful.
+[INFO] Sample 298 - Augmentation 2 successful.
+[INFO] Sample 298 - Augmentation 3 successful.
+[INFO] Sample 298 - Augmentation 4 successful.
+[DEBUG] Sample 313 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 313 - Augmentation 1 successful.
+[INFO] Sample 313 - Augmentation 2 successful.
+[INFO] Sample 313 - Augmentation 3 successful.
+[INFO] Sample 313 - Augmentation 4 successful.
+[DEBUG] Sample 344 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 344 - Augmentation 1 successful.
+[INFO] Sample 344 - Augmentation 2 successful.
+[INFO] Sample 344 - Augmentation 3 successful.
+[INFO] Sample 344 - Augmentation 4 successful.
+[DEBUG] Sample 446 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 446 - Augmentation 1 successful.
+[INFO] Sample 446 - Augmentation 2 successful.
+[INFO] Sample 446 - Augmentation 3 successful.
+[INFO] Sample 446 - Augmentation 4 successful.
+[DEBUG] Sample 508 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 508 - Augmentation 1 successful.
+[INFO] Sample 508 - Augmentation 2 successful.
+[INFO] Sample 508 - Augmentation 3 successful.
+[INFO] Sample 508 - Augmentation 4 successful.
+[DEBUG] Sample 594 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 594 - Augmentation 1 successful.
+[INFO] Sample 594 - Augmentation 2 successful.
+[INFO] Sample 594 - Augmentation 3 successful.
+[INFO] Sample 594 - Augmentation 4 successful.
+[DEBUG] Sample 646 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 646 - Augmentation 1 successful.
+[INFO] Sample 646 - Augmentation 2 successful.
+[INFO] Sample 646 - Augmentation 3 successful.
+[INFO] Sample 646 - Augmentation 4 successful.
+[DEBUG] Sample 709 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 709 - Augmentation 1 successful.
+[INFO] Sample 709 - Augmentation 2 successful.
+[INFO] Sample 709 - Augmentation 3 successful.
+[INFO] Sample 709 - Augmentation 4 successful.
+[DEBUG] Sample 782 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 782 - Augmentation 1 successful.
+[INFO] Sample 782 - Augmentation 2 successful.
+[INFO] Sample 782 - Augmentation 3 successful.
+[INFO] Sample 782 - Augmentation 4 successful.
+[DEBUG] Sample 837 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 837 - Augmentation 1 successful.
+[INFO] Sample 837 - Augmentation 2 successful.
+[INFO] Sample 837 - Augmentation 3 successful.
+[INFO] Sample 837 - Augmentation 4 successful.
+[DEBUG] Sample 876 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 876 - Augmentation 1 successful.
+[INFO] Sample 876 - Augmentation 2 successful.
+[INFO] Sample 876 - Augmentation 3 successful.
+[INFO] Sample 876 - Augmentation 4 successful.
+[DEBUG] Sample 945 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 945 - Augmentation 1 successful.
+[INFO] Sample 945 - Augmentation 2 successful.
+[INFO] Sample 945 - Augmentation 3 successful.
+[INFO] Sample 945 - Augmentation 4 successful.
+[DEBUG] Sample 965 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 965 - Augmentation 1 successful.
+[INFO] Sample 965 - Augmentation 2 successful.
+[INFO] Sample 965 - Augmentation 3 successful.
+[INFO] Sample 965 - Augmentation 4 successful.
+[DEBUG] Sample 1037 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1037 - Augmentation 1 successful.
+[INFO] Sample 1037 - Augmentation 2 successful.
+[INFO] Sample 1037 - Augmentation 3 successful.
+[INFO] Sample 1037 - Augmentation 4 successful.
+[DEBUG] Sample 1145 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1145 - Augmentation 1 successful.
+[INFO] Sample 1145 - Augmentation 2 successful.
+[INFO] Sample 1145 - Augmentation 3 successful.
+[INFO] Sample 1145 - Augmentation 4 successful.
+[DEBUG] Sample 1187 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1187 - Augmentation 1 successful.
+[INFO] Sample 1187 - Augmentation 2 successful.
+[INFO] Sample 1187 - Augmentation 3 successful.
+[INFO] Sample 1187 - Augmentation 4 successful.
+[DEBUG] Sample 1194 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1194 - Augmentation 1 successful.
+[INFO] Sample 1194 - Augmentation 2 successful.
+[INFO] Sample 1194 - Augmentation 3 successful.
+[INFO] Sample 1194 - Augmentation 4 successful.
+[DEBUG] Sample 1200 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1200 - Augmentation 1 successful.
+[INFO] Sample 1200 - Augmentation 2 successful.
+[INFO] Sample 1200 - Augmentation 3 successful.
+[INFO] Sample 1200 - Augmentation 4 successful.
+[DEBUG] Sample 1294 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1294 - Augmentation 1 successful.
+[INFO] Sample 1294 - Augmentation 2 successful.
+[INFO] Sample 1294 - Augmentation 3 successful.
+[INFO] Sample 1294 - Augmentation 4 successful.
+[DEBUG] Sample 1371 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1371 - Augmentation 1 successful.
+[INFO] Sample 1371 - Augmentation 2 successful.
+[INFO] Sample 1371 - Augmentation 3 successful.
+[INFO] Sample 1371 - Augmentation 4 successful.
+[DEBUG] Sample 1482 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1482 - Augmentation 1 successful.
+[INFO] Sample 1482 - Augmentation 2 successful.
+[INFO] Sample 1482 - Augmentation 3 successful.
+[INFO] Sample 1482 - Augmentation 4 successful.
+[DEBUG] Sample 1489 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1489 - Augmentation 1 successful.
+[INFO] Sample 1489 - Augmentation 2 successful.
+[INFO] Sample 1489 - Augmentation 3 successful.
+[INFO] Sample 1489 - Augmentation 4 successful.
+[DEBUG] Sample 1528 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1528 - Augmentation 1 successful.
+[INFO] Sample 1528 - Augmentation 2 successful.
+[INFO] Sample 1528 - Augmentation 3 successful.
+[INFO] Sample 1528 - Augmentation 4 successful.
+[DEBUG] Sample 1557 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1557 - Augmentation 1 successful.
+[INFO] Sample 1557 - Augmentation 2 successful.
+[INFO] Sample 1557 - Augmentation 3 successful.
+[INFO] Sample 1557 - Augmentation 4 successful.
+[DEBUG] Sample 1571 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1571 - Augmentation 1 successful.
+[INFO] Sample 1571 - Augmentation 2 successful.
+[INFO] Sample 1571 - Augmentation 3 successful.
+[INFO] Sample 1571 - Augmentation 4 successful.
+[DEBUG] Sample 1690 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1690 - Augmentation 1 successful.
+[INFO] Sample 1690 - Augmentation 2 successful.
+[INFO] Sample 1690 - Augmentation 3 successful.
+[INFO] Sample 1690 - Augmentation 4 successful.
+[DEBUG] Sample 1758 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1758 - Augmentation 1 successful.
+[INFO] Sample 1758 - Augmentation 2 successful.
+[INFO] Sample 1758 - Augmentation 3 successful.
+[INFO] Sample 1758 - Augmentation 4 successful.
+[DEBUG] Sample 1787 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1787 - Augmentation 1 successful.
+[INFO] Sample 1787 - Augmentation 2 successful.
+[INFO] Sample 1787 - Augmentation 3 successful.
+[INFO] Sample 1787 - Augmentation 4 successful.
+[DEBUG] Sample 1834 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1834 - Augmentation 1 successful.
+[INFO] Sample 1834 - Augmentation 2 successful.
+[INFO] Sample 1834 - Augmentation 3 successful.
+[INFO] Sample 1834 - Augmentation 4 successful.
+[DEBUG] Sample 1950 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1950 - Augmentation 1 successful.
+[INFO] Sample 1950 - Augmentation 2 successful.
+[INFO] Sample 1950 - Augmentation 3 successful.
+[INFO] Sample 1950 - Augmentation 4 successful.
+[DEBUG] Sample 1989 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 1989 - Augmentation 1 successful.
+[INFO] Sample 1989 - Augmentation 2 successful.
+[INFO] Sample 1989 - Augmentation 3 successful.
+[INFO] Sample 1989 - Augmentation 4 successful.
+[DEBUG] Sample 2049 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2049 - Augmentation 1 successful.
+[INFO] Sample 2049 - Augmentation 2 successful.
+[INFO] Sample 2049 - Augmentation 3 successful.
+[INFO] Sample 2049 - Augmentation 4 successful.
+[DEBUG] Sample 2118 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2118 - Augmentation 1 successful.
+[INFO] Sample 2118 - Augmentation 2 successful.
+[INFO] Sample 2118 - Augmentation 3 successful.
+[INFO] Sample 2118 - Augmentation 4 successful.
+[DEBUG] Sample 2177 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2177 - Augmentation 1 successful.
+[INFO] Sample 2177 - Augmentation 2 successful.
+[INFO] Sample 2177 - Augmentation 3 successful.
+[INFO] Sample 2177 - Augmentation 4 successful.
+[DEBUG] Sample 2257 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2257 - Augmentation 1 successful.
+[INFO] Sample 2257 - Augmentation 2 successful.
+[INFO] Sample 2257 - Augmentation 3 successful.
+[INFO] Sample 2257 - Augmentation 4 successful.
+[DEBUG] Sample 2268 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2268 - Augmentation 1 successful.
+[INFO] Sample 2268 - Augmentation 2 successful.
+[INFO] Sample 2268 - Augmentation 3 successful.
+[INFO] Sample 2268 - Augmentation 4 successful.
+[DEBUG] Sample 2384 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2384 - Augmentation 1 successful.
+[INFO] Sample 2384 - Augmentation 2 successful.
+[INFO] Sample 2384 - Augmentation 3 successful.
+[INFO] Sample 2384 - Augmentation 4 successful.
+[DEBUG] Sample 2590 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2590 - Augmentation 1 successful.
+[INFO] Sample 2590 - Augmentation 2 successful.
+[INFO] Sample 2590 - Augmentation 3 successful.
+[INFO] Sample 2590 - Augmentation 4 successful.
+[DEBUG] Sample 2625 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2625 - Augmentation 1 successful.
+[INFO] Sample 2625 - Augmentation 2 successful.
+[INFO] Sample 2625 - Augmentation 3 successful.
+[INFO] Sample 2625 - Augmentation 4 successful.
+[DEBUG] Sample 2691 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2691 - Augmentation 1 successful.
+[INFO] Sample 2691 - Augmentation 2 successful.
+[INFO] Sample 2691 - Augmentation 3 successful.
+[INFO] Sample 2691 - Augmentation 4 successful.
+[DEBUG] Sample 2778 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2778 - Augmentation 1 successful.
+[INFO] Sample 2778 - Augmentation 2 successful.
+[INFO] Sample 2778 - Augmentation 3 successful.
+[INFO] Sample 2778 - Augmentation 4 successful.
+[DEBUG] Sample 2802 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2802 - Augmentation 1 successful.
+[INFO] Sample 2802 - Augmentation 2 successful.
+[INFO] Sample 2802 - Augmentation 3 successful.
+[INFO] Sample 2802 - Augmentation 4 successful.
+[DEBUG] Sample 2824 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2824 - Augmentation 1 successful.
+[INFO] Sample 2824 - Augmentation 2 successful.
+[INFO] Sample 2824 - Augmentation 3 successful.
+[INFO] Sample 2824 - Augmentation 4 successful.
+[DEBUG] Sample 2886 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2886 - Augmentation 1 successful.
+[INFO] Sample 2886 - Augmentation 2 successful.
+[INFO] Sample 2886 - Augmentation 3 successful.
+[INFO] Sample 2886 - Augmentation 4 successful.
+[DEBUG] Sample 2887 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2887 - Augmentation 1 successful.
+[INFO] Sample 2887 - Augmentation 2 successful.
+[INFO] Sample 2887 - Augmentation 3 successful.
+[INFO] Sample 2887 - Augmentation 4 successful.
+[DEBUG] Sample 2950 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 2950 - Augmentation 1 successful.
+[INFO] Sample 2950 - Augmentation 2 successful.
+[INFO] Sample 2950 - Augmentation 3 successful.
+[INFO] Sample 2950 - Augmentation 4 successful.
+[DEBUG] Sample 3013 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3013 - Augmentation 1 successful.
+[INFO] Sample 3013 - Augmentation 2 successful.
+[INFO] Sample 3013 - Augmentation 3 successful.
+[INFO] Sample 3013 - Augmentation 4 successful.
+[DEBUG] Sample 3021 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3021 - Augmentation 1 successful.
+[INFO] Sample 3021 - Augmentation 2 successful.
+[INFO] Sample 3021 - Augmentation 3 successful.
+[INFO] Sample 3021 - Augmentation 4 successful.
+[DEBUG] Sample 3024 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3024 - Augmentation 1 successful.
+[INFO] Sample 3024 - Augmentation 2 successful.
+[INFO] Sample 3024 - Augmentation 3 successful.
+[INFO] Sample 3024 - Augmentation 4 successful.
+[DEBUG] Sample 3028 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3028 - Augmentation 1 successful.
+[INFO] Sample 3028 - Augmentation 2 successful.
+[INFO] Sample 3028 - Augmentation 3 successful.
+[INFO] Sample 3028 - Augmentation 4 successful.
+[DEBUG] Sample 3078 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3078 - Augmentation 1 successful.
+[INFO] Sample 3078 - Augmentation 2 successful.
+[INFO] Sample 3078 - Augmentation 3 successful.
+[INFO] Sample 3078 - Augmentation 4 successful.
+[DEBUG] Sample 3082 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3082 - Augmentation 1 successful.
+[INFO] Sample 3082 - Augmentation 2 successful.
+[INFO] Sample 3082 - Augmentation 3 successful.
+[INFO] Sample 3082 - Augmentation 4 successful.
+[DEBUG] Sample 3125 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3125 - Augmentation 1 successful.
+[INFO] Sample 3125 - Augmentation 2 successful.
+[INFO] Sample 3125 - Augmentation 3 successful.
+[INFO] Sample 3125 - Augmentation 4 successful.
+[DEBUG] Sample 3141 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3141 - Augmentation 1 successful.
+[INFO] Sample 3141 - Augmentation 2 successful.
+[INFO] Sample 3141 - Augmentation 3 successful.
+[INFO] Sample 3141 - Augmentation 4 successful.
+[DEBUG] Sample 3187 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3187 - Augmentation 1 successful.
+[INFO] Sample 3187 - Augmentation 2 successful.
+[INFO] Sample 3187 - Augmentation 3 successful.
+[INFO] Sample 3187 - Augmentation 4 successful.
+[DEBUG] Sample 3435 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3435 - Augmentation 1 successful.
+[INFO] Sample 3435 - Augmentation 2 successful.
+[INFO] Sample 3435 - Augmentation 3 successful.
+[INFO] Sample 3435 - Augmentation 4 successful.
+[DEBUG] Sample 3456 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3456 - Augmentation 1 successful.
+[INFO] Sample 3456 - Augmentation 2 successful.
+[INFO] Sample 3456 - Augmentation 3 successful.
+[INFO] Sample 3456 - Augmentation 4 successful.
+[DEBUG] Sample 3504 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3504 - Augmentation 1 successful.
+[INFO] Sample 3504 - Augmentation 2 successful.
+[INFO] Sample 3504 - Augmentation 3 successful.
+[INFO] Sample 3504 - Augmentation 4 successful.
+[DEBUG] Sample 3583 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3583 - Augmentation 1 successful.
+[INFO] Sample 3583 - Augmentation 2 successful.
+[INFO] Sample 3583 - Augmentation 3 successful.
+[INFO] Sample 3583 - Augmentation 4 successful.
+[DEBUG] Sample 3633 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3633 - Augmentation 1 successful.
+[INFO] Sample 3633 - Augmentation 2 successful.
+[INFO] Sample 3633 - Augmentation 3 successful.
+[INFO] Sample 3633 - Augmentation 4 successful.
+[DEBUG] Sample 3652 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3652 - Augmentation 1 successful.
+[INFO] Sample 3652 - Augmentation 2 successful.
+[INFO] Sample 3652 - Augmentation 3 successful.
+[INFO] Sample 3652 - Augmentation 4 successful.
+[DEBUG] Sample 3696 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3696 - Augmentation 1 successful.
+[INFO] Sample 3696 - Augmentation 2 successful.
+[INFO] Sample 3696 - Augmentation 3 successful.
+[INFO] Sample 3696 - Augmentation 4 successful.
+[DEBUG] Sample 3802 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3802 - Augmentation 1 successful.
+[INFO] Sample 3802 - Augmentation 2 successful.
+[INFO] Sample 3802 - Augmentation 3 successful.
+[INFO] Sample 3802 - Augmentation 4 successful.
+[DEBUG] Sample 3831 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3831 - Augmentation 1 successful.
+[INFO] Sample 3831 - Augmentation 2 successful.
+[INFO] Sample 3831 - Augmentation 3 successful.
+[INFO] Sample 3831 - Augmentation 4 successful.
+[DEBUG] Sample 3844 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3844 - Augmentation 1 successful.
+[INFO] Sample 3844 - Augmentation 2 successful.
+[INFO] Sample 3844 - Augmentation 3 successful.
+[INFO] Sample 3844 - Augmentation 4 successful.
+[DEBUG] Sample 3926 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3926 - Augmentation 1 successful.
+[INFO] Sample 3926 - Augmentation 2 successful.
+[INFO] Sample 3926 - Augmentation 3 successful.
+[INFO] Sample 3926 - Augmentation 4 successful.
+[DEBUG] Sample 3941 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 3941 - Augmentation 1 successful.
+[INFO] Sample 3941 - Augmentation 2 successful.
+[INFO] Sample 3941 - Augmentation 3 successful.
+[INFO] Sample 3941 - Augmentation 4 successful.
+[DEBUG] Sample 4048 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4048 - Augmentation 1 successful.
+[INFO] Sample 4048 - Augmentation 2 successful.
+[INFO] Sample 4048 - Augmentation 3 successful.
+[INFO] Sample 4048 - Augmentation 4 successful.
+[DEBUG] Sample 4055 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4055 - Augmentation 1 successful.
+[INFO] Sample 4055 - Augmentation 2 successful.
+[INFO] Sample 4055 - Augmentation 3 successful.
+[INFO] Sample 4055 - Augmentation 4 successful.
+[DEBUG] Sample 4059 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4059 - Augmentation 1 successful.
+[INFO] Sample 4059 - Augmentation 2 successful.
+[INFO] Sample 4059 - Augmentation 3 successful.
+[INFO] Sample 4059 - Augmentation 4 successful.
+[DEBUG] Sample 4119 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4119 - Augmentation 1 successful.
+[INFO] Sample 4119 - Augmentation 2 successful.
+[INFO] Sample 4119 - Augmentation 3 successful.
+[INFO] Sample 4119 - Augmentation 4 successful.
+[DEBUG] Sample 4186 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4186 - Augmentation 1 successful.
+[INFO] Sample 4186 - Augmentation 2 successful.
+[INFO] Sample 4186 - Augmentation 3 successful.
+[INFO] Sample 4186 - Augmentation 4 successful.
+[DEBUG] Sample 4320 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4320 - Augmentation 1 successful.
+[INFO] Sample 4320 - Augmentation 2 successful.
+[INFO] Sample 4320 - Augmentation 3 successful.
+[INFO] Sample 4320 - Augmentation 4 successful.
+[DEBUG] Sample 4327 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4327 - Augmentation 1 successful.
+[INFO] Sample 4327 - Augmentation 2 successful.
+[INFO] Sample 4327 - Augmentation 3 successful.
+[INFO] Sample 4327 - Augmentation 4 successful.
+[DEBUG] Sample 4373 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4373 - Augmentation 1 successful.
+[INFO] Sample 4373 - Augmentation 2 successful.
+[INFO] Sample 4373 - Augmentation 3 successful.
+[INFO] Sample 4373 - Augmentation 4 successful.
+[DEBUG] Sample 4472 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4472 - Augmentation 1 successful.
+[INFO] Sample 4472 - Augmentation 2 successful.
+[INFO] Sample 4472 - Augmentation 3 successful.
+[INFO] Sample 4472 - Augmentation 4 successful.
+[DEBUG] Sample 4521 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4521 - Augmentation 1 successful.
+[INFO] Sample 4521 - Augmentation 2 successful.
+[INFO] Sample 4521 - Augmentation 3 successful.
+[INFO] Sample 4521 - Augmentation 4 successful.
+[DEBUG] Sample 4528 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4528 - Augmentation 1 successful.
+[INFO] Sample 4528 - Augmentation 2 successful.
+[INFO] Sample 4528 - Augmentation 3 successful.
+[INFO] Sample 4528 - Augmentation 4 successful.
+[DEBUG] Sample 4552 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4552 - Augmentation 1 successful.
+[INFO] Sample 4552 - Augmentation 2 successful.
+[INFO] Sample 4552 - Augmentation 3 successful.
+[INFO] Sample 4552 - Augmentation 4 successful.
+[DEBUG] Sample 4587 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4587 - Augmentation 1 successful.
+[INFO] Sample 4587 - Augmentation 2 successful.
+[INFO] Sample 4587 - Augmentation 3 successful.
+[INFO] Sample 4587 - Augmentation 4 successful.
+[DEBUG] Sample 4605 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4605 - Augmentation 1 successful.
+[INFO] Sample 4605 - Augmentation 2 successful.
+[INFO] Sample 4605 - Augmentation 3 successful.
+[INFO] Sample 4605 - Augmentation 4 successful.
+[DEBUG] Sample 4631 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4631 - Augmentation 1 successful.
+[INFO] Sample 4631 - Augmentation 2 successful.
+[INFO] Sample 4631 - Augmentation 3 successful.
+[INFO] Sample 4631 - Augmentation 4 successful.
+[DEBUG] Sample 4676 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4676 - Augmentation 1 successful.
+[INFO] Sample 4676 - Augmentation 2 successful.
+[INFO] Sample 4676 - Augmentation 3 successful.
+[INFO] Sample 4676 - Augmentation 4 successful.
+[DEBUG] Sample 4695 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4695 - Augmentation 1 successful.
+[INFO] Sample 4695 - Augmentation 2 successful.
+[INFO] Sample 4695 - Augmentation 3 successful.
+[INFO] Sample 4695 - Augmentation 4 successful.
+[DEBUG] Sample 4762 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4762 - Augmentation 1 successful.
+[INFO] Sample 4762 - Augmentation 2 successful.
+[INFO] Sample 4762 - Augmentation 3 successful.
+[INFO] Sample 4762 - Augmentation 4 successful.
+[DEBUG] Sample 4838 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 4838 - Augmentation 1 successful.
+[INFO] Sample 4838 - Augmentation 2 successful.
+[INFO] Sample 4838 - Augmentation 3 successful.
+[INFO] Sample 4838 - Augmentation 4 successful.
+[DEBUG] Sample 5056 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 5056 - Augmentation 1 successful.
+[INFO] Sample 5056 - Augmentation 2 successful.
+[INFO] Sample 5056 - Augmentation 3 successful.
+[INFO] Sample 5056 - Augmentation 4 successful.
+[DEBUG] Sample 5105 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 5105 - Augmentation 1 successful.
+[INFO] Sample 5105 - Augmentation 2 successful.
+[INFO] Sample 5105 - Augmentation 3 successful.
+[INFO] Sample 5105 - Augmentation 4 successful.
+[DEBUG] Sample 5481 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 5481 - Augmentation 1 successful.
+[INFO] Sample 5481 - Augmentation 2 successful.
+[INFO] Sample 5481 - Augmentation 3 successful.
+[INFO] Sample 5481 - Augmentation 4 successful.
+[DEBUG] Sample 5491 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 5491 - Augmentation 1 successful.
+[INFO] Sample 5491 - Augmentation 2 successful.
+[INFO] Sample 5491 - Augmentation 3 successful.
+[INFO] Sample 5491 - Augmentation 4 successful.
+[DEBUG] Sample 5635 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 5635 - Augmentation 1 successful.
+[INFO] Sample 5635 - Augmentation 2 successful.
+[INFO] Sample 5635 - Augmentation 3 successful.
+[INFO] Sample 5635 - Augmentation 4 successful.
+[DEBUG] Sample 5780 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 5780 - Augmentation 1 successful.
+[INFO] Sample 5780 - Augmentation 2 successful.
+[INFO] Sample 5780 - Augmentation 3 successful.
+[INFO] Sample 5780 - Augmentation 4 successful.
+[DEBUG] Sample 5830 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 5830 - Augmentation 1 successful.
+[INFO] Sample 5830 - Augmentation 2 successful.
+[INFO] Sample 5830 - Augmentation 3 successful.
+[INFO] Sample 5830 - Augmentation 4 successful.
+[DEBUG] Sample 5858 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 5858 - Augmentation 1 successful.
+[INFO] Sample 5858 - Augmentation 2 successful.
+[INFO] Sample 5858 - Augmentation 3 successful.
+[INFO] Sample 5858 - Augmentation 4 successful.
+[DEBUG] Sample 5885 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 5885 - Augmentation 1 successful.
+[INFO] Sample 5885 - Augmentation 2 successful.
+[INFO] Sample 5885 - Augmentation 3 successful.
+[INFO] Sample 5885 - Augmentation 4 successful.
+[DEBUG] Sample 5942 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 5942 - Augmentation 1 successful.
+[INFO] Sample 5942 - Augmentation 2 successful.
+[INFO] Sample 5942 - Augmentation 3 successful.
+[INFO] Sample 5942 - Augmentation 4 successful.
+[DEBUG] Sample 5957 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 5957 - Augmentation 1 successful.
+[INFO] Sample 5957 - Augmentation 2 successful.
+[INFO] Sample 5957 - Augmentation 3 successful.
+[INFO] Sample 5957 - Augmentation 4 successful.
+[DEBUG] Sample 5995 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 5995 - Augmentation 1 successful.
+[INFO] Sample 5995 - Augmentation 2 successful.
+[INFO] Sample 5995 - Augmentation 3 successful.
+[INFO] Sample 5995 - Augmentation 4 successful.
+[DEBUG] Sample 6024 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6024 - Augmentation 1 successful.
+[INFO] Sample 6024 - Augmentation 2 successful.
+[INFO] Sample 6024 - Augmentation 3 successful.
+[INFO] Sample 6024 - Augmentation 4 successful.
+[DEBUG] Sample 6034 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6034 - Augmentation 1 successful.
+[INFO] Sample 6034 - Augmentation 2 successful.
+[INFO] Sample 6034 - Augmentation 3 successful.
+[INFO] Sample 6034 - Augmentation 4 successful.
+[DEBUG] Sample 6087 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6087 - Augmentation 1 successful.
+[INFO] Sample 6087 - Augmentation 2 successful.
+[INFO] Sample 6087 - Augmentation 3 successful.
+[INFO] Sample 6087 - Augmentation 4 successful.
+[DEBUG] Sample 6194 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6194 - Augmentation 1 successful.
+[INFO] Sample 6194 - Augmentation 2 successful.
+[INFO] Sample 6194 - Augmentation 3 successful.
+[INFO] Sample 6194 - Augmentation 4 successful.
+[DEBUG] Sample 6203 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6203 - Augmentation 1 successful.
+[INFO] Sample 6203 - Augmentation 2 successful.
+[INFO] Sample 6203 - Augmentation 3 successful.
+[INFO] Sample 6203 - Augmentation 4 successful.
+[DEBUG] Sample 6258 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6258 - Augmentation 1 successful.
+[INFO] Sample 6258 - Augmentation 2 successful.
+[INFO] Sample 6258 - Augmentation 3 successful.
+[INFO] Sample 6258 - Augmentation 4 successful.
+[DEBUG] Sample 6277 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6277 - Augmentation 1 successful.
+[INFO] Sample 6277 - Augmentation 2 successful.
+[INFO] Sample 6277 - Augmentation 3 successful.
+[INFO] Sample 6277 - Augmentation 4 successful.
+[DEBUG] Sample 6301 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6301 - Augmentation 1 successful.
+[INFO] Sample 6301 - Augmentation 2 successful.
+[INFO] Sample 6301 - Augmentation 3 successful.
+[INFO] Sample 6301 - Augmentation 4 successful.
+[DEBUG] Sample 6341 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6341 - Augmentation 1 successful.
+[INFO] Sample 6341 - Augmentation 2 successful.
+[INFO] Sample 6341 - Augmentation 3 successful.
+[INFO] Sample 6341 - Augmentation 4 successful.
+[DEBUG] Sample 6364 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6364 - Augmentation 1 successful.
+[INFO] Sample 6364 - Augmentation 2 successful.
+[INFO] Sample 6364 - Augmentation 3 successful.
+[INFO] Sample 6364 - Augmentation 4 successful.
+[DEBUG] Sample 6378 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6378 - Augmentation 1 successful.
+[INFO] Sample 6378 - Augmentation 2 successful.
+[INFO] Sample 6378 - Augmentation 3 successful.
+[INFO] Sample 6378 - Augmentation 4 successful.
+[DEBUG] Sample 6425 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6425 - Augmentation 1 successful.
+[INFO] Sample 6425 - Augmentation 2 successful.
+[INFO] Sample 6425 - Augmentation 3 successful.
+[INFO] Sample 6425 - Augmentation 4 successful.
+[DEBUG] Sample 6436 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6436 - Augmentation 1 successful.
+[INFO] Sample 6436 - Augmentation 2 successful.
+[INFO] Sample 6436 - Augmentation 3 successful.
+[INFO] Sample 6436 - Augmentation 4 successful.
+[DEBUG] Sample 6489 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6489 - Augmentation 1 successful.
+[INFO] Sample 6489 - Augmentation 2 successful.
+[INFO] Sample 6489 - Augmentation 3 successful.
+[INFO] Sample 6489 - Augmentation 4 successful.
+[DEBUG] Sample 6536 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6536 - Augmentation 1 successful.
+[INFO] Sample 6536 - Augmentation 2 successful.
+[INFO] Sample 6536 - Augmentation 3 successful.
+[INFO] Sample 6536 - Augmentation 4 successful.
+[DEBUG] Sample 6587 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6587 - Augmentation 1 successful.
+[INFO] Sample 6587 - Augmentation 2 successful.
+[INFO] Sample 6587 - Augmentation 3 successful.
+[INFO] Sample 6587 - Augmentation 4 successful.
+[DEBUG] Sample 6612 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6612 - Augmentation 1 successful.
+[INFO] Sample 6612 - Augmentation 2 successful.
+[INFO] Sample 6612 - Augmentation 3 successful.
+[INFO] Sample 6612 - Augmentation 4 successful.
+[DEBUG] Sample 6618 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6618 - Augmentation 1 successful.
+[INFO] Sample 6618 - Augmentation 2 successful.
+[INFO] Sample 6618 - Augmentation 3 successful.
+[INFO] Sample 6618 - Augmentation 4 successful.
+[DEBUG] Sample 6632 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6632 - Augmentation 1 successful.
+[INFO] Sample 6632 - Augmentation 2 successful.
+[INFO] Sample 6632 - Augmentation 3 successful.
+[INFO] Sample 6632 - Augmentation 4 successful.
+[DEBUG] Sample 6641 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6641 - Augmentation 1 successful.
+[INFO] Sample 6641 - Augmentation 2 successful.
+[INFO] Sample 6641 - Augmentation 3 successful.
+[INFO] Sample 6641 - Augmentation 4 successful.
+[DEBUG] Sample 6644 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6644 - Augmentation 1 successful.
+[INFO] Sample 6644 - Augmentation 2 successful.
+[INFO] Sample 6644 - Augmentation 3 successful.
+[INFO] Sample 6644 - Augmentation 4 successful.
+[DEBUG] Sample 6838 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6838 - Augmentation 1 successful.
+[INFO] Sample 6838 - Augmentation 2 successful.
+[INFO] Sample 6838 - Augmentation 3 successful.
+[INFO] Sample 6838 - Augmentation 4 successful.
+[DEBUG] Sample 6918 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6918 - Augmentation 1 successful.
+[INFO] Sample 6918 - Augmentation 2 successful.
+[INFO] Sample 6918 - Augmentation 3 successful.
+[INFO] Sample 6918 - Augmentation 4 successful.
+[DEBUG] Sample 6935 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 6935 - Augmentation 1 successful.
+[INFO] Sample 6935 - Augmentation 2 successful.
+[INFO] Sample 6935 - Augmentation 3 successful.
+[INFO] Sample 6935 - Augmentation 4 successful.
+[DEBUG] Sample 7117 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7117 - Augmentation 1 successful.
+[INFO] Sample 7117 - Augmentation 2 successful.
+[INFO] Sample 7117 - Augmentation 3 successful.
+[INFO] Sample 7117 - Augmentation 4 successful.
+[DEBUG] Sample 7148 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7148 - Augmentation 1 successful.
+[INFO] Sample 7148 - Augmentation 2 successful.
+[INFO] Sample 7148 - Augmentation 3 successful.
+[INFO] Sample 7148 - Augmentation 4 successful.
+[DEBUG] Sample 7232 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7232 - Augmentation 1 successful.
+[INFO] Sample 7232 - Augmentation 2 successful.
+[INFO] Sample 7232 - Augmentation 3 successful.
+[INFO] Sample 7232 - Augmentation 4 successful.
+[DEBUG] Sample 7343 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7343 - Augmentation 1 successful.
+[INFO] Sample 7343 - Augmentation 2 successful.
+[INFO] Sample 7343 - Augmentation 3 successful.
+[INFO] Sample 7343 - Augmentation 4 successful.
+[DEBUG] Sample 7482 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7482 - Augmentation 1 successful.
+[INFO] Sample 7482 - Augmentation 2 successful.
+[INFO] Sample 7482 - Augmentation 3 successful.
+[INFO] Sample 7482 - Augmentation 4 successful.
+[DEBUG] Sample 7563 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7563 - Augmentation 1 successful.
+[INFO] Sample 7563 - Augmentation 2 successful.
+[INFO] Sample 7563 - Augmentation 3 successful.
+[INFO] Sample 7563 - Augmentation 4 successful.
+[DEBUG] Sample 7580 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7580 - Augmentation 1 successful.
+[INFO] Sample 7580 - Augmentation 2 successful.
+[INFO] Sample 7580 - Augmentation 3 successful.
+[INFO] Sample 7580 - Augmentation 4 successful.
+[DEBUG] Sample 7613 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7613 - Augmentation 1 successful.
+[INFO] Sample 7613 - Augmentation 2 successful.
+[INFO] Sample 7613 - Augmentation 3 successful.
+[INFO] Sample 7613 - Augmentation 4 successful.
+[DEBUG] Sample 7640 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7640 - Augmentation 1 successful.
+[INFO] Sample 7640 - Augmentation 2 successful.
+[INFO] Sample 7640 - Augmentation 3 successful.
+[INFO] Sample 7640 - Augmentation 4 successful.
+[DEBUG] Sample 7720 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7720 - Augmentation 1 successful.
+[INFO] Sample 7720 - Augmentation 2 successful.
+[INFO] Sample 7720 - Augmentation 3 successful.
+[INFO] Sample 7720 - Augmentation 4 successful.
+[DEBUG] Sample 7777 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7777 - Augmentation 1 successful.
+[INFO] Sample 7777 - Augmentation 2 successful.
+[INFO] Sample 7777 - Augmentation 3 successful.
+[INFO] Sample 7777 - Augmentation 4 successful.
+[DEBUG] Sample 7854 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7854 - Augmentation 1 successful.
+[INFO] Sample 7854 - Augmentation 2 successful.
+[INFO] Sample 7854 - Augmentation 3 successful.
+[INFO] Sample 7854 - Augmentation 4 successful.
+[DEBUG] Sample 7860 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7860 - Augmentation 1 successful.
+[INFO] Sample 7860 - Augmentation 2 successful.
+[INFO] Sample 7860 - Augmentation 3 successful.
+[INFO] Sample 7860 - Augmentation 4 successful.
+[DEBUG] Sample 7870 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7870 - Augmentation 1 successful.
+[INFO] Sample 7870 - Augmentation 2 successful.
+[INFO] Sample 7870 - Augmentation 3 successful.
+[INFO] Sample 7870 - Augmentation 4 successful.
+[DEBUG] Sample 7924 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7924 - Augmentation 1 successful.
+[INFO] Sample 7924 - Augmentation 2 successful.
+[INFO] Sample 7924 - Augmentation 3 successful.
+[INFO] Sample 7924 - Augmentation 4 successful.
+[DEBUG] Sample 7959 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7959 - Augmentation 1 successful.
+[INFO] Sample 7959 - Augmentation 2 successful.
+[INFO] Sample 7959 - Augmentation 3 successful.
+[INFO] Sample 7959 - Augmentation 4 successful.
+[DEBUG] Sample 7973 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7973 - Augmentation 1 successful.
+[INFO] Sample 7973 - Augmentation 2 successful.
+[INFO] Sample 7973 - Augmentation 3 successful.
+[INFO] Sample 7973 - Augmentation 4 successful.
+[DEBUG] Sample 7980 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 7980 - Augmentation 1 successful.
+[INFO] Sample 7980 - Augmentation 2 successful.
+[INFO] Sample 7980 - Augmentation 3 successful.
+[INFO] Sample 7980 - Augmentation 4 successful.
+[DEBUG] Sample 8046 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8046 - Augmentation 1 successful.
+[INFO] Sample 8046 - Augmentation 2 successful.
+[INFO] Sample 8046 - Augmentation 3 successful.
+[INFO] Sample 8046 - Augmentation 4 successful.
+[DEBUG] Sample 8073 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8073 - Augmentation 1 successful.
+[INFO] Sample 8073 - Augmentation 2 successful.
+[INFO] Sample 8073 - Augmentation 3 successful.
+[INFO] Sample 8073 - Augmentation 4 successful.
+[DEBUG] Sample 8190 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8190 - Augmentation 1 successful.
+[INFO] Sample 8190 - Augmentation 2 successful.
+[INFO] Sample 8190 - Augmentation 3 successful.
+[INFO] Sample 8190 - Augmentation 4 successful.
+[DEBUG] Sample 8218 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8218 - Augmentation 1 successful.
+[INFO] Sample 8218 - Augmentation 2 successful.
+[INFO] Sample 8218 - Augmentation 3 successful.
+[INFO] Sample 8218 - Augmentation 4 successful.
+[DEBUG] Sample 8270 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8270 - Augmentation 1 successful.
+[INFO] Sample 8270 - Augmentation 2 successful.
+[INFO] Sample 8270 - Augmentation 3 successful.
+[INFO] Sample 8270 - Augmentation 4 successful.
+[DEBUG] Sample 8313 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8313 - Augmentation 1 successful.
+[INFO] Sample 8313 - Augmentation 2 successful.
+[INFO] Sample 8313 - Augmentation 3 successful.
+[INFO] Sample 8313 - Augmentation 4 successful.
+[DEBUG] Sample 8337 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8337 - Augmentation 1 successful.
+[INFO] Sample 8337 - Augmentation 2 successful.
+[INFO] Sample 8337 - Augmentation 3 successful.
+[INFO] Sample 8337 - Augmentation 4 successful.
+[DEBUG] Sample 8411 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8411 - Augmentation 1 successful.
+[INFO] Sample 8411 - Augmentation 2 successful.
+[INFO] Sample 8411 - Augmentation 3 successful.
+[INFO] Sample 8411 - Augmentation 4 successful.
+[DEBUG] Sample 8421 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8421 - Augmentation 1 successful.
+[INFO] Sample 8421 - Augmentation 2 successful.
+[INFO] Sample 8421 - Augmentation 3 successful.
+[INFO] Sample 8421 - Augmentation 4 successful.
+[DEBUG] Sample 8497 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8497 - Augmentation 1 successful.
+[INFO] Sample 8497 - Augmentation 2 successful.
+[INFO] Sample 8497 - Augmentation 3 successful.
+[INFO] Sample 8497 - Augmentation 4 successful.
+[DEBUG] Sample 8516 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8516 - Augmentation 1 successful.
+[INFO] Sample 8516 - Augmentation 2 successful.
+[INFO] Sample 8516 - Augmentation 3 successful.
+[INFO] Sample 8516 - Augmentation 4 successful.
+[DEBUG] Sample 8631 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8631 - Augmentation 1 successful.
+[INFO] Sample 8631 - Augmentation 2 successful.
+[INFO] Sample 8631 - Augmentation 3 successful.
+[INFO] Sample 8631 - Augmentation 4 successful.
+[DEBUG] Sample 8693 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8693 - Augmentation 1 successful.
+[INFO] Sample 8693 - Augmentation 2 successful.
+[INFO] Sample 8693 - Augmentation 3 successful.
+[INFO] Sample 8693 - Augmentation 4 successful.
+[DEBUG] Sample 8710 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8710 - Augmentation 1 successful.
+[INFO] Sample 8710 - Augmentation 2 successful.
+[INFO] Sample 8710 - Augmentation 3 successful.
+[INFO] Sample 8710 - Augmentation 4 successful.
+[DEBUG] Sample 8724 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8724 - Augmentation 1 successful.
+[INFO] Sample 8724 - Augmentation 2 successful.
+[INFO] Sample 8724 - Augmentation 3 successful.
+[INFO] Sample 8724 - Augmentation 4 successful.
+[DEBUG] Sample 8809 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8809 - Augmentation 1 successful.
+[INFO] Sample 8809 - Augmentation 2 successful.
+[INFO] Sample 8809 - Augmentation 3 successful.
+[INFO] Sample 8809 - Augmentation 4 successful.
+[DEBUG] Sample 8829 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8829 - Augmentation 1 successful.
+[INFO] Sample 8829 - Augmentation 2 successful.
+[INFO] Sample 8829 - Augmentation 3 successful.
+[INFO] Sample 8829 - Augmentation 4 successful.
+[DEBUG] Sample 8916 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8916 - Augmentation 1 successful.
+[INFO] Sample 8916 - Augmentation 2 successful.
+[INFO] Sample 8916 - Augmentation 3 successful.
+[INFO] Sample 8916 - Augmentation 4 successful.
+[DEBUG] Sample 8926 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8926 - Augmentation 1 successful.
+[INFO] Sample 8926 - Augmentation 2 successful.
+[INFO] Sample 8926 - Augmentation 3 successful.
+[INFO] Sample 8926 - Augmentation 4 successful.
+[DEBUG] Sample 8982 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8982 - Augmentation 1 successful.
+[INFO] Sample 8982 - Augmentation 2 successful.
+[INFO] Sample 8982 - Augmentation 3 successful.
+[INFO] Sample 8982 - Augmentation 4 successful.
+[DEBUG] Sample 8984 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 8984 - Augmentation 1 successful.
+[INFO] Sample 8984 - Augmentation 2 successful.
+[INFO] Sample 8984 - Augmentation 3 successful.
+[INFO] Sample 8984 - Augmentation 4 successful.
+[DEBUG] Sample 9079 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9079 - Augmentation 1 successful.
+[INFO] Sample 9079 - Augmentation 2 successful.
+[INFO] Sample 9079 - Augmentation 3 successful.
+[INFO] Sample 9079 - Augmentation 4 successful.
+[DEBUG] Sample 9086 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9086 - Augmentation 1 successful.
+[INFO] Sample 9086 - Augmentation 2 successful.
+[INFO] Sample 9086 - Augmentation 3 successful.
+[INFO] Sample 9086 - Augmentation 4 successful.
+[DEBUG] Sample 9103 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9103 - Augmentation 1 successful.
+[INFO] Sample 9103 - Augmentation 2 successful.
+[INFO] Sample 9103 - Augmentation 3 successful.
+[INFO] Sample 9103 - Augmentation 4 successful.
+[DEBUG] Sample 9178 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9178 - Augmentation 1 successful.
+[INFO] Sample 9178 - Augmentation 2 successful.
+[INFO] Sample 9178 - Augmentation 3 successful.
+[INFO] Sample 9178 - Augmentation 4 successful.
+[DEBUG] Sample 9188 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9188 - Augmentation 1 successful.
+[INFO] Sample 9188 - Augmentation 2 successful.
+[INFO] Sample 9188 - Augmentation 3 successful.
+[INFO] Sample 9188 - Augmentation 4 successful.
+[DEBUG] Sample 9361 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9361 - Augmentation 1 successful.
+[INFO] Sample 9361 - Augmentation 2 successful.
+[INFO] Sample 9361 - Augmentation 3 successful.
+[INFO] Sample 9361 - Augmentation 4 successful.
+[DEBUG] Sample 9383 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9383 - Augmentation 1 successful.
+[INFO] Sample 9383 - Augmentation 2 successful.
+[INFO] Sample 9383 - Augmentation 3 successful.
+[INFO] Sample 9383 - Augmentation 4 successful.
+[DEBUG] Sample 9394 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9394 - Augmentation 1 successful.
+[INFO] Sample 9394 - Augmentation 2 successful.
+[INFO] Sample 9394 - Augmentation 3 successful.
+[INFO] Sample 9394 - Augmentation 4 successful.
+[DEBUG] Sample 9456 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9456 - Augmentation 1 successful.
+[INFO] Sample 9456 - Augmentation 2 successful.
+[INFO] Sample 9456 - Augmentation 3 successful.
+[INFO] Sample 9456 - Augmentation 4 successful.
+[DEBUG] Sample 9470 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9470 - Augmentation 1 successful.
+[INFO] Sample 9470 - Augmentation 2 successful.
+[INFO] Sample 9470 - Augmentation 3 successful.
+[INFO] Sample 9470 - Augmentation 4 successful.
+[DEBUG] Sample 9522 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9522 - Augmentation 1 successful.
+[INFO] Sample 9522 - Augmentation 2 successful.
+[INFO] Sample 9522 - Augmentation 3 successful.
+[INFO] Sample 9522 - Augmentation 4 successful.
+[DEBUG] Sample 9617 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9617 - Augmentation 1 successful.
+[INFO] Sample 9617 - Augmentation 2 successful.
+[INFO] Sample 9617 - Augmentation 3 successful.
+[INFO] Sample 9617 - Augmentation 4 successful.
+[DEBUG] Sample 9679 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9679 - Augmentation 1 successful.
+[INFO] Sample 9679 - Augmentation 2 successful.
+[INFO] Sample 9679 - Augmentation 3 successful.
+[INFO] Sample 9679 - Augmentation 4 successful.
+[DEBUG] Sample 9815 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9815 - Augmentation 1 successful.
+[INFO] Sample 9815 - Augmentation 2 successful.
+[INFO] Sample 9815 - Augmentation 3 successful.
+[INFO] Sample 9815 - Augmentation 4 successful.
+[DEBUG] Sample 9834 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9834 - Augmentation 1 successful.
+[INFO] Sample 9834 - Augmentation 2 successful.
+[INFO] Sample 9834 - Augmentation 3 successful.
+[INFO] Sample 9834 - Augmentation 4 successful.
+[DEBUG] Sample 9837 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 9837 - Augmentation 1 successful.
+[INFO] Sample 9837 - Augmentation 2 successful.
+[INFO] Sample 9837 - Augmentation 3 successful.
+[INFO] Sample 9837 - Augmentation 4 successful.
+[DEBUG] Sample 10007 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10007 - Augmentation 1 successful.
+[INFO] Sample 10007 - Augmentation 2 successful.
+[INFO] Sample 10007 - Augmentation 3 successful.
+[INFO] Sample 10007 - Augmentation 4 successful.
+[DEBUG] Sample 10161 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10161 - Augmentation 1 successful.
+[INFO] Sample 10161 - Augmentation 2 successful.
+[INFO] Sample 10161 - Augmentation 3 successful.
+[INFO] Sample 10161 - Augmentation 4 successful.
+[DEBUG] Sample 10330 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10330 - Augmentation 1 successful.
+[INFO] Sample 10330 - Augmentation 2 successful.
+[INFO] Sample 10330 - Augmentation 3 successful.
+[INFO] Sample 10330 - Augmentation 4 successful.
+[DEBUG] Sample 10353 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10353 - Augmentation 1 successful.
+[INFO] Sample 10353 - Augmentation 2 successful.
+[INFO] Sample 10353 - Augmentation 3 successful.
+[INFO] Sample 10353 - Augmentation 4 successful.
+[DEBUG] Sample 10376 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10376 - Augmentation 1 successful.
+[INFO] Sample 10376 - Augmentation 2 successful.
+[INFO] Sample 10376 - Augmentation 3 successful.
+[INFO] Sample 10376 - Augmentation 4 successful.
+[DEBUG] Sample 10420 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10420 - Augmentation 1 successful.
+[INFO] Sample 10420 - Augmentation 2 successful.
+[INFO] Sample 10420 - Augmentation 3 successful.
+[INFO] Sample 10420 - Augmentation 4 successful.
+[DEBUG] Sample 10430 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10430 - Augmentation 1 successful.
+[INFO] Sample 10430 - Augmentation 2 successful.
+[INFO] Sample 10430 - Augmentation 3 successful.
+[INFO] Sample 10430 - Augmentation 4 successful.
+[DEBUG] Sample 10443 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10443 - Augmentation 1 successful.
+[INFO] Sample 10443 - Augmentation 2 successful.
+[INFO] Sample 10443 - Augmentation 3 successful.
+[INFO] Sample 10443 - Augmentation 4 successful.
+[DEBUG] Sample 10557 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10557 - Augmentation 1 successful.
+[INFO] Sample 10557 - Augmentation 2 successful.
+[INFO] Sample 10557 - Augmentation 3 successful.
+[INFO] Sample 10557 - Augmentation 4 successful.
+[DEBUG] Sample 10604 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10604 - Augmentation 1 successful.
+[INFO] Sample 10604 - Augmentation 2 successful.
+[INFO] Sample 10604 - Augmentation 3 successful.
+[INFO] Sample 10604 - Augmentation 4 successful.
+[DEBUG] Sample 10659 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10659 - Augmentation 1 successful.
+[INFO] Sample 10659 - Augmentation 2 successful.
+[INFO] Sample 10659 - Augmentation 3 successful.
+[INFO] Sample 10659 - Augmentation 4 successful.
+[DEBUG] Sample 10733 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10733 - Augmentation 1 successful.
+[INFO] Sample 10733 - Augmentation 2 successful.
+[INFO] Sample 10733 - Augmentation 3 successful.
+[INFO] Sample 10733 - Augmentation 4 successful.
+[DEBUG] Sample 10806 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10806 - Augmentation 1 successful.
+[INFO] Sample 10806 - Augmentation 2 successful.
+[INFO] Sample 10806 - Augmentation 3 successful.
+[INFO] Sample 10806 - Augmentation 4 successful.
+[DEBUG] Sample 10914 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10914 - Augmentation 1 successful.
+[INFO] Sample 10914 - Augmentation 2 successful.
+[INFO] Sample 10914 - Augmentation 3 successful.
+[INFO] Sample 10914 - Augmentation 4 successful.
+[DEBUG] Sample 10923 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 10923 - Augmentation 1 successful.
+[INFO] Sample 10923 - Augmentation 2 successful.
+[INFO] Sample 10923 - Augmentation 3 successful.
+[INFO] Sample 10923 - Augmentation 4 successful.
+[DEBUG] Sample 11054 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11054 - Augmentation 1 successful.
+[INFO] Sample 11054 - Augmentation 2 successful.
+[INFO] Sample 11054 - Augmentation 3 successful.
+[INFO] Sample 11054 - Augmentation 4 successful.
+[DEBUG] Sample 11172 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11172 - Augmentation 1 successful.
+[INFO] Sample 11172 - Augmentation 2 successful.
+[INFO] Sample 11172 - Augmentation 3 successful.
+[INFO] Sample 11172 - Augmentation 4 successful.
+[DEBUG] Sample 11214 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11214 - Augmentation 1 successful.
+[INFO] Sample 11214 - Augmentation 2 successful.
+[INFO] Sample 11214 - Augmentation 3 successful.
+[INFO] Sample 11214 - Augmentation 4 successful.
+[DEBUG] Sample 11284 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11284 - Augmentation 1 successful.
+[INFO] Sample 11284 - Augmentation 2 successful.
+[INFO] Sample 11284 - Augmentation 3 successful.
+[INFO] Sample 11284 - Augmentation 4 successful.
+[DEBUG] Sample 11369 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11369 - Augmentation 1 successful.
+[INFO] Sample 11369 - Augmentation 2 successful.
+[INFO] Sample 11369 - Augmentation 3 successful.
+[INFO] Sample 11369 - Augmentation 4 successful.
+[DEBUG] Sample 11485 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11485 - Augmentation 1 successful.
+[INFO] Sample 11485 - Augmentation 2 successful.
+[INFO] Sample 11485 - Augmentation 3 successful.
+[INFO] Sample 11485 - Augmentation 4 successful.
+[DEBUG] Sample 11515 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11515 - Augmentation 1 successful.
+[INFO] Sample 11515 - Augmentation 2 successful.
+[INFO] Sample 11515 - Augmentation 3 successful.
+[INFO] Sample 11515 - Augmentation 4 successful.
+[DEBUG] Sample 11629 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11629 - Augmentation 1 successful.
+[INFO] Sample 11629 - Augmentation 2 successful.
+[INFO] Sample 11629 - Augmentation 3 successful.
+[INFO] Sample 11629 - Augmentation 4 successful.
+[DEBUG] Sample 11650 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11650 - Augmentation 1 successful.
+[INFO] Sample 11650 - Augmentation 2 successful.
+[INFO] Sample 11650 - Augmentation 3 successful.
+[INFO] Sample 11650 - Augmentation 4 successful.
+[DEBUG] Sample 11740 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11740 - Augmentation 1 successful.
+[INFO] Sample 11740 - Augmentation 2 successful.
+[INFO] Sample 11740 - Augmentation 3 successful.
+[INFO] Sample 11740 - Augmentation 4 successful.
+[DEBUG] Sample 11745 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11745 - Augmentation 1 successful.
+[INFO] Sample 11745 - Augmentation 2 successful.
+[INFO] Sample 11745 - Augmentation 3 successful.
+[INFO] Sample 11745 - Augmentation 4 successful.
+[DEBUG] Sample 11764 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11764 - Augmentation 1 successful.
+[INFO] Sample 11764 - Augmentation 2 successful.
+[INFO] Sample 11764 - Augmentation 3 successful.
+[INFO] Sample 11764 - Augmentation 4 successful.
+[DEBUG] Sample 11898 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11898 - Augmentation 1 successful.
+[INFO] Sample 11898 - Augmentation 2 successful.
+[INFO] Sample 11898 - Augmentation 3 successful.
+[INFO] Sample 11898 - Augmentation 4 successful.
+[DEBUG] Sample 11962 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11962 - Augmentation 1 successful.
+[INFO] Sample 11962 - Augmentation 2 successful.
+[INFO] Sample 11962 - Augmentation 3 successful.
+[INFO] Sample 11962 - Augmentation 4 successful.
+[DEBUG] Sample 11984 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 11984 - Augmentation 1 successful.
+[INFO] Sample 11984 - Augmentation 2 successful.
+[INFO] Sample 11984 - Augmentation 3 successful.
+[INFO] Sample 11984 - Augmentation 4 successful.
+[DEBUG] Sample 12013 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 12013 - Augmentation 1 successful.
+[INFO] Sample 12013 - Augmentation 2 successful.
+[INFO] Sample 12013 - Augmentation 3 successful.
+[INFO] Sample 12013 - Augmentation 4 successful.
+[DEBUG] Sample 12052 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 12052 - Augmentation 1 successful.
+[INFO] Sample 12052 - Augmentation 2 successful.
+[INFO] Sample 12052 - Augmentation 3 successful.
+[INFO] Sample 12052 - Augmentation 4 successful.
+[DEBUG] Sample 12097 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 12097 - Augmentation 1 successful.
+[INFO] Sample 12097 - Augmentation 2 successful.
+[INFO] Sample 12097 - Augmentation 3 successful.
+[INFO] Sample 12097 - Augmentation 4 successful.
+[DEBUG] Sample 12133 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 12133 - Augmentation 1 successful.
+[INFO] Sample 12133 - Augmentation 2 successful.
+[INFO] Sample 12133 - Augmentation 3 successful.
+[INFO] Sample 12133 - Augmentation 4 successful.
+[DEBUG] Sample 12203 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 12203 - Augmentation 1 successful.
+[INFO] Sample 12203 - Augmentation 2 successful.
+[INFO] Sample 12203 - Augmentation 3 successful.
+[INFO] Sample 12203 - Augmentation 4 successful.
+[DEBUG] Sample 12302 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 12302 - Augmentation 1 successful.
+[INFO] Sample 12302 - Augmentation 2 successful.
+[INFO] Sample 12302 - Augmentation 3 successful.
+[INFO] Sample 12302 - Augmentation 4 successful.
+[DEBUG] Sample 12385 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 12385 - Augmentation 1 successful.
+[INFO] Sample 12385 - Augmentation 2 successful.
+[INFO] Sample 12385 - Augmentation 3 successful.
+[INFO] Sample 12385 - Augmentation 4 successful.
+[DEBUG] Sample 12422 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 12422 - Augmentation 1 successful.
+[INFO] Sample 12422 - Augmentation 2 successful.
+[INFO] Sample 12422 - Augmentation 3 successful.
+[INFO] Sample 12422 - Augmentation 4 successful.
+[DEBUG] Sample 12452 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 12452 - Augmentation 1 successful.
+[INFO] Sample 12452 - Augmentation 2 successful.
+[INFO] Sample 12452 - Augmentation 3 successful.
+[INFO] Sample 12452 - Augmentation 4 successful.
+[DEBUG] Sample 12471 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 12471 - Augmentation 1 successful.
+[INFO] Sample 12471 - Augmentation 2 successful.
+[INFO] Sample 12471 - Augmentation 3 successful.
+[INFO] Sample 12471 - Augmentation 4 successful.
+[DEBUG] Sample 12475 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 12475 - Augmentation 1 successful.
+[INFO] Sample 12475 - Augmentation 2 successful.
+[INFO] Sample 12475 - Augmentation 3 successful.
+[INFO] Sample 12475 - Augmentation 4 successful.
+[DEBUG] Sample 12824 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 12824 - Augmentation 1 successful.
+[INFO] Sample 12824 - Augmentation 2 successful.
+[INFO] Sample 12824 - Augmentation 3 successful.
+[INFO] Sample 12824 - Augmentation 4 successful.
+[DEBUG] Sample 12871 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 12871 - Augmentation 1 successful.
+[INFO] Sample 12871 - Augmentation 2 successful.
+[INFO] Sample 12871 - Augmentation 3 successful.
+[INFO] Sample 12871 - Augmentation 4 successful.
+[DEBUG] Sample 12938 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 12938 - Augmentation 1 successful.
+[INFO] Sample 12938 - Augmentation 2 successful.
+[INFO] Sample 12938 - Augmentation 3 successful.
+[INFO] Sample 12938 - Augmentation 4 successful.
+[DEBUG] Sample 13025 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13025 - Augmentation 1 successful.
+[INFO] Sample 13025 - Augmentation 2 successful.
+[INFO] Sample 13025 - Augmentation 3 successful.
+[INFO] Sample 13025 - Augmentation 4 successful.
+[DEBUG] Sample 13082 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13082 - Augmentation 1 successful.
+[INFO] Sample 13082 - Augmentation 2 successful.
+[INFO] Sample 13082 - Augmentation 3 successful.
+[INFO] Sample 13082 - Augmentation 4 successful.
+[DEBUG] Sample 13122 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13122 - Augmentation 1 successful.
+[INFO] Sample 13122 - Augmentation 2 successful.
+[INFO] Sample 13122 - Augmentation 3 successful.
+[INFO] Sample 13122 - Augmentation 4 successful.
+[DEBUG] Sample 13156 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13156 - Augmentation 1 successful.
+[INFO] Sample 13156 - Augmentation 2 successful.
+[INFO] Sample 13156 - Augmentation 3 successful.
+[INFO] Sample 13156 - Augmentation 4 successful.
+[DEBUG] Sample 13225 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13225 - Augmentation 1 successful.
+[INFO] Sample 13225 - Augmentation 2 successful.
+[INFO] Sample 13225 - Augmentation 3 successful.
+[INFO] Sample 13225 - Augmentation 4 successful.
+[DEBUG] Sample 13227 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13227 - Augmentation 1 successful.
+[INFO] Sample 13227 - Augmentation 2 successful.
+[INFO] Sample 13227 - Augmentation 3 successful.
+[INFO] Sample 13227 - Augmentation 4 successful.
+[DEBUG] Sample 13322 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13322 - Augmentation 1 successful.
+[INFO] Sample 13322 - Augmentation 2 successful.
+[INFO] Sample 13322 - Augmentation 3 successful.
+[INFO] Sample 13322 - Augmentation 4 successful.
+[DEBUG] Sample 13386 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13386 - Augmentation 1 successful.
+[INFO] Sample 13386 - Augmentation 2 successful.
+[INFO] Sample 13386 - Augmentation 3 successful.
+[INFO] Sample 13386 - Augmentation 4 successful.
+[DEBUG] Sample 13414 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13414 - Augmentation 1 successful.
+[INFO] Sample 13414 - Augmentation 2 successful.
+[INFO] Sample 13414 - Augmentation 3 successful.
+[INFO] Sample 13414 - Augmentation 4 successful.
+[DEBUG] Sample 13486 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13486 - Augmentation 1 successful.
+[INFO] Sample 13486 - Augmentation 2 successful.
+[INFO] Sample 13486 - Augmentation 3 successful.
+[INFO] Sample 13486 - Augmentation 4 successful.
+[DEBUG] Sample 13506 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13506 - Augmentation 1 successful.
+[INFO] Sample 13506 - Augmentation 2 successful.
+[INFO] Sample 13506 - Augmentation 3 successful.
+[INFO] Sample 13506 - Augmentation 4 successful.
+[DEBUG] Sample 13519 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13519 - Augmentation 1 successful.
+[INFO] Sample 13519 - Augmentation 2 successful.
+[INFO] Sample 13519 - Augmentation 3 successful.
+[INFO] Sample 13519 - Augmentation 4 successful.
+[DEBUG] Sample 13532 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13532 - Augmentation 1 successful.
+[INFO] Sample 13532 - Augmentation 2 successful.
+[INFO] Sample 13532 - Augmentation 3 successful.
+[INFO] Sample 13532 - Augmentation 4 successful.
+[DEBUG] Sample 13611 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13611 - Augmentation 1 successful.
+[INFO] Sample 13611 - Augmentation 2 successful.
+[INFO] Sample 13611 - Augmentation 3 successful.
+[INFO] Sample 13611 - Augmentation 4 successful.
+[DEBUG] Sample 13649 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13649 - Augmentation 1 successful.
+[INFO] Sample 13649 - Augmentation 2 successful.
+[INFO] Sample 13649 - Augmentation 3 successful.
+[INFO] Sample 13649 - Augmentation 4 successful.
+[DEBUG] Sample 13671 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13671 - Augmentation 1 successful.
+[INFO] Sample 13671 - Augmentation 2 successful.
+[INFO] Sample 13671 - Augmentation 3 successful.
+[INFO] Sample 13671 - Augmentation 4 successful.
+[DEBUG] Sample 13689 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13689 - Augmentation 1 successful.
+[INFO] Sample 13689 - Augmentation 2 successful.
+[INFO] Sample 13689 - Augmentation 3 successful.
+[INFO] Sample 13689 - Augmentation 4 successful.
+[DEBUG] Sample 13714 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13714 - Augmentation 1 successful.
+[INFO] Sample 13714 - Augmentation 2 successful.
+[INFO] Sample 13714 - Augmentation 3 successful.
+[INFO] Sample 13714 - Augmentation 4 successful.
+[DEBUG] Sample 13963 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13963 - Augmentation 1 successful.
+[INFO] Sample 13963 - Augmentation 2 successful.
+[INFO] Sample 13963 - Augmentation 3 successful.
+[INFO] Sample 13963 - Augmentation 4 successful.
+[DEBUG] Sample 13993 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 13993 - Augmentation 1 successful.
+[INFO] Sample 13993 - Augmentation 2 successful.
+[INFO] Sample 13993 - Augmentation 3 successful.
+[INFO] Sample 13993 - Augmentation 4 successful.
+[DEBUG] Sample 14026 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14026 - Augmentation 1 successful.
+[INFO] Sample 14026 - Augmentation 2 successful.
+[INFO] Sample 14026 - Augmentation 3 successful.
+[INFO] Sample 14026 - Augmentation 4 successful.
+[DEBUG] Sample 14071 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14071 - Augmentation 1 successful.
+[INFO] Sample 14071 - Augmentation 2 successful.
+[INFO] Sample 14071 - Augmentation 3 successful.
+[INFO] Sample 14071 - Augmentation 4 successful.
+[DEBUG] Sample 14088 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14088 - Augmentation 1 successful.
+[INFO] Sample 14088 - Augmentation 2 successful.
+[INFO] Sample 14088 - Augmentation 3 successful.
+[INFO] Sample 14088 - Augmentation 4 successful.
+[DEBUG] Sample 14142 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14142 - Augmentation 1 successful.
+[INFO] Sample 14142 - Augmentation 2 successful.
+[INFO] Sample 14142 - Augmentation 3 successful.
+[INFO] Sample 14142 - Augmentation 4 successful.
+[DEBUG] Sample 14165 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14165 - Augmentation 1 successful.
+[INFO] Sample 14165 - Augmentation 2 successful.
+[INFO] Sample 14165 - Augmentation 3 successful.
+[INFO] Sample 14165 - Augmentation 4 successful.
+[DEBUG] Sample 14192 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14192 - Augmentation 1 successful.
+[INFO] Sample 14192 - Augmentation 2 successful.
+[INFO] Sample 14192 - Augmentation 3 successful.
+[INFO] Sample 14192 - Augmentation 4 successful.
+[DEBUG] Sample 14379 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14379 - Augmentation 1 successful.
+[INFO] Sample 14379 - Augmentation 2 successful.
+[INFO] Sample 14379 - Augmentation 3 successful.
+[INFO] Sample 14379 - Augmentation 4 successful.
+[DEBUG] Sample 14380 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14380 - Augmentation 1 successful.
+[INFO] Sample 14380 - Augmentation 2 successful.
+[INFO] Sample 14380 - Augmentation 3 successful.
+[INFO] Sample 14380 - Augmentation 4 successful.
+[DEBUG] Sample 14385 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14385 - Augmentation 1 successful.
+[INFO] Sample 14385 - Augmentation 2 successful.
+[INFO] Sample 14385 - Augmentation 3 successful.
+[INFO] Sample 14385 - Augmentation 4 successful.
+[DEBUG] Sample 14398 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14398 - Augmentation 1 successful.
+[INFO] Sample 14398 - Augmentation 2 successful.
+[INFO] Sample 14398 - Augmentation 3 successful.
+[INFO] Sample 14398 - Augmentation 4 successful.
+[DEBUG] Sample 14399 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14399 - Augmentation 1 successful.
+[INFO] Sample 14399 - Augmentation 2 successful.
+[INFO] Sample 14399 - Augmentation 3 successful.
+[INFO] Sample 14399 - Augmentation 4 successful.
+[DEBUG] Sample 14464 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14464 - Augmentation 1 successful.
+[INFO] Sample 14464 - Augmentation 2 successful.
+[INFO] Sample 14464 - Augmentation 3 successful.
+[INFO] Sample 14464 - Augmentation 4 successful.
+[DEBUG] Sample 14476 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14476 - Augmentation 1 successful.
+[INFO] Sample 14476 - Augmentation 2 successful.
+[INFO] Sample 14476 - Augmentation 3 successful.
+[INFO] Sample 14476 - Augmentation 4 successful.
+[DEBUG] Sample 14578 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14578 - Augmentation 1 successful.
+[INFO] Sample 14578 - Augmentation 2 successful.
+[INFO] Sample 14578 - Augmentation 3 successful.
+[INFO] Sample 14578 - Augmentation 4 successful.
+[DEBUG] Sample 14579 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14579 - Augmentation 1 successful.
+[INFO] Sample 14579 - Augmentation 2 successful.
+[INFO] Sample 14579 - Augmentation 3 successful.
+[INFO] Sample 14579 - Augmentation 4 successful.
+[DEBUG] Sample 14654 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14654 - Augmentation 1 successful.
+[INFO] Sample 14654 - Augmentation 2 successful.
+[INFO] Sample 14654 - Augmentation 3 successful.
+[INFO] Sample 14654 - Augmentation 4 successful.
+[DEBUG] Sample 14661 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14661 - Augmentation 1 successful.
+[INFO] Sample 14661 - Augmentation 2 successful.
+[INFO] Sample 14661 - Augmentation 3 successful.
+[INFO] Sample 14661 - Augmentation 4 successful.
+[DEBUG] Sample 14892 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14892 - Augmentation 1 successful.
+[INFO] Sample 14892 - Augmentation 2 successful.
+[INFO] Sample 14892 - Augmentation 3 successful.
+[INFO] Sample 14892 - Augmentation 4 successful.
+[DEBUG] Sample 14914 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14914 - Augmentation 1 successful.
+[INFO] Sample 14914 - Augmentation 2 successful.
+[INFO] Sample 14914 - Augmentation 3 successful.
+[INFO] Sample 14914 - Augmentation 4 successful.
+[DEBUG] Sample 14918 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14918 - Augmentation 1 successful.
+[INFO] Sample 14918 - Augmentation 2 successful.
+[INFO] Sample 14918 - Augmentation 3 successful.
+[INFO] Sample 14918 - Augmentation 4 successful.
+[DEBUG] Sample 14925 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14925 - Augmentation 1 successful.
+[INFO] Sample 14925 - Augmentation 2 successful.
+[INFO] Sample 14925 - Augmentation 3 successful.
+[INFO] Sample 14925 - Augmentation 4 successful.
+[DEBUG] Sample 14965 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14965 - Augmentation 1 successful.
+[INFO] Sample 14965 - Augmentation 2 successful.
+[INFO] Sample 14965 - Augmentation 3 successful.
+[INFO] Sample 14965 - Augmentation 4 successful.
+[DEBUG] Sample 14999 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 14999 - Augmentation 1 successful.
+[INFO] Sample 14999 - Augmentation 2 successful.
+[INFO] Sample 14999 - Augmentation 3 successful.
+[INFO] Sample 14999 - Augmentation 4 successful.
+[DEBUG] Sample 15041 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15041 - Augmentation 1 successful.
+[INFO] Sample 15041 - Augmentation 2 successful.
+[INFO] Sample 15041 - Augmentation 3 successful.
+[INFO] Sample 15041 - Augmentation 4 successful.
+[DEBUG] Sample 15058 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15058 - Augmentation 1 successful.
+[INFO] Sample 15058 - Augmentation 2 successful.
+[INFO] Sample 15058 - Augmentation 3 successful.
+[INFO] Sample 15058 - Augmentation 4 successful.
+[DEBUG] Sample 15326 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15326 - Augmentation 1 successful.
+[INFO] Sample 15326 - Augmentation 2 successful.
+[INFO] Sample 15326 - Augmentation 3 successful.
+[INFO] Sample 15326 - Augmentation 4 successful.
+[DEBUG] Sample 15345 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15345 - Augmentation 1 successful.
+[INFO] Sample 15345 - Augmentation 2 successful.
+[INFO] Sample 15345 - Augmentation 3 successful.
+[INFO] Sample 15345 - Augmentation 4 successful.
+[DEBUG] Sample 15373 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15373 - Augmentation 1 successful.
+[INFO] Sample 15373 - Augmentation 2 successful.
+[INFO] Sample 15373 - Augmentation 3 successful.
+[INFO] Sample 15373 - Augmentation 4 successful.
+[DEBUG] Sample 15421 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15421 - Augmentation 1 successful.
+[INFO] Sample 15421 - Augmentation 2 successful.
+[INFO] Sample 15421 - Augmentation 3 successful.
+[INFO] Sample 15421 - Augmentation 4 successful.
+[DEBUG] Sample 15475 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15475 - Augmentation 1 successful.
+[INFO] Sample 15475 - Augmentation 2 successful.
+[INFO] Sample 15475 - Augmentation 3 successful.
+[INFO] Sample 15475 - Augmentation 4 successful.
+[DEBUG] Sample 15597 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15597 - Augmentation 1 successful.
+[INFO] Sample 15597 - Augmentation 2 successful.
+[INFO] Sample 15597 - Augmentation 3 successful.
+[INFO] Sample 15597 - Augmentation 4 successful.
+[DEBUG] Sample 15610 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15610 - Augmentation 1 successful.
+[INFO] Sample 15610 - Augmentation 2 successful.
+[INFO] Sample 15610 - Augmentation 3 successful.
+[INFO] Sample 15610 - Augmentation 4 successful.
+[DEBUG] Sample 15671 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15671 - Augmentation 1 successful.
+[INFO] Sample 15671 - Augmentation 2 successful.
+[INFO] Sample 15671 - Augmentation 3 successful.
+[INFO] Sample 15671 - Augmentation 4 successful.
+[DEBUG] Sample 15751 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15751 - Augmentation 1 successful.
+[INFO] Sample 15751 - Augmentation 2 successful.
+[INFO] Sample 15751 - Augmentation 3 successful.
+[INFO] Sample 15751 - Augmentation 4 successful.
+[DEBUG] Sample 15767 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15767 - Augmentation 1 successful.
+[INFO] Sample 15767 - Augmentation 2 successful.
+[INFO] Sample 15767 - Augmentation 3 successful.
+[INFO] Sample 15767 - Augmentation 4 successful.
+[DEBUG] Sample 15782 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15782 - Augmentation 1 successful.
+[INFO] Sample 15782 - Augmentation 2 successful.
+[INFO] Sample 15782 - Augmentation 3 successful.
+[INFO] Sample 15782 - Augmentation 4 successful.
+[DEBUG] Sample 15804 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15804 - Augmentation 1 successful.
+[INFO] Sample 15804 - Augmentation 2 successful.
+[INFO] Sample 15804 - Augmentation 3 successful.
+[INFO] Sample 15804 - Augmentation 4 successful.
+[DEBUG] Sample 15928 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15928 - Augmentation 1 successful.
+[INFO] Sample 15928 - Augmentation 2 successful.
+[INFO] Sample 15928 - Augmentation 3 successful.
+[INFO] Sample 15928 - Augmentation 4 successful.
+[DEBUG] Sample 15934 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15934 - Augmentation 1 successful.
+[INFO] Sample 15934 - Augmentation 2 successful.
+[INFO] Sample 15934 - Augmentation 3 successful.
+[INFO] Sample 15934 - Augmentation 4 successful.
+[DEBUG] Sample 15955 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15955 - Augmentation 1 successful.
+[INFO] Sample 15955 - Augmentation 2 successful.
+[INFO] Sample 15955 - Augmentation 3 successful.
+[INFO] Sample 15955 - Augmentation 4 successful.
+[DEBUG] Sample 15963 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15963 - Augmentation 1 successful.
+[INFO] Sample 15963 - Augmentation 2 successful.
+[INFO] Sample 15963 - Augmentation 3 successful.
+[INFO] Sample 15963 - Augmentation 4 successful.
+[DEBUG] Sample 15994 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 15994 - Augmentation 1 successful.
+[INFO] Sample 15994 - Augmentation 2 successful.
+[INFO] Sample 15994 - Augmentation 3 successful.
+[INFO] Sample 15994 - Augmentation 4 successful.
+[DEBUG] Sample 16011 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16011 - Augmentation 1 successful.
+[INFO] Sample 16011 - Augmentation 2 successful.
+[INFO] Sample 16011 - Augmentation 3 successful.
+[INFO] Sample 16011 - Augmentation 4 successful.
+[DEBUG] Sample 16037 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16037 - Augmentation 1 successful.
+[INFO] Sample 16037 - Augmentation 2 successful.
+[INFO] Sample 16037 - Augmentation 3 successful.
+[INFO] Sample 16037 - Augmentation 4 successful.
+[DEBUG] Sample 16096 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16096 - Augmentation 1 successful.
+[INFO] Sample 16096 - Augmentation 2 successful.
+[INFO] Sample 16096 - Augmentation 3 successful.
+[INFO] Sample 16096 - Augmentation 4 successful.
+[DEBUG] Sample 16198 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16198 - Augmentation 1 successful.
+[INFO] Sample 16198 - Augmentation 2 successful.
+[INFO] Sample 16198 - Augmentation 3 successful.
+[INFO] Sample 16198 - Augmentation 4 successful.
+[DEBUG] Sample 16392 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16392 - Augmentation 1 successful.
+[INFO] Sample 16392 - Augmentation 2 successful.
+[INFO] Sample 16392 - Augmentation 3 successful.
+[INFO] Sample 16392 - Augmentation 4 successful.
+[DEBUG] Sample 16474 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16474 - Augmentation 1 successful.
+[INFO] Sample 16474 - Augmentation 2 successful.
+[INFO] Sample 16474 - Augmentation 3 successful.
+[INFO] Sample 16474 - Augmentation 4 successful.
+[DEBUG] Sample 16579 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16579 - Augmentation 1 successful.
+[INFO] Sample 16579 - Augmentation 2 successful.
+[INFO] Sample 16579 - Augmentation 3 successful.
+[INFO] Sample 16579 - Augmentation 4 successful.
+[DEBUG] Sample 16650 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16650 - Augmentation 1 successful.
+[INFO] Sample 16650 - Augmentation 2 successful.
+[INFO] Sample 16650 - Augmentation 3 successful.
+[INFO] Sample 16650 - Augmentation 4 successful.
+[DEBUG] Sample 16658 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16658 - Augmentation 1 successful.
+[INFO] Sample 16658 - Augmentation 2 successful.
+[INFO] Sample 16658 - Augmentation 3 successful.
+[INFO] Sample 16658 - Augmentation 4 successful.
+[DEBUG] Sample 16829 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16829 - Augmentation 1 successful.
+[INFO] Sample 16829 - Augmentation 2 successful.
+[INFO] Sample 16829 - Augmentation 3 successful.
+[INFO] Sample 16829 - Augmentation 4 successful.
+[DEBUG] Sample 16860 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16860 - Augmentation 1 successful.
+[INFO] Sample 16860 - Augmentation 2 successful.
+[INFO] Sample 16860 - Augmentation 3 successful.
+[INFO] Sample 16860 - Augmentation 4 successful.
+[DEBUG] Sample 16868 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16868 - Augmentation 1 successful.
+[INFO] Sample 16868 - Augmentation 2 successful.
+[INFO] Sample 16868 - Augmentation 3 successful.
+[INFO] Sample 16868 - Augmentation 4 successful.
+[DEBUG] Sample 16930 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16930 - Augmentation 1 successful.
+[INFO] Sample 16930 - Augmentation 2 successful.
+[INFO] Sample 16930 - Augmentation 3 successful.
+[INFO] Sample 16930 - Augmentation 4 successful.
+[DEBUG] Sample 16992 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16992 - Augmentation 1 successful.
+[INFO] Sample 16992 - Augmentation 2 successful.
+[INFO] Sample 16992 - Augmentation 3 successful.
+[INFO] Sample 16992 - Augmentation 4 successful.
+[DEBUG] Sample 16993 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 16993 - Augmentation 1 successful.
+[INFO] Sample 16993 - Augmentation 2 successful.
+[INFO] Sample 16993 - Augmentation 3 successful.
+[INFO] Sample 16993 - Augmentation 4 successful.
+[DEBUG] Sample 17057 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17057 - Augmentation 1 successful.
+[INFO] Sample 17057 - Augmentation 2 successful.
+[INFO] Sample 17057 - Augmentation 3 successful.
+[INFO] Sample 17057 - Augmentation 4 successful.
+[DEBUG] Sample 17059 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17059 - Augmentation 1 successful.
+[INFO] Sample 17059 - Augmentation 2 successful.
+[INFO] Sample 17059 - Augmentation 3 successful.
+[INFO] Sample 17059 - Augmentation 4 successful.
+[DEBUG] Sample 17112 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17112 - Augmentation 1 successful.
+[INFO] Sample 17112 - Augmentation 2 successful.
+[INFO] Sample 17112 - Augmentation 3 successful.
+[INFO] Sample 17112 - Augmentation 4 successful.
+[DEBUG] Sample 17156 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17156 - Augmentation 1 successful.
+[INFO] Sample 17156 - Augmentation 2 successful.
+[INFO] Sample 17156 - Augmentation 3 successful.
+[INFO] Sample 17156 - Augmentation 4 successful.
+[DEBUG] Sample 17266 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17266 - Augmentation 1 successful.
+[INFO] Sample 17266 - Augmentation 2 successful.
+[INFO] Sample 17266 - Augmentation 3 successful.
+[INFO] Sample 17266 - Augmentation 4 successful.
+[DEBUG] Sample 17290 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17290 - Augmentation 1 successful.
+[INFO] Sample 17290 - Augmentation 2 successful.
+[INFO] Sample 17290 - Augmentation 3 successful.
+[INFO] Sample 17290 - Augmentation 4 successful.
+[DEBUG] Sample 17370 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17370 - Augmentation 1 successful.
+[INFO] Sample 17370 - Augmentation 2 successful.
+[INFO] Sample 17370 - Augmentation 3 successful.
+[INFO] Sample 17370 - Augmentation 4 successful.
+[DEBUG] Sample 17390 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17390 - Augmentation 1 successful.
+[INFO] Sample 17390 - Augmentation 2 successful.
+[INFO] Sample 17390 - Augmentation 3 successful.
+[INFO] Sample 17390 - Augmentation 4 successful.
+[DEBUG] Sample 17432 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17432 - Augmentation 1 successful.
+[INFO] Sample 17432 - Augmentation 2 successful.
+[INFO] Sample 17432 - Augmentation 3 successful.
+[INFO] Sample 17432 - Augmentation 4 successful.
+[DEBUG] Sample 17437 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17437 - Augmentation 1 successful.
+[INFO] Sample 17437 - Augmentation 2 successful.
+[INFO] Sample 17437 - Augmentation 3 successful.
+[INFO] Sample 17437 - Augmentation 4 successful.
+[DEBUG] Sample 17616 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17616 - Augmentation 1 successful.
+[INFO] Sample 17616 - Augmentation 2 successful.
+[INFO] Sample 17616 - Augmentation 3 successful.
+[INFO] Sample 17616 - Augmentation 4 successful.
+[DEBUG] Sample 17725 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17725 - Augmentation 1 successful.
+[INFO] Sample 17725 - Augmentation 2 successful.
+[INFO] Sample 17725 - Augmentation 3 successful.
+[INFO] Sample 17725 - Augmentation 4 successful.
+[DEBUG] Sample 17766 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17766 - Augmentation 1 successful.
+[INFO] Sample 17766 - Augmentation 2 successful.
+[INFO] Sample 17766 - Augmentation 3 successful.
+[INFO] Sample 17766 - Augmentation 4 successful.
+[DEBUG] Sample 17804 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17804 - Augmentation 1 successful.
+[INFO] Sample 17804 - Augmentation 2 successful.
+[INFO] Sample 17804 - Augmentation 3 successful.
+[INFO] Sample 17804 - Augmentation 4 successful.
+[DEBUG] Sample 17903 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 17903 - Augmentation 1 successful.
+[INFO] Sample 17903 - Augmentation 2 successful.
+[INFO] Sample 17903 - Augmentation 3 successful.
+[INFO] Sample 17903 - Augmentation 4 successful.
+[DEBUG] Sample 18008 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18008 - Augmentation 1 successful.
+[INFO] Sample 18008 - Augmentation 2 successful.
+[INFO] Sample 18008 - Augmentation 3 successful.
+[INFO] Sample 18008 - Augmentation 4 successful.
+[DEBUG] Sample 18023 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18023 - Augmentation 1 successful.
+[INFO] Sample 18023 - Augmentation 2 successful.
+[INFO] Sample 18023 - Augmentation 3 successful.
+[INFO] Sample 18023 - Augmentation 4 successful.
+[DEBUG] Sample 18026 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18026 - Augmentation 1 successful.
+[INFO] Sample 18026 - Augmentation 2 successful.
+[INFO] Sample 18026 - Augmentation 3 successful.
+[INFO] Sample 18026 - Augmentation 4 successful.
+[DEBUG] Sample 18040 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18040 - Augmentation 1 successful.
+[INFO] Sample 18040 - Augmentation 2 successful.
+[INFO] Sample 18040 - Augmentation 3 successful.
+[INFO] Sample 18040 - Augmentation 4 successful.
+[DEBUG] Sample 18096 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18096 - Augmentation 1 successful.
+[INFO] Sample 18096 - Augmentation 2 successful.
+[INFO] Sample 18096 - Augmentation 3 successful.
+[INFO] Sample 18096 - Augmentation 4 successful.
+[DEBUG] Sample 18182 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18182 - Augmentation 1 successful.
+[INFO] Sample 18182 - Augmentation 2 successful.
+[INFO] Sample 18182 - Augmentation 3 successful.
+[INFO] Sample 18182 - Augmentation 4 successful.
+[DEBUG] Sample 18229 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18229 - Augmentation 1 successful.
+[INFO] Sample 18229 - Augmentation 2 successful.
+[INFO] Sample 18229 - Augmentation 3 successful.
+[INFO] Sample 18229 - Augmentation 4 successful.
+[DEBUG] Sample 18272 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18272 - Augmentation 1 successful.
+[INFO] Sample 18272 - Augmentation 2 successful.
+[INFO] Sample 18272 - Augmentation 3 successful.
+[INFO] Sample 18272 - Augmentation 4 successful.
+[DEBUG] Sample 18324 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18324 - Augmentation 1 successful.
+[INFO] Sample 18324 - Augmentation 2 successful.
+[INFO] Sample 18324 - Augmentation 3 successful.
+[INFO] Sample 18324 - Augmentation 4 successful.
+[DEBUG] Sample 18528 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18528 - Augmentation 1 successful.
+[INFO] Sample 18528 - Augmentation 2 successful.
+[INFO] Sample 18528 - Augmentation 3 successful.
+[INFO] Sample 18528 - Augmentation 4 successful.
+[DEBUG] Sample 18560 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18560 - Augmentation 1 successful.
+[INFO] Sample 18560 - Augmentation 2 successful.
+[INFO] Sample 18560 - Augmentation 3 successful.
+[INFO] Sample 18560 - Augmentation 4 successful.
+[DEBUG] Sample 18563 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18563 - Augmentation 1 successful.
+[INFO] Sample 18563 - Augmentation 2 successful.
+[INFO] Sample 18563 - Augmentation 3 successful.
+[INFO] Sample 18563 - Augmentation 4 successful.
+[DEBUG] Sample 18571 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18571 - Augmentation 1 successful.
+[INFO] Sample 18571 - Augmentation 2 successful.
+[INFO] Sample 18571 - Augmentation 3 successful.
+[INFO] Sample 18571 - Augmentation 4 successful.
+[DEBUG] Sample 18584 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18584 - Augmentation 1 successful.
+[INFO] Sample 18584 - Augmentation 2 successful.
+[INFO] Sample 18584 - Augmentation 3 successful.
+[INFO] Sample 18584 - Augmentation 4 successful.
+[DEBUG] Sample 18618 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18618 - Augmentation 1 successful.
+[INFO] Sample 18618 - Augmentation 2 successful.
+[INFO] Sample 18618 - Augmentation 3 successful.
+[INFO] Sample 18618 - Augmentation 4 successful.
+[DEBUG] Sample 18657 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18657 - Augmentation 1 successful.
+[INFO] Sample 18657 - Augmentation 2 successful.
+[INFO] Sample 18657 - Augmentation 3 successful.
+[INFO] Sample 18657 - Augmentation 4 successful.
+[DEBUG] Sample 18708 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18708 - Augmentation 1 successful.
+[INFO] Sample 18708 - Augmentation 2 successful.
+[INFO] Sample 18708 - Augmentation 3 successful.
+[INFO] Sample 18708 - Augmentation 4 successful.
+[DEBUG] Sample 18712 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18712 - Augmentation 1 successful.
+[INFO] Sample 18712 - Augmentation 2 successful.
+[INFO] Sample 18712 - Augmentation 3 successful.
+[INFO] Sample 18712 - Augmentation 4 successful.
+[DEBUG] Sample 18714 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18714 - Augmentation 1 successful.
+[INFO] Sample 18714 - Augmentation 2 successful.
+[INFO] Sample 18714 - Augmentation 3 successful.
+[INFO] Sample 18714 - Augmentation 4 successful.
+[DEBUG] Sample 18757 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18757 - Augmentation 1 successful.
+[INFO] Sample 18757 - Augmentation 2 successful.
+[INFO] Sample 18757 - Augmentation 3 successful.
+[INFO] Sample 18757 - Augmentation 4 successful.
+[DEBUG] Sample 18759 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18759 - Augmentation 1 successful.
+[INFO] Sample 18759 - Augmentation 2 successful.
+[INFO] Sample 18759 - Augmentation 3 successful.
+[INFO] Sample 18759 - Augmentation 4 successful.
+[DEBUG] Sample 18761 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18761 - Augmentation 1 successful.
+[INFO] Sample 18761 - Augmentation 2 successful.
+[INFO] Sample 18761 - Augmentation 3 successful.
+[INFO] Sample 18761 - Augmentation 4 successful.
+[DEBUG] Sample 18791 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18791 - Augmentation 1 successful.
+[INFO] Sample 18791 - Augmentation 2 successful.
+[INFO] Sample 18791 - Augmentation 3 successful.
+[INFO] Sample 18791 - Augmentation 4 successful.
+[DEBUG] Sample 18819 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18819 - Augmentation 1 successful.
+[INFO] Sample 18819 - Augmentation 2 successful.
+[INFO] Sample 18819 - Augmentation 3 successful.
+[INFO] Sample 18819 - Augmentation 4 successful.
+[DEBUG] Sample 18830 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18830 - Augmentation 1 successful.
+[INFO] Sample 18830 - Augmentation 2 successful.
+[INFO] Sample 18830 - Augmentation 3 successful.
+[INFO] Sample 18830 - Augmentation 4 successful.
+[DEBUG] Sample 18838 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18838 - Augmentation 1 successful.
+[INFO] Sample 18838 - Augmentation 2 successful.
+[INFO] Sample 18838 - Augmentation 3 successful.
+[INFO] Sample 18838 - Augmentation 4 successful.
+[DEBUG] Sample 18928 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18928 - Augmentation 1 successful.
+[INFO] Sample 18928 - Augmentation 2 successful.
+[INFO] Sample 18928 - Augmentation 3 successful.
+[INFO] Sample 18928 - Augmentation 4 successful.
+[DEBUG] Sample 18958 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 18958 - Augmentation 1 successful.
+[INFO] Sample 18958 - Augmentation 2 successful.
+[INFO] Sample 18958 - Augmentation 3 successful.
+[INFO] Sample 18958 - Augmentation 4 successful.
+[DEBUG] Sample 19002 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19002 - Augmentation 1 successful.
+[INFO] Sample 19002 - Augmentation 2 successful.
+[INFO] Sample 19002 - Augmentation 3 successful.
+[INFO] Sample 19002 - Augmentation 4 successful.
+[DEBUG] Sample 19005 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19005 - Augmentation 1 successful.
+[INFO] Sample 19005 - Augmentation 2 successful.
+[INFO] Sample 19005 - Augmentation 3 successful.
+[INFO] Sample 19005 - Augmentation 4 successful.
+[DEBUG] Sample 19016 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19016 - Augmentation 1 successful.
+[INFO] Sample 19016 - Augmentation 2 successful.
+[INFO] Sample 19016 - Augmentation 3 successful.
+[INFO] Sample 19016 - Augmentation 4 successful.
+[DEBUG] Sample 19237 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19237 - Augmentation 1 successful.
+[INFO] Sample 19237 - Augmentation 2 successful.
+[INFO] Sample 19237 - Augmentation 3 successful.
+[INFO] Sample 19237 - Augmentation 4 successful.
+[DEBUG] Sample 19239 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19239 - Augmentation 1 successful.
+[INFO] Sample 19239 - Augmentation 2 successful.
+[INFO] Sample 19239 - Augmentation 3 successful.
+[INFO] Sample 19239 - Augmentation 4 successful.
+[DEBUG] Sample 19286 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19286 - Augmentation 1 successful.
+[INFO] Sample 19286 - Augmentation 2 successful.
+[INFO] Sample 19286 - Augmentation 3 successful.
+[INFO] Sample 19286 - Augmentation 4 successful.
+[DEBUG] Sample 19291 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19291 - Augmentation 1 successful.
+[INFO] Sample 19291 - Augmentation 2 successful.
+[INFO] Sample 19291 - Augmentation 3 successful.
+[INFO] Sample 19291 - Augmentation 4 successful.
+[DEBUG] Sample 19429 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19429 - Augmentation 1 successful.
+[INFO] Sample 19429 - Augmentation 2 successful.
+[INFO] Sample 19429 - Augmentation 3 successful.
+[INFO] Sample 19429 - Augmentation 4 successful.
+[DEBUG] Sample 19581 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19581 - Augmentation 1 successful.
+[INFO] Sample 19581 - Augmentation 2 successful.
+[INFO] Sample 19581 - Augmentation 3 successful.
+[INFO] Sample 19581 - Augmentation 4 successful.
+[DEBUG] Sample 19707 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19707 - Augmentation 1 successful.
+[INFO] Sample 19707 - Augmentation 2 successful.
+[INFO] Sample 19707 - Augmentation 3 successful.
+[INFO] Sample 19707 - Augmentation 4 successful.
+[DEBUG] Sample 19753 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19753 - Augmentation 1 successful.
+[INFO] Sample 19753 - Augmentation 2 successful.
+[INFO] Sample 19753 - Augmentation 3 successful.
+[INFO] Sample 19753 - Augmentation 4 successful.
+[DEBUG] Sample 19839 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19839 - Augmentation 1 successful.
+[INFO] Sample 19839 - Augmentation 2 successful.
+[INFO] Sample 19839 - Augmentation 3 successful.
+[INFO] Sample 19839 - Augmentation 4 successful.
+[DEBUG] Sample 19845 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19845 - Augmentation 1 successful.
+[INFO] Sample 19845 - Augmentation 2 successful.
+[INFO] Sample 19845 - Augmentation 3 successful.
+[INFO] Sample 19845 - Augmentation 4 successful.
+[DEBUG] Sample 19860 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19860 - Augmentation 1 successful.
+[INFO] Sample 19860 - Augmentation 2 successful.
+[INFO] Sample 19860 - Augmentation 3 successful.
+[INFO] Sample 19860 - Augmentation 4 successful.
+[DEBUG] Sample 19944 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 19944 - Augmentation 1 successful.
+[INFO] Sample 19944 - Augmentation 2 successful.
+[INFO] Sample 19944 - Augmentation 3 successful.
+[INFO] Sample 19944 - Augmentation 4 successful.
+[DEBUG] Sample 20063 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20063 - Augmentation 1 successful.
+[INFO] Sample 20063 - Augmentation 2 successful.
+[INFO] Sample 20063 - Augmentation 3 successful.
+[INFO] Sample 20063 - Augmentation 4 successful.
+[DEBUG] Sample 20125 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20125 - Augmentation 1 successful.
+[INFO] Sample 20125 - Augmentation 2 successful.
+[INFO] Sample 20125 - Augmentation 3 successful.
+[INFO] Sample 20125 - Augmentation 4 successful.
+[DEBUG] Sample 20208 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20208 - Augmentation 1 successful.
+[INFO] Sample 20208 - Augmentation 2 successful.
+[INFO] Sample 20208 - Augmentation 3 successful.
+[INFO] Sample 20208 - Augmentation 4 successful.
+[DEBUG] Sample 20376 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20376 - Augmentation 1 successful.
+[INFO] Sample 20376 - Augmentation 2 successful.
+[INFO] Sample 20376 - Augmentation 3 successful.
+[INFO] Sample 20376 - Augmentation 4 successful.
+[DEBUG] Sample 20427 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20427 - Augmentation 1 successful.
+[INFO] Sample 20427 - Augmentation 2 successful.
+[INFO] Sample 20427 - Augmentation 3 successful.
+[INFO] Sample 20427 - Augmentation 4 successful.
+[DEBUG] Sample 20532 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20532 - Augmentation 1 successful.
+[INFO] Sample 20532 - Augmentation 2 successful.
+[INFO] Sample 20532 - Augmentation 3 successful.
+[INFO] Sample 20532 - Augmentation 4 successful.
+[DEBUG] Sample 20554 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20554 - Augmentation 1 successful.
+[INFO] Sample 20554 - Augmentation 2 successful.
+[INFO] Sample 20554 - Augmentation 3 successful.
+[INFO] Sample 20554 - Augmentation 4 successful.
+[DEBUG] Sample 20575 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20575 - Augmentation 1 successful.
+[INFO] Sample 20575 - Augmentation 2 successful.
+[INFO] Sample 20575 - Augmentation 3 successful.
+[INFO] Sample 20575 - Augmentation 4 successful.
+[DEBUG] Sample 20632 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20632 - Augmentation 1 successful.
+[INFO] Sample 20632 - Augmentation 2 successful.
+[INFO] Sample 20632 - Augmentation 3 successful.
+[INFO] Sample 20632 - Augmentation 4 successful.
+[DEBUG] Sample 20683 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20683 - Augmentation 1 successful.
+[INFO] Sample 20683 - Augmentation 2 successful.
+[INFO] Sample 20683 - Augmentation 3 successful.
+[INFO] Sample 20683 - Augmentation 4 successful.
+[DEBUG] Sample 20778 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20778 - Augmentation 1 successful.
+[INFO] Sample 20778 - Augmentation 2 successful.
+[INFO] Sample 20778 - Augmentation 3 successful.
+[INFO] Sample 20778 - Augmentation 4 successful.
+[DEBUG] Sample 20803 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20803 - Augmentation 1 successful.
+[INFO] Sample 20803 - Augmentation 2 successful.
+[INFO] Sample 20803 - Augmentation 3 successful.
+[INFO] Sample 20803 - Augmentation 4 successful.
+[DEBUG] Sample 20888 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20888 - Augmentation 1 successful.
+[INFO] Sample 20888 - Augmentation 2 successful.
+[INFO] Sample 20888 - Augmentation 3 successful.
+[INFO] Sample 20888 - Augmentation 4 successful.
+[DEBUG] Sample 20895 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20895 - Augmentation 1 successful.
+[INFO] Sample 20895 - Augmentation 2 successful.
+[INFO] Sample 20895 - Augmentation 3 successful.
+[INFO] Sample 20895 - Augmentation 4 successful.
+[DEBUG] Sample 20989 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 20989 - Augmentation 1 successful.
+[INFO] Sample 20989 - Augmentation 2 successful.
+[INFO] Sample 20989 - Augmentation 3 successful.
+[INFO] Sample 20989 - Augmentation 4 successful.
+[DEBUG] Sample 21006 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21006 - Augmentation 1 successful.
+[INFO] Sample 21006 - Augmentation 2 successful.
+[INFO] Sample 21006 - Augmentation 3 successful.
+[INFO] Sample 21006 - Augmentation 4 successful.
+[DEBUG] Sample 21036 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21036 - Augmentation 1 successful.
+[INFO] Sample 21036 - Augmentation 2 successful.
+[INFO] Sample 21036 - Augmentation 3 successful.
+[INFO] Sample 21036 - Augmentation 4 successful.
+[DEBUG] Sample 21082 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21082 - Augmentation 1 successful.
+[INFO] Sample 21082 - Augmentation 2 successful.
+[INFO] Sample 21082 - Augmentation 3 successful.
+[INFO] Sample 21082 - Augmentation 4 successful.
+[DEBUG] Sample 21166 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21166 - Augmentation 1 successful.
+[INFO] Sample 21166 - Augmentation 2 successful.
+[INFO] Sample 21166 - Augmentation 3 successful.
+[INFO] Sample 21166 - Augmentation 4 successful.
+[DEBUG] Sample 21202 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21202 - Augmentation 1 successful.
+[INFO] Sample 21202 - Augmentation 2 successful.
+[INFO] Sample 21202 - Augmentation 3 successful.
+[INFO] Sample 21202 - Augmentation 4 successful.
+[DEBUG] Sample 21214 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21214 - Augmentation 1 successful.
+[INFO] Sample 21214 - Augmentation 2 successful.
+[INFO] Sample 21214 - Augmentation 3 successful.
+[INFO] Sample 21214 - Augmentation 4 successful.
+[DEBUG] Sample 21287 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21287 - Augmentation 1 successful.
+[INFO] Sample 21287 - Augmentation 2 successful.
+[INFO] Sample 21287 - Augmentation 3 successful.
+[INFO] Sample 21287 - Augmentation 4 successful.
+[DEBUG] Sample 21309 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21309 - Augmentation 1 successful.
+[INFO] Sample 21309 - Augmentation 2 successful.
+[INFO] Sample 21309 - Augmentation 3 successful.
+[INFO] Sample 21309 - Augmentation 4 successful.
+[DEBUG] Sample 21338 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21338 - Augmentation 1 successful.
+[INFO] Sample 21338 - Augmentation 2 successful.
+[INFO] Sample 21338 - Augmentation 3 successful.
+[INFO] Sample 21338 - Augmentation 4 successful.
+[DEBUG] Sample 21357 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21357 - Augmentation 1 successful.
+[INFO] Sample 21357 - Augmentation 2 successful.
+[INFO] Sample 21357 - Augmentation 3 successful.
+[INFO] Sample 21357 - Augmentation 4 successful.
+[DEBUG] Sample 21371 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21371 - Augmentation 1 successful.
+[INFO] Sample 21371 - Augmentation 2 successful.
+[INFO] Sample 21371 - Augmentation 3 successful.
+[INFO] Sample 21371 - Augmentation 4 successful.
+[DEBUG] Sample 21564 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21564 - Augmentation 1 successful.
+[INFO] Sample 21564 - Augmentation 2 successful.
+[INFO] Sample 21564 - Augmentation 3 successful.
+[INFO] Sample 21564 - Augmentation 4 successful.
+[DEBUG] Sample 21592 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21592 - Augmentation 1 successful.
+[INFO] Sample 21592 - Augmentation 2 successful.
+[INFO] Sample 21592 - Augmentation 3 successful.
+[INFO] Sample 21592 - Augmentation 4 successful.
+[DEBUG] Sample 21631 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21631 - Augmentation 1 successful.
+[INFO] Sample 21631 - Augmentation 2 successful.
+[INFO] Sample 21631 - Augmentation 3 successful.
+[INFO] Sample 21631 - Augmentation 4 successful.
+[DEBUG] Sample 21659 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21659 - Augmentation 1 successful.
+[INFO] Sample 21659 - Augmentation 2 successful.
+[INFO] Sample 21659 - Augmentation 3 successful.
+[INFO] Sample 21659 - Augmentation 4 successful.
+[DEBUG] Sample 21661 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21661 - Augmentation 1 successful.
+[INFO] Sample 21661 - Augmentation 2 successful.
+[INFO] Sample 21661 - Augmentation 3 successful.
+[INFO] Sample 21661 - Augmentation 4 successful.
+[DEBUG] Sample 21689 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21689 - Augmentation 1 successful.
+[INFO] Sample 21689 - Augmentation 2 successful.
+[INFO] Sample 21689 - Augmentation 3 successful.
+[INFO] Sample 21689 - Augmentation 4 successful.
+[DEBUG] Sample 21765 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21765 - Augmentation 1 successful.
+[INFO] Sample 21765 - Augmentation 2 successful.
+[INFO] Sample 21765 - Augmentation 3 successful.
+[INFO] Sample 21765 - Augmentation 4 successful.
+[DEBUG] Sample 21803 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21803 - Augmentation 1 successful.
+[INFO] Sample 21803 - Augmentation 2 successful.
+[INFO] Sample 21803 - Augmentation 3 successful.
+[INFO] Sample 21803 - Augmentation 4 successful.
+[DEBUG] Sample 21824 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21824 - Augmentation 1 successful.
+[INFO] Sample 21824 - Augmentation 2 successful.
+[INFO] Sample 21824 - Augmentation 3 successful.
+[INFO] Sample 21824 - Augmentation 4 successful.
+[DEBUG] Sample 21932 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21932 - Augmentation 1 successful.
+[INFO] Sample 21932 - Augmentation 2 successful.
+[INFO] Sample 21932 - Augmentation 3 successful.
+[INFO] Sample 21932 - Augmentation 4 successful.
+[DEBUG] Sample 21992 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 21992 - Augmentation 1 successful.
+[INFO] Sample 21992 - Augmentation 2 successful.
+[INFO] Sample 21992 - Augmentation 3 successful.
+[INFO] Sample 21992 - Augmentation 4 successful.
+[DEBUG] Sample 22008 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22008 - Augmentation 1 successful.
+[INFO] Sample 22008 - Augmentation 2 successful.
+[INFO] Sample 22008 - Augmentation 3 successful.
+[INFO] Sample 22008 - Augmentation 4 successful.
+[DEBUG] Sample 22054 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22054 - Augmentation 1 successful.
+[INFO] Sample 22054 - Augmentation 2 successful.
+[INFO] Sample 22054 - Augmentation 3 successful.
+[INFO] Sample 22054 - Augmentation 4 successful.
+[DEBUG] Sample 22081 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22081 - Augmentation 1 successful.
+[INFO] Sample 22081 - Augmentation 2 successful.
+[INFO] Sample 22081 - Augmentation 3 successful.
+[INFO] Sample 22081 - Augmentation 4 successful.
+[DEBUG] Sample 22133 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22133 - Augmentation 1 successful.
+[INFO] Sample 22133 - Augmentation 2 successful.
+[INFO] Sample 22133 - Augmentation 3 successful.
+[INFO] Sample 22133 - Augmentation 4 successful.
+[DEBUG] Sample 22135 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22135 - Augmentation 1 successful.
+[INFO] Sample 22135 - Augmentation 2 successful.
+[INFO] Sample 22135 - Augmentation 3 successful.
+[INFO] Sample 22135 - Augmentation 4 successful.
+[DEBUG] Sample 22219 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22219 - Augmentation 1 successful.
+[INFO] Sample 22219 - Augmentation 2 successful.
+[INFO] Sample 22219 - Augmentation 3 successful.
+[INFO] Sample 22219 - Augmentation 4 successful.
+[DEBUG] Sample 22228 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22228 - Augmentation 1 successful.
+[INFO] Sample 22228 - Augmentation 2 successful.
+[INFO] Sample 22228 - Augmentation 3 successful.
+[INFO] Sample 22228 - Augmentation 4 successful.
+[DEBUG] Sample 22310 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22310 - Augmentation 1 successful.
+[INFO] Sample 22310 - Augmentation 2 successful.
+[INFO] Sample 22310 - Augmentation 3 successful.
+[INFO] Sample 22310 - Augmentation 4 successful.
+[DEBUG] Sample 22333 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22333 - Augmentation 1 successful.
+[INFO] Sample 22333 - Augmentation 2 successful.
+[INFO] Sample 22333 - Augmentation 3 successful.
+[INFO] Sample 22333 - Augmentation 4 successful.
+[DEBUG] Sample 22416 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22416 - Augmentation 1 successful.
+[INFO] Sample 22416 - Augmentation 2 successful.
+[INFO] Sample 22416 - Augmentation 3 successful.
+[INFO] Sample 22416 - Augmentation 4 successful.
+[DEBUG] Sample 22435 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22435 - Augmentation 1 successful.
+[INFO] Sample 22435 - Augmentation 2 successful.
+[INFO] Sample 22435 - Augmentation 3 successful.
+[INFO] Sample 22435 - Augmentation 4 successful.
+[DEBUG] Sample 22511 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22511 - Augmentation 1 successful.
+[INFO] Sample 22511 - Augmentation 2 successful.
+[INFO] Sample 22511 - Augmentation 3 successful.
+[INFO] Sample 22511 - Augmentation 4 successful.
+[DEBUG] Sample 22567 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22567 - Augmentation 1 successful.
+[INFO] Sample 22567 - Augmentation 2 successful.
+[INFO] Sample 22567 - Augmentation 3 successful.
+[INFO] Sample 22567 - Augmentation 4 successful.
+[DEBUG] Sample 22644 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22644 - Augmentation 1 successful.
+[INFO] Sample 22644 - Augmentation 2 successful.
+[INFO] Sample 22644 - Augmentation 3 successful.
+[INFO] Sample 22644 - Augmentation 4 successful.
+[DEBUG] Sample 22674 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22674 - Augmentation 1 successful.
+[INFO] Sample 22674 - Augmentation 2 successful.
+[INFO] Sample 22674 - Augmentation 3 successful.
+[INFO] Sample 22674 - Augmentation 4 successful.
+[DEBUG] Sample 22703 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22703 - Augmentation 1 successful.
+[INFO] Sample 22703 - Augmentation 2 successful.
+[INFO] Sample 22703 - Augmentation 3 successful.
+[INFO] Sample 22703 - Augmentation 4 successful.
+[DEBUG] Sample 22729 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22729 - Augmentation 1 successful.
+[INFO] Sample 22729 - Augmentation 2 successful.
+[INFO] Sample 22729 - Augmentation 3 successful.
+[INFO] Sample 22729 - Augmentation 4 successful.
+[DEBUG] Sample 22798 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22798 - Augmentation 1 successful.
+[INFO] Sample 22798 - Augmentation 2 successful.
+[INFO] Sample 22798 - Augmentation 3 successful.
+[INFO] Sample 22798 - Augmentation 4 successful.
+[DEBUG] Sample 22825 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22825 - Augmentation 1 successful.
+[INFO] Sample 22825 - Augmentation 2 successful.
+[INFO] Sample 22825 - Augmentation 3 successful.
+[INFO] Sample 22825 - Augmentation 4 successful.
+[DEBUG] Sample 22951 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22951 - Augmentation 1 successful.
+[INFO] Sample 22951 - Augmentation 2 successful.
+[INFO] Sample 22951 - Augmentation 3 successful.
+[INFO] Sample 22951 - Augmentation 4 successful.
+[DEBUG] Sample 22957 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 22957 - Augmentation 1 successful.
+[INFO] Sample 22957 - Augmentation 2 successful.
+[INFO] Sample 22957 - Augmentation 3 successful.
+[INFO] Sample 22957 - Augmentation 4 successful.
+[DEBUG] Sample 23072 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23072 - Augmentation 1 successful.
+[INFO] Sample 23072 - Augmentation 2 successful.
+[INFO] Sample 23072 - Augmentation 3 successful.
+[INFO] Sample 23072 - Augmentation 4 successful.
+[DEBUG] Sample 23082 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23082 - Augmentation 1 successful.
+[INFO] Sample 23082 - Augmentation 2 successful.
+[INFO] Sample 23082 - Augmentation 3 successful.
+[INFO] Sample 23082 - Augmentation 4 successful.
+[DEBUG] Sample 23137 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23137 - Augmentation 1 successful.
+[INFO] Sample 23137 - Augmentation 2 successful.
+[INFO] Sample 23137 - Augmentation 3 successful.
+[INFO] Sample 23137 - Augmentation 4 successful.
+[DEBUG] Sample 23145 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23145 - Augmentation 1 successful.
+[INFO] Sample 23145 - Augmentation 2 successful.
+[INFO] Sample 23145 - Augmentation 3 successful.
+[INFO] Sample 23145 - Augmentation 4 successful.
+[DEBUG] Sample 23351 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23351 - Augmentation 1 successful.
+[INFO] Sample 23351 - Augmentation 2 successful.
+[INFO] Sample 23351 - Augmentation 3 successful.
+[INFO] Sample 23351 - Augmentation 4 successful.
+[DEBUG] Sample 23380 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23380 - Augmentation 1 successful.
+[INFO] Sample 23380 - Augmentation 2 successful.
+[INFO] Sample 23380 - Augmentation 3 successful.
+[INFO] Sample 23380 - Augmentation 4 successful.
+[DEBUG] Sample 23452 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23452 - Augmentation 1 successful.
+[INFO] Sample 23452 - Augmentation 2 successful.
+[INFO] Sample 23452 - Augmentation 3 successful.
+[INFO] Sample 23452 - Augmentation 4 successful.
+[DEBUG] Sample 23565 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23565 - Augmentation 1 successful.
+[INFO] Sample 23565 - Augmentation 2 successful.
+[INFO] Sample 23565 - Augmentation 3 successful.
+[INFO] Sample 23565 - Augmentation 4 successful.
+[DEBUG] Sample 23582 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23582 - Augmentation 1 successful.
+[INFO] Sample 23582 - Augmentation 2 successful.
+[INFO] Sample 23582 - Augmentation 3 successful.
+[INFO] Sample 23582 - Augmentation 4 successful.
+[DEBUG] Sample 23616 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23616 - Augmentation 1 successful.
+[INFO] Sample 23616 - Augmentation 2 successful.
+[INFO] Sample 23616 - Augmentation 3 successful.
+[INFO] Sample 23616 - Augmentation 4 successful.
+[DEBUG] Sample 23703 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23703 - Augmentation 1 successful.
+[INFO] Sample 23703 - Augmentation 2 successful.
+[INFO] Sample 23703 - Augmentation 3 successful.
+[INFO] Sample 23703 - Augmentation 4 successful.
+[DEBUG] Sample 23750 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23750 - Augmentation 1 successful.
+[INFO] Sample 23750 - Augmentation 2 successful.
+[INFO] Sample 23750 - Augmentation 3 successful.
+[INFO] Sample 23750 - Augmentation 4 successful.
+[DEBUG] Sample 23915 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23915 - Augmentation 1 successful.
+[INFO] Sample 23915 - Augmentation 2 successful.
+[INFO] Sample 23915 - Augmentation 3 successful.
+[INFO] Sample 23915 - Augmentation 4 successful.
+[DEBUG] Sample 23946 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23946 - Augmentation 1 successful.
+[INFO] Sample 23946 - Augmentation 2 successful.
+[INFO] Sample 23946 - Augmentation 3 successful.
+[INFO] Sample 23946 - Augmentation 4 successful.
+[DEBUG] Sample 23969 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23969 - Augmentation 1 successful.
+[INFO] Sample 23969 - Augmentation 2 successful.
+[INFO] Sample 23969 - Augmentation 3 successful.
+[INFO] Sample 23969 - Augmentation 4 successful.
+[DEBUG] Sample 23972 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23972 - Augmentation 1 successful.
+[INFO] Sample 23972 - Augmentation 2 successful.
+[INFO] Sample 23972 - Augmentation 3 successful.
+[INFO] Sample 23972 - Augmentation 4 successful.
+[DEBUG] Sample 23974 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 23974 - Augmentation 1 successful.
+[INFO] Sample 23974 - Augmentation 2 successful.
+[INFO] Sample 23974 - Augmentation 3 successful.
+[INFO] Sample 23974 - Augmentation 4 successful.
+[DEBUG] Sample 24046 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24046 - Augmentation 1 successful.
+[INFO] Sample 24046 - Augmentation 2 successful.
+[INFO] Sample 24046 - Augmentation 3 successful.
+[INFO] Sample 24046 - Augmentation 4 successful.
+[DEBUG] Sample 24049 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24049 - Augmentation 1 successful.
+[INFO] Sample 24049 - Augmentation 2 successful.
+[INFO] Sample 24049 - Augmentation 3 successful.
+[INFO] Sample 24049 - Augmentation 4 successful.
+[DEBUG] Sample 24178 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24178 - Augmentation 1 successful.
+[INFO] Sample 24178 - Augmentation 2 successful.
+[INFO] Sample 24178 - Augmentation 3 successful.
+[INFO] Sample 24178 - Augmentation 4 successful.
+[DEBUG] Sample 24189 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24189 - Augmentation 1 successful.
+[INFO] Sample 24189 - Augmentation 2 successful.
+[INFO] Sample 24189 - Augmentation 3 successful.
+[INFO] Sample 24189 - Augmentation 4 successful.
+[DEBUG] Sample 24256 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24256 - Augmentation 1 successful.
+[INFO] Sample 24256 - Augmentation 2 successful.
+[INFO] Sample 24256 - Augmentation 3 successful.
+[INFO] Sample 24256 - Augmentation 4 successful.
+[DEBUG] Sample 24308 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24308 - Augmentation 1 successful.
+[INFO] Sample 24308 - Augmentation 2 successful.
+[INFO] Sample 24308 - Augmentation 3 successful.
+[INFO] Sample 24308 - Augmentation 4 successful.
+[DEBUG] Sample 24310 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24310 - Augmentation 1 successful.
+[INFO] Sample 24310 - Augmentation 2 successful.
+[INFO] Sample 24310 - Augmentation 3 successful.
+[INFO] Sample 24310 - Augmentation 4 successful.
+[DEBUG] Sample 24317 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24317 - Augmentation 1 successful.
+[INFO] Sample 24317 - Augmentation 2 successful.
+[INFO] Sample 24317 - Augmentation 3 successful.
+[INFO] Sample 24317 - Augmentation 4 successful.
+[DEBUG] Sample 24352 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24352 - Augmentation 1 successful.
+[INFO] Sample 24352 - Augmentation 2 successful.
+[INFO] Sample 24352 - Augmentation 3 successful.
+[INFO] Sample 24352 - Augmentation 4 successful.
+[DEBUG] Sample 24408 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24408 - Augmentation 1 successful.
+[INFO] Sample 24408 - Augmentation 2 successful.
+[INFO] Sample 24408 - Augmentation 3 successful.
+[INFO] Sample 24408 - Augmentation 4 successful.
+[DEBUG] Sample 24507 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24507 - Augmentation 1 successful.
+[INFO] Sample 24507 - Augmentation 2 successful.
+[INFO] Sample 24507 - Augmentation 3 successful.
+[INFO] Sample 24507 - Augmentation 4 successful.
+[DEBUG] Sample 24528 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24528 - Augmentation 1 successful.
+[INFO] Sample 24528 - Augmentation 2 successful.
+[INFO] Sample 24528 - Augmentation 3 successful.
+[INFO] Sample 24528 - Augmentation 4 successful.
+[DEBUG] Sample 24594 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24594 - Augmentation 1 successful.
+[INFO] Sample 24594 - Augmentation 2 successful.
+[INFO] Sample 24594 - Augmentation 3 successful.
+[INFO] Sample 24594 - Augmentation 4 successful.
+[DEBUG] Sample 24631 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24631 - Augmentation 1 successful.
+[INFO] Sample 24631 - Augmentation 2 successful.
+[INFO] Sample 24631 - Augmentation 3 successful.
+[INFO] Sample 24631 - Augmentation 4 successful.
+[DEBUG] Sample 24657 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24657 - Augmentation 1 successful.
+[INFO] Sample 24657 - Augmentation 2 successful.
+[INFO] Sample 24657 - Augmentation 3 successful.
+[INFO] Sample 24657 - Augmentation 4 successful.
+[DEBUG] Sample 24723 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24723 - Augmentation 1 successful.
+[INFO] Sample 24723 - Augmentation 2 successful.
+[INFO] Sample 24723 - Augmentation 3 successful.
+[INFO] Sample 24723 - Augmentation 4 successful.
+[DEBUG] Sample 24809 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24809 - Augmentation 1 successful.
+[INFO] Sample 24809 - Augmentation 2 successful.
+[INFO] Sample 24809 - Augmentation 3 successful.
+[INFO] Sample 24809 - Augmentation 4 successful.
+[DEBUG] Sample 24909 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24909 - Augmentation 1 successful.
+[INFO] Sample 24909 - Augmentation 2 successful.
+[INFO] Sample 24909 - Augmentation 3 successful.
+[INFO] Sample 24909 - Augmentation 4 successful.
+[DEBUG] Sample 24995 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 24995 - Augmentation 1 successful.
+[INFO] Sample 24995 - Augmentation 2 successful.
+[INFO] Sample 24995 - Augmentation 3 successful.
+[INFO] Sample 24995 - Augmentation 4 successful.
+[DEBUG] Sample 25047 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25047 - Augmentation 1 successful.
+[INFO] Sample 25047 - Augmentation 2 successful.
+[INFO] Sample 25047 - Augmentation 3 successful.
+[INFO] Sample 25047 - Augmentation 4 successful.
+[DEBUG] Sample 25048 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25048 - Augmentation 1 successful.
+[INFO] Sample 25048 - Augmentation 2 successful.
+[INFO] Sample 25048 - Augmentation 3 successful.
+[INFO] Sample 25048 - Augmentation 4 successful.
+[DEBUG] Sample 25053 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25053 - Augmentation 1 successful.
+[INFO] Sample 25053 - Augmentation 2 successful.
+[INFO] Sample 25053 - Augmentation 3 successful.
+[INFO] Sample 25053 - Augmentation 4 successful.
+[DEBUG] Sample 25174 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25174 - Augmentation 1 successful.
+[INFO] Sample 25174 - Augmentation 2 successful.
+[INFO] Sample 25174 - Augmentation 3 successful.
+[INFO] Sample 25174 - Augmentation 4 successful.
+[DEBUG] Sample 25188 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25188 - Augmentation 1 successful.
+[INFO] Sample 25188 - Augmentation 2 successful.
+[INFO] Sample 25188 - Augmentation 3 successful.
+[INFO] Sample 25188 - Augmentation 4 successful.
+[DEBUG] Sample 25235 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25235 - Augmentation 1 successful.
+[INFO] Sample 25235 - Augmentation 2 successful.
+[INFO] Sample 25235 - Augmentation 3 successful.
+[INFO] Sample 25235 - Augmentation 4 successful.
+[DEBUG] Sample 25276 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25276 - Augmentation 1 successful.
+[INFO] Sample 25276 - Augmentation 2 successful.
+[INFO] Sample 25276 - Augmentation 3 successful.
+[INFO] Sample 25276 - Augmentation 4 successful.
+[DEBUG] Sample 25327 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25327 - Augmentation 1 successful.
+[INFO] Sample 25327 - Augmentation 2 successful.
+[INFO] Sample 25327 - Augmentation 3 successful.
+[INFO] Sample 25327 - Augmentation 4 successful.
+[DEBUG] Sample 25473 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25473 - Augmentation 1 successful.
+[INFO] Sample 25473 - Augmentation 2 successful.
+[INFO] Sample 25473 - Augmentation 3 successful.
+[INFO] Sample 25473 - Augmentation 4 successful.
+[DEBUG] Sample 25494 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25494 - Augmentation 1 successful.
+[INFO] Sample 25494 - Augmentation 2 successful.
+[INFO] Sample 25494 - Augmentation 3 successful.
+[INFO] Sample 25494 - Augmentation 4 successful.
+[DEBUG] Sample 25558 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25558 - Augmentation 1 successful.
+[INFO] Sample 25558 - Augmentation 2 successful.
+[INFO] Sample 25558 - Augmentation 3 successful.
+[INFO] Sample 25558 - Augmentation 4 successful.
+[DEBUG] Sample 25565 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25565 - Augmentation 1 successful.
+[INFO] Sample 25565 - Augmentation 2 successful.
+[INFO] Sample 25565 - Augmentation 3 successful.
+[INFO] Sample 25565 - Augmentation 4 successful.
+[DEBUG] Sample 25589 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25589 - Augmentation 1 successful.
+[INFO] Sample 25589 - Augmentation 2 successful.
+[INFO] Sample 25589 - Augmentation 3 successful.
+[INFO] Sample 25589 - Augmentation 4 successful.
+[DEBUG] Sample 25663 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25663 - Augmentation 1 successful.
+[INFO] Sample 25663 - Augmentation 2 successful.
+[INFO] Sample 25663 - Augmentation 3 successful.
+[INFO] Sample 25663 - Augmentation 4 successful.
+[DEBUG] Sample 25755 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25755 - Augmentation 1 successful.
+[INFO] Sample 25755 - Augmentation 2 successful.
+[INFO] Sample 25755 - Augmentation 3 successful.
+[INFO] Sample 25755 - Augmentation 4 successful.
+[DEBUG] Sample 25761 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25761 - Augmentation 1 successful.
+[INFO] Sample 25761 - Augmentation 2 successful.
+[INFO] Sample 25761 - Augmentation 3 successful.
+[INFO] Sample 25761 - Augmentation 4 successful.
+[DEBUG] Sample 25798 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25798 - Augmentation 1 successful.
+[INFO] Sample 25798 - Augmentation 2 successful.
+[INFO] Sample 25798 - Augmentation 3 successful.
+[INFO] Sample 25798 - Augmentation 4 successful.
+[DEBUG] Sample 25802 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25802 - Augmentation 1 successful.
+[INFO] Sample 25802 - Augmentation 2 successful.
+[INFO] Sample 25802 - Augmentation 3 successful.
+[INFO] Sample 25802 - Augmentation 4 successful.
+[DEBUG] Sample 25815 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25815 - Augmentation 1 successful.
+[INFO] Sample 25815 - Augmentation 2 successful.
+[INFO] Sample 25815 - Augmentation 3 successful.
+[INFO] Sample 25815 - Augmentation 4 successful.
+[DEBUG] Sample 25848 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25848 - Augmentation 1 successful.
+[INFO] Sample 25848 - Augmentation 2 successful.
+[INFO] Sample 25848 - Augmentation 3 successful.
+[INFO] Sample 25848 - Augmentation 4 successful.
+[DEBUG] Sample 25926 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 25926 - Augmentation 1 successful.
+[INFO] Sample 25926 - Augmentation 2 successful.
+[INFO] Sample 25926 - Augmentation 3 successful.
+[INFO] Sample 25926 - Augmentation 4 successful.
+[DEBUG] Sample 26027 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 26027 - Augmentation 1 successful.
+[INFO] Sample 26027 - Augmentation 2 successful.
+[INFO] Sample 26027 - Augmentation 3 successful.
+[INFO] Sample 26027 - Augmentation 4 successful.
+[DEBUG] Sample 26042 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 26042 - Augmentation 1 successful.
+[INFO] Sample 26042 - Augmentation 2 successful.
+[INFO] Sample 26042 - Augmentation 3 successful.
+[INFO] Sample 26042 - Augmentation 4 successful.
+[DEBUG] Sample 26074 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 26074 - Augmentation 1 successful.
+[INFO] Sample 26074 - Augmentation 2 successful.
+[INFO] Sample 26074 - Augmentation 3 successful.
+[INFO] Sample 26074 - Augmentation 4 successful.
+[DEBUG] Sample 26106 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 26106 - Augmentation 1 successful.
+[INFO] Sample 26106 - Augmentation 2 successful.
+[INFO] Sample 26106 - Augmentation 3 successful.
+[INFO] Sample 26106 - Augmentation 4 successful.
+[DEBUG] Sample 26201 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 26201 - Augmentation 1 successful.
+[INFO] Sample 26201 - Augmentation 2 successful.
+[INFO] Sample 26201 - Augmentation 3 successful.
+[INFO] Sample 26201 - Augmentation 4 successful.
+[DEBUG] Sample 26220 - Original shape: (256, 256, 3), dtype: uint8, Label: 1
+[INFO] Sample 26220 - Augmentation 1 successful.
+[INFO] Sample 26220 - Augmentation 2 successful.
+[INFO] Sample 26220 - Augmentation 3 successful.
+[INFO] Sample 26220 - Augmentation 4 successful.
+[INFO] Augmentation complete. Generated 1924 new samples.
+[INFO] Total dataset size after augmentation: 28424
+26500

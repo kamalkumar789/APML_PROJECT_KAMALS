@@ -10,6 +10,9 @@ class ImagesDataset(Dataset):
 
         self.image_names = self.data['image_name'].tolist()
         self.labels = self.data['target'].tolist()
+        self.ages = self.data['age_approx'].tolist()
+        self.sex = self.data['sex']
+        self.patientsIds = self.data['patient_id']
 
         self.transform_label_zero = transform_for_label_0
         self.transform_label_one = transform_for_label_1
@@ -29,12 +32,6 @@ class ImagesDataset(Dataset):
             image = Image.open(image_path).convert('RGB')
         except Exception as e:
             raise RuntimeError(f"Failed to load image {image_path}: {e}")
-
-        # Apply class-specific transforms
-        if label == 0 and self.transform_label_zero:
-            image = self.transform_label_zero(image)
-        elif label == 1 and self.transform_label_one:
-            image = self.transform_label_one(image)
 
         return image, label
 

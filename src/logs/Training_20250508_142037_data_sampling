@@ -1,0 +1,197 @@
+Training started at: 2025-05-08 14:20:37
+
+Transform for label 0:
+ Compose([
+  Resize(p=1.0, height=256, interpolation=1, mask_interpolation=0, width=256),
+  Normalize(p=1.0, max_pixel_value=255.0, mean=(0.5, 0.5, 0.5), normalization='standard', std=(0.5, 0.5, 0.5)),
+  ToTensorV2(p=1.0, transpose_mask=False),
+], p=1.0, bbox_params=None, keypoint_params=None, additional_targets={}, is_check_shapes=True)
+
+Transform for label 1:
+ Compose([
+  ShiftScaleRotate(p=0.5, shift_limit_x=(-0.05, 0.05), shift_limit_y=(-0.05, 0.05), scale_limit=(-0.050000000000000044, 0.050000000000000044), rotate_limit=(-5.0, 5.0), interpolation=1, border_mode=2, fill=0.0, fill_mask=0.0, rotate_method='largest_box', mask_interpolation=0),
+  OneOf([
+    CLAHE(p=0.3, clip_limit=(1.0, 2.0), tile_grid_size=(8, 8)),
+    RandomBrightnessContrast(p=0.3, brightness_by_max=True, brightness_limit=(-0.2, 0.2), contrast_limit=(-0.2, 0.2), ensure_safe_range=False),
+    HueSaturationValue(p=0.3, hue_shift_limit=(-20.0, 20.0), sat_shift_limit=(-30.0, 30.0), val_shift_limit=(-20.0, 20.0)),
+  ], p=1.0),
+  Resize(p=1.0, height=256, interpolation=1, mask_interpolation=0, width=256),
+  Normalize(p=1.0, max_pixel_value=255.0, mean=(0.5, 0.5, 0.5), normalization='standard', std=(0.5, 0.5, 0.5)),
+  ToTensorV2(p=1.0, transpose_mask=False),
+], p=1.0, bbox_params=None, keypoint_params=None, additional_targets={}, is_check_shapes=True)
+[INFO] Starting augmentation of dataset. Total original samples: 26500
+[DEBUG] Sample 24 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 24 - Augmentation 1 successful.
+[INFO] Sample 24 - Augmentation 2 successful.
+[INFO] Sample 24 - Augmentation 3 successful.
+[INFO] Sample 24 - Augmentation 4 successful.
+[DEBUG] Sample 84 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 84 - Augmentation 1 successful.
+[INFO] Sample 84 - Augmentation 2 successful.
+[INFO] Sample 84 - Augmentation 3 successful.
+[INFO] Sample 84 - Augmentation 4 successful.
+[DEBUG] Sample 107 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 107 - Augmentation 1 successful.
+[INFO] Sample 107 - Augmentation 2 successful.
+[INFO] Sample 107 - Augmentation 3 successful.
+[INFO] Sample 107 - Augmentation 4 successful.
+[DEBUG] Sample 121 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 121 - Augmentation 1 successful.
+[INFO] Sample 121 - Augmentation 2 successful.
+[INFO] Sample 121 - Augmentation 3 successful.
+[INFO] Sample 121 - Augmentation 4 successful.
+[DEBUG] Sample 154 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 154 - Augmentation 1 successful.
+[INFO] Sample 154 - Augmentation 2 successful.
+[INFO] Sample 154 - Augmentation 3 successful.
+[INFO] Sample 154 - Augmentation 4 successful.
+[DEBUG] Sample 204 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 204 - Augmentation 1 successful.
+[INFO] Sample 204 - Augmentation 2 successful.
+[INFO] Sample 204 - Augmentation 3 successful.
+[INFO] Sample 204 - Augmentation 4 successful.
+[DEBUG] Sample 308 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 308 - Augmentation 1 successful.
+[INFO] Sample 308 - Augmentation 2 successful.
+[INFO] Sample 308 - Augmentation 3 successful.
+[INFO] Sample 308 - Augmentation 4 successful.
+[DEBUG] Sample 309 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 309 - Augmentation 1 successful.
+[INFO] Sample 309 - Augmentation 2 successful.
+[INFO] Sample 309 - Augmentation 3 successful.
+[INFO] Sample 309 - Augmentation 4 successful.
+[DEBUG] Sample 347 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 347 - Augmentation 1 successful.
+[INFO] Sample 347 - Augmentation 2 successful.
+[INFO] Sample 347 - Augmentation 3 successful.
+[INFO] Sample 347 - Augmentation 4 successful.
+[DEBUG] Sample 365 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 365 - Augmentation 1 successful.
+[INFO] Sample 365 - Augmentation 2 successful.
+[INFO] Sample 365 - Augmentation 3 successful.
+[INFO] Sample 365 - Augmentation 4 successful.
+[DEBUG] Sample 495 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 495 - Augmentation 1 successful.
+[INFO] Sample 495 - Augmentation 2 successful.
+[INFO] Sample 495 - Augmentation 3 successful.
+[INFO] Sample 495 - Augmentation 4 successful.
+[DEBUG] Sample 522 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 522 - Augmentation 1 successful.
+[INFO] Sample 522 - Augmentation 2 successful.
+[INFO] Sample 522 - Augmentation 3 successful.
+[INFO] Sample 522 - Augmentation 4 successful.
+[DEBUG] Sample 573 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 573 - Augmentation 1 successful.
+[INFO] Sample 573 - Augmentation 2 successful.
+[INFO] Sample 573 - Augmentation 3 successful.
+[INFO] Sample 573 - Augmentation 4 successful.
+[DEBUG] Sample 665 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 665 - Augmentation 1 successful.
+[INFO] Sample 665 - Augmentation 2 successful.
+[INFO] Sample 665 - Augmentation 3 successful.
+[INFO] Sample 665 - Augmentation 4 successful.
+[DEBUG] Sample 729 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 729 - Augmentation 1 successful.
+[INFO] Sample 729 - Augmentation 2 successful.
+[INFO] Sample 729 - Augmentation 3 successful.
+[INFO] Sample 729 - Augmentation 4 successful.
+[DEBUG] Sample 737 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 737 - Augmentation 1 successful.
+[INFO] Sample 737 - Augmentation 2 successful.
+[INFO] Sample 737 - Augmentation 3 successful.
+[INFO] Sample 737 - Augmentation 4 successful.
+[DEBUG] Sample 785 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 785 - Augmentation 1 successful.
+[INFO] Sample 785 - Augmentation 2 successful.
+[INFO] Sample 785 - Augmentation 3 successful.
+[INFO] Sample 785 - Augmentation 4 successful.
+[DEBUG] Sample 855 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 855 - Augmentation 1 successful.
+[INFO] Sample 855 - Augmentation 2 successful.
+[INFO] Sample 855 - Augmentation 3 successful.
+[INFO] Sample 855 - Augmentation 4 successful.
+[DEBUG] Sample 973 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 973 - Augmentation 1 successful.
+[INFO] Sample 973 - Augmentation 2 successful.
+[INFO] Sample 973 - Augmentation 3 successful.
+[INFO] Sample 973 - Augmentation 4 successful.
+[DEBUG] Sample 1034 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1034 - Augmentation 1 successful.
+[INFO] Sample 1034 - Augmentation 2 successful.
+[INFO] Sample 1034 - Augmentation 3 successful.
+[INFO] Sample 1034 - Augmentation 4 successful.
+[DEBUG] Sample 1055 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1055 - Augmentation 1 successful.
+[INFO] Sample 1055 - Augmentation 2 successful.
+[INFO] Sample 1055 - Augmentation 3 successful.
+[INFO] Sample 1055 - Augmentation 4 successful.
+[DEBUG] Sample 1113 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1113 - Augmentation 1 successful.
+[INFO] Sample 1113 - Augmentation 2 successful.
+[INFO] Sample 1113 - Augmentation 3 successful.
+[INFO] Sample 1113 - Augmentation 4 successful.
+[DEBUG] Sample 1143 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1143 - Augmentation 1 successful.
+[INFO] Sample 1143 - Augmentation 2 successful.
+[INFO] Sample 1143 - Augmentation 3 successful.
+[INFO] Sample 1143 - Augmentation 4 successful.
+[DEBUG] Sample 1193 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1193 - Augmentation 1 successful.
+[INFO] Sample 1193 - Augmentation 2 successful.
+[INFO] Sample 1193 - Augmentation 3 successful.
+[INFO] Sample 1193 - Augmentation 4 successful.
+[DEBUG] Sample 1196 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1196 - Augmentation 1 successful.
+[INFO] Sample 1196 - Augmentation 2 successful.
+[INFO] Sample 1196 - Augmentation 3 successful.
+[INFO] Sample 1196 - Augmentation 4 successful.
+[DEBUG] Sample 1198 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1198 - Augmentation 1 successful.
+[INFO] Sample 1198 - Augmentation 2 successful.
+[INFO] Sample 1198 - Augmentation 3 successful.
+[INFO] Sample 1198 - Augmentation 4 successful.
+[DEBUG] Sample 1268 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1268 - Augmentation 1 successful.
+[INFO] Sample 1268 - Augmentation 2 successful.
+[INFO] Sample 1268 - Augmentation 3 successful.
+[INFO] Sample 1268 - Augmentation 4 successful.
+[DEBUG] Sample 1434 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1434 - Augmentation 1 successful.
+[INFO] Sample 1434 - Augmentation 2 successful.
+[INFO] Sample 1434 - Augmentation 3 successful.
+[INFO] Sample 1434 - Augmentation 4 successful.
+[DEBUG] Sample 1451 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1451 - Augmentation 1 successful.
+[INFO] Sample 1451 - Augmentation 2 successful.
+[INFO] Sample 1451 - Augmentation 3 successful.
+[INFO] Sample 1451 - Augmentation 4 successful.
+[DEBUG] Sample 1538 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1538 - Augmentation 1 successful.
+[INFO] Sample 1538 - Augmentation 2 successful.
+[INFO] Sample 1538 - Augmentation 3 successful.
+[INFO] Sample 1538 - Augmentation 4 successful.
+[DEBUG] Sample 1599 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1599 - Augmentation 1 successful.
+[INFO] Sample 1599 - Augmentation 2 successful.
+[INFO] Sample 1599 - Augmentation 3 successful.
+[INFO] Sample 1599 - Augmentation 4 successful.
+[DEBUG] Sample 1661 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1661 - Augmentation 1 successful.
+[INFO] Sample 1661 - Augmentation 2 successful.
+[INFO] Sample 1661 - Augmentation 3 successful.
+[INFO] Sample 1661 - Augmentation 4 successful.
+[DEBUG] Sample 1675 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1675 - Augmentation 1 successful.
+[INFO] Sample 1675 - Augmentation 2 successful.
+[INFO] Sample 1675 - Augmentation 3 successful.
+[INFO] Sample 1675 - Augmentation 4 successful.
+[DEBUG] Sample 1760 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1760 - Augmentation 1 successful.
+[INFO] Sample 1760 - Augmentation 2 successful.
+[INFO] Sample 1760 - Augmentation 3 successful.
+[INFO] Sample 1760 - Augmentation 4 successful.
+[DEBUG] Sample 1780 - Original shape: (256, 256, 3), Label: 1
+[INFO] Sample 1780 - Augmentation 1 successful.
+[INFO] Sample 1780 - Augmentation 2 successful.
+[INFO] Sample 1780 - Augmentation 3 successful.
+[INFO] Sample 1780 - Augmentation 4 successful.

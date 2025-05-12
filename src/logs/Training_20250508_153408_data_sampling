@@ -1,0 +1,126 @@
+Training started at: 2025-05-08 15:34:08
+
+Transform for label 0:
+ Compose([
+  Resize(p=1.0, height=256, interpolation=1, mask_interpolation=0, width=256),
+  Normalize(p=1.0, max_pixel_value=255.0, mean=(0.5, 0.5, 0.5), normalization='standard', std=(0.5, 0.5, 0.5)),
+  ToTensorV2(p=1.0, transpose_mask=False),
+], p=1.0, bbox_params=None, keypoint_params=None, additional_targets={}, is_check_shapes=True)
+
+Transform for label 1:
+ Compose([
+  ShiftScaleRotate(p=0.5, shift_limit_x=(-0.05, 0.05), shift_limit_y=(-0.05, 0.05), scale_limit=(-0.050000000000000044, 0.050000000000000044), rotate_limit=(-5.0, 5.0), interpolation=1, border_mode=2, fill=0.0, fill_mask=0.0, rotate_method='largest_box', mask_interpolation=0),
+  OneOf([
+    CLAHE(p=0.3, clip_limit=(1.0, 2.0), tile_grid_size=(8, 8)),
+    RandomBrightnessContrast(p=0.3, brightness_by_max=True, brightness_limit=(-0.2, 0.2), contrast_limit=(-0.2, 0.2), ensure_safe_range=False),
+    HueSaturationValue(p=0.3, hue_shift_limit=(-20.0, 20.0), sat_shift_limit=(-30.0, 30.0), val_shift_limit=(-20.0, 20.0)),
+  ], p=1.0),
+  Resize(p=1.0, height=256, interpolation=1, mask_interpolation=0, width=256),
+  Normalize(p=1.0, max_pixel_value=255.0, mean=(0.5, 0.5, 0.5), normalization='standard', std=(0.5, 0.5, 0.5)),
+  ToTensorV2(p=1.0, transpose_mask=False),
+], p=1.0, bbox_params=None, keypoint_params=None, additional_targets={}, is_check_shapes=True)
+Class 0 count: 99
+Class 1 count: 1
+[INFO] Starting augmentation. Total original samples: 80
+[INFO] Dataset type: <class 'torch.utils.data.dataset.Subset'>
+[INFO] Original + augmented data type: <class 'list'>
+[INFO] Final data length: 84
+[INFO] Final dataset length: 84
+[DEBUG] Sample image shape: (256, 256, 3)
+[INFO] Printing shapes of all images in subset_dataset:
+Image 0 shape: (256, 256, 3)
+Image 1 shape: (256, 256, 3)
+Image 2 shape: (256, 256, 3)
+Image 3 shape: (256, 256, 3)
+Image 4 shape: (256, 256, 3)
+Image 5 shape: (256, 256, 3)
+Image 6 shape: (256, 256, 3)
+Image 7 shape: (256, 256, 3)
+Image 8 shape: (256, 256, 3)
+Image 9 shape: (256, 256, 3)
+Image 10 shape: (256, 256, 3)
+Image 11 shape: (256, 256, 3)
+Image 12 shape: (256, 256, 3)
+Image 13 shape: (256, 256, 3)
+Image 14 shape: (256, 256, 3)
+Image 15 shape: (256, 256, 3)
+Image 16 shape: (256, 256, 3)
+Image 17 shape: (256, 256, 3)
+Image 18 shape: (256, 256, 3)
+Image 19 shape: (256, 256, 3)
+Image 20 shape: (256, 256, 3)
+Image 21 shape: (256, 256, 3)
+Image 22 shape: (256, 256, 3)
+Image 23 shape: (256, 256, 3)
+Image 24 shape: (256, 256, 3)
+Image 25 shape: (256, 256, 3)
+Image 26 shape: (256, 256, 3)
+Image 27 shape: (256, 256, 3)
+Image 28 shape: (256, 256, 3)
+Image 29 shape: (256, 256, 3)
+Image 30 shape: (256, 256, 3)
+Image 31 shape: (256, 256, 3)
+Image 32 shape: (256, 256, 3)
+Image 33 shape: (256, 256, 3)
+Image 34 shape: (256, 256, 3)
+Image 35 shape: (256, 256, 3)
+Image 36 shape: (256, 256, 3)
+Image 37 shape: (256, 256, 3)
+Image 38 shape: (256, 256, 3)
+Image 39 shape: (256, 256, 3)
+Image 40 shape: (256, 256, 3)
+Image 41 shape: (256, 256, 3)
+Image 42 shape: (256, 256, 3)
+Image 43 shape: (256, 256, 3)
+Image 44 shape: (256, 256, 3)
+Image 45 shape: (256, 256, 3)
+Image 46 shape: (256, 256, 3)
+Image 47 shape: (256, 256, 3)
+Image 48 shape: (256, 256, 3)
+Image 49 shape: (256, 256, 3)
+Image 50 shape: (256, 256, 3)
+Image 51 shape: (256, 256, 3)
+Image 52 shape: (256, 256, 3)
+Image 53 shape: (256, 256, 3)
+Image 54 shape: (256, 256, 3)
+Image 55 shape: (256, 256, 3)
+Image 56 shape: (256, 256, 3)
+Image 57 shape: (256, 256, 3)
+Image 58 shape: (256, 256, 3)
+Image 59 shape: (256, 256, 3)
+Image 60 shape: (256, 256, 3)
+Image 61 shape: (256, 256, 3)
+Image 62 shape: (256, 256, 3)
+Image 63 shape: (256, 256, 3)
+Image 64 shape: (256, 256, 3)
+Image 65 shape: (256, 256, 3)
+Image 66 shape: (256, 256, 3)
+Image 67 shape: (256, 256, 3)
+Image 68 shape: (256, 256, 3)
+Image 69 shape: (256, 256, 3)
+Image 70 shape: (256, 256, 3)
+Image 71 shape: (256, 256, 3)
+Image 72 shape: (256, 256, 3)
+Image 73 shape: (256, 256, 3)
+Image 74 shape: (256, 256, 3)
+Image 75 shape: (256, 256, 3)
+Image 76 shape: (256, 256, 3)
+Image 77 shape: (256, 256, 3)
+Image 78 shape: (256, 256, 3)
+Image 79 shape: (256, 256, 3)
+Image 80 shape: torch.Size([3, 256, 256])
+Image 81 shape: torch.Size([3, 256, 256])
+Image 82 shape: torch.Size([3, 256, 256])
+Image 83 shape: torch.Size([3, 256, 256])
+84
+Class 0 count: 79
+Class 1 count: 5
+84
+Learning Rate      : 0.0001
+Batch Size   : 32
+Epochs : 10
+Threashold : 0.5
+Total Samples      : 104
+Training Samples   : 84
+Validation Samples : 10
+Testing Samples : 10

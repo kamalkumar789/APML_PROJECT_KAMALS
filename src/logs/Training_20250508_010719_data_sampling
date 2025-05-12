@@ -1,0 +1,478 @@
+Training started at: 2025-05-08 01:07:19
+
+Transform for label 0:
+ Compose([
+  Resize(p=1.0, height=256, interpolation=1, mask_interpolation=0, width=256),
+  Normalize(p=1.0, max_pixel_value=255.0, mean=(0.5, 0.5, 0.5), normalization='standard', std=(0.5, 0.5, 0.5)),
+  ToTensorV2(p=1.0, transpose_mask=False),
+], p=1.0, bbox_params=None, keypoint_params=None, additional_targets={}, is_check_shapes=True)
+
+Transform for label 1:
+ Compose([
+  ShiftScaleRotate(p=0.5, shift_limit_x=(-0.05, 0.05), shift_limit_y=(-0.05, 0.05), scale_limit=(-0.050000000000000044, 0.050000000000000044), rotate_limit=(-5.0, 5.0), interpolation=1, border_mode=2, fill=0.0, fill_mask=0.0, rotate_method='largest_box', mask_interpolation=0),
+  OneOf([
+    CLAHE(p=0.3, clip_limit=(1.0, 2.0), tile_grid_size=(8, 8)),
+    RandomBrightnessContrast(p=0.3, brightness_by_max=True, brightness_limit=(-0.2, 0.2), contrast_limit=(-0.2, 0.2), ensure_safe_range=False),
+    HueSaturationValue(p=0.3, hue_shift_limit=(-20.0, 20.0), sat_shift_limit=(-30.0, 30.0), val_shift_limit=(-20.0, 20.0)),
+  ], p=1.0),
+  Resize(p=1.0, height=256, interpolation=1, mask_interpolation=0, width=256),
+  Normalize(p=1.0, max_pixel_value=255.0, mean=(0.5, 0.5, 0.5), normalization='standard', std=(0.5, 0.5, 0.5)),
+  ToTensorV2(p=1.0, transpose_mask=False),
+], p=1.0, bbox_params=None, keypoint_params=None, additional_targets={}, is_check_shapes=True)
+Class 0 count: 89
+Class 1 count: 11
+Learning Rate      : 0.0001
+Batch Size   : 32
+Epochs : 30
+Threashold : 0.5
+Total Samples      : 100
+Training Samples   : 80
+Validation Samples : 10
+Testing Samples : 10
+
+Epoch [1/30] Summary:
+Train Loss   : 0.4525
+Train F1     : 0.6432
+Train Recall : 0.8000
+Train AUC    : 0.7889
+
+
+Validation Evaluation:
+Validation Loss   : 0.3825
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.6667
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [2/30] Summary:
+Train Loss   : 0.1681
+Train F1     : 0.8800
+Train Recall : 0.9625
+Train AUC    : 0.9859
+
+
+Validation Evaluation:
+Validation Loss   : 0.5572
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.6667
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [3/30] Summary:
+Train Loss   : 0.0673
+Train F1     : 0.9639
+Train Recall : 1.0000
+Train AUC    : 0.9999
+
+
+Validation Evaluation:
+Validation Loss   : 0.6574
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.1111
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [4/30] Summary:
+Train Loss   : 0.0665
+Train F1     : 0.9697
+Train Recall : 1.0000
+Train AUC    : 0.9998
+
+
+Validation Evaluation:
+Validation Loss   : 0.7492
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.0000
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [5/30] Summary:
+Train Loss   : 0.0281
+Train F1     : 0.9875
+Train Recall : 0.9875
+Train AUC    : 0.9999
+
+
+Validation Evaluation:
+Validation Loss   : 0.8415
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.0000
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [6/30] Summary:
+Train Loss   : 0.0156
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.8912
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.0000
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [7/30] Summary:
+Train Loss   : 0.0178
+Train F1     : 0.9938
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.9135
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.0000
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [8/30] Summary:
+Train Loss   : 0.0076
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.9225
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.0000
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [9/30] Summary:
+Train Loss   : 0.0061
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.9014
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.2222
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [10/30] Summary:
+Train Loss   : 0.0054
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.8963
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.3333
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [11/30] Summary:
+Train Loss   : 0.0038
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.9026
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.3333
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [12/30] Summary:
+Train Loss   : 0.0055
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.9422
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.3333
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [13/30] Summary:
+Train Loss   : 0.0030
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.9365
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.4444
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [14/30] Summary:
+Train Loss   : 0.0055
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 0.9868
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.3333
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [15/30] Summary:
+Train Loss   : 0.0031
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 1.0432
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.0000
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [16/30] Summary:
+Train Loss   : 0.0030
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 1.0595
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.0000
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [17/30] Summary:
+Train Loss   : 0.0025
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 1.0906
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.0000
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [18/30] Summary:
+Train Loss   : 0.0018
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 1.1068
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.0000
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [19/30] Summary:
+Train Loss   : 0.0034
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 1.1213
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.0000
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [20/30] Summary:
+Train Loss   : 0.0025
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 1.1237
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.1111
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [21/30] Summary:
+Train Loss   : 0.0036
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 1.1314
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.0000
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [22/30] Summary:
+Train Loss   : 0.0018
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 1.1281
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.0000
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [23/30] Summary:
+Train Loss   : 0.0013
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 1.1484
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.1111
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [24/30] Summary:
+Train Loss   : 0.0022
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 1.1494
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.2222
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [25/30] Summary:
+Train Loss   : 0.0009
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 1.1472
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.3333
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [26/30] Summary:
+Train Loss   : 0.0013
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 1.1428
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.3333
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [27/30] Summary:
+Train Loss   : 0.0043
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 1.2102
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.1111
+[[9 0]
+ [1 0]]
+[INFO] Confusion matrix saved to: validation_confusion_matrix.png
+
+Epoch [28/30] Summary:
+Train Loss   : 0.0021
+Train F1     : 1.0000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 1.2599
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.1111
+[[9 0]
+ [1 0]]

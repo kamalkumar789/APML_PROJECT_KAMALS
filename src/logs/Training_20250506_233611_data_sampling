@@ -1,0 +1,40 @@
+Training started at: 2025-05-06 23:36:11
+Class 0 count: 32542
+Class 1 count: 584
+Learning Rate      : 0.0001
+Batch Size   : 32
+Epochs : 5
+Threashold : 0.5
+Total Samples      : 33126
+Training Samples   : 26500
+Validation Samples : 3312
+Testing Samples : 3314
+Epoch [1/5], Step [50/829], Loss: 0.0906
+Epoch [1/5], Step [100/829], Loss: 0.0428
+Epoch [1/5], Step [150/829], Loss: 0.0300
+Epoch [1/5], Step [200/829], Loss: 0.0523
+Epoch [1/5], Step [250/829], Loss: 0.0324
+Epoch [1/5], Step [300/829], Loss: 0.0142
+Epoch [1/5], Step [350/829], Loss: 0.0100
+Epoch [1/5], Step [400/829], Loss: 0.0074
+Epoch [1/5], Step [450/829], Loss: 0.0125
+Epoch [1/5], Step [500/829], Loss: 0.0143
+Epoch [1/5], Step [550/829], Loss: 0.0116
+Epoch [1/5], Step [600/829], Loss: 0.0100
+Epoch [1/5], Step [650/829], Loss: 0.0070
+Epoch [1/5], Step [700/829], Loss: 0.0026
+Epoch [1/5], Step [750/829], Loss: 0.0049
+Epoch [1/5], Step [800/829], Loss: 0.0031
+
+Epoch [1/5] Summary:
+Train Loss   : 0.0511
+Train F1     : 0.8553
+Train Recall : 0.9978
+Train AUC    : 1.0000
+
+
+Validation Evaluation:
+Validation Loss   : 6.1129
+Validation F1     : 0.0000
+Validation Recall : 0.0000
+Validation AUC    : 0.4837

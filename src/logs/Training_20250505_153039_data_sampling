@@ -1,0 +1,291 @@
+Training started at: 2025-05-05 15:30:39
+Class 0 count: 32542
+Class 1 count: 584
+Learning Rate      : 0.0003
+Batch Size   : 32
+Epochs : 10
+Threashold : 0.5
+Total Samples      : 33126
+Training Samples   : 23188
+Validation Samples : 4968
+Testing Samples : 4970
+Epoch [1/10], Step [50/725], Loss: 1.4751
+Epoch [1/10], Step [100/725], Loss: 0.6559
+Epoch [1/10], Step [150/725], Loss: 0.6698
+Epoch [1/10], Step [200/725], Loss: 1.0557
+Epoch [1/10], Step [250/725], Loss: 0.8674
+Epoch [1/10], Step [300/725], Loss: 0.5360
+Epoch [1/10], Step [350/725], Loss: 2.2876
+Epoch [1/10], Step [400/725], Loss: 2.5314
+Epoch [1/10], Step [450/725], Loss: 1.0110
+Epoch [1/10], Step [500/725], Loss: 0.7587
+Epoch [1/10], Step [550/725], Loss: 1.1673
+Epoch [1/10], Step [600/725], Loss: 0.9870
+Epoch [1/10], Step [650/725], Loss: 0.5725
+Epoch [1/10], Step [700/725], Loss: 0.7209
+
+Epoch [1/10] Summary:
+Train Loss   : 1.1401
+Train F1     : 0.0671
+Train Recall : 0.8184
+Train AUC    : 0.7639
+
+
+Validation Evaluation:
+Validation Loss   : 0.9788
+Validation F1     : 0.0662
+Validation Recall : 0.9103
+Validation AUC    : 0.8239
+Epoch [2/10], Step [50/725], Loss: 1.3390
+Epoch [2/10], Step [100/725], Loss: 0.5459
+Epoch [2/10], Step [150/725], Loss: 1.9658
+Epoch [2/10], Step [200/725], Loss: 0.5635
+Epoch [2/10], Step [250/725], Loss: 0.4672
+Epoch [2/10], Step [300/725], Loss: 0.9909
+Epoch [2/10], Step [350/725], Loss: 1.2531
+Epoch [2/10], Step [400/725], Loss: 0.8476
+Epoch [2/10], Step [450/725], Loss: 0.9124
+Epoch [2/10], Step [500/725], Loss: 0.5539
+Epoch [2/10], Step [550/725], Loss: 2.3044
+Epoch [2/10], Step [600/725], Loss: 0.6171
+Epoch [2/10], Step [650/725], Loss: 0.4254
+Epoch [2/10], Step [700/725], Loss: 1.1536
+
+Epoch [2/10] Summary:
+Train Loss   : 1.0727
+Train F1     : 0.0823
+Train Recall : 0.8349
+Train AUC    : 0.8051
+
+
+Validation Evaluation:
+Validation Loss   : 0.9955
+Validation F1     : 0.0588
+Validation Recall : 0.9744
+Validation AUC    : 0.8487
+Epoch [3/10], Step [50/725], Loss: 0.8753
+Epoch [3/10], Step [100/725], Loss: 0.4896
+Epoch [3/10], Step [150/725], Loss: 0.6208
+Epoch [3/10], Step [200/725], Loss: 1.3170
+Epoch [3/10], Step [250/725], Loss: 5.0889
+Epoch [3/10], Step [300/725], Loss: 0.5376
+Epoch [3/10], Step [350/725], Loss: 0.8759
+Epoch [3/10], Step [400/725], Loss: 1.1995
+Epoch [3/10], Step [450/725], Loss: 0.4959
+Epoch [3/10], Step [500/725], Loss: 0.6444
+Epoch [3/10], Step [550/725], Loss: 0.6294
+Epoch [3/10], Step [600/725], Loss: 0.5855
+Epoch [3/10], Step [650/725], Loss: 4.6837
+Epoch [3/10], Step [700/725], Loss: 0.5257
+
+Epoch [3/10] Summary:
+Train Loss   : 1.0410
+Train F1     : 0.0824
+Train Recall : 0.8561
+Train AUC    : 0.8116
+
+
+Validation Evaluation:
+Validation Loss   : 0.8835
+Validation F1     : 0.0775
+Validation Recall : 0.8974
+Validation AUC    : 0.8427
+Epoch [4/10], Step [50/725], Loss: 0.5580
+Epoch [4/10], Step [100/725], Loss: 0.7825
+Epoch [4/10], Step [150/725], Loss: 1.2044
+Epoch [4/10], Step [200/725], Loss: 0.5636
+Epoch [4/10], Step [250/725], Loss: 0.7825
+Epoch [4/10], Step [300/725], Loss: 1.3581
+Epoch [4/10], Step [350/725], Loss: 0.6217
+Epoch [4/10], Step [400/725], Loss: 0.9917
+Epoch [4/10], Step [450/725], Loss: 0.8222
+Epoch [4/10], Step [500/725], Loss: 0.5295
+Epoch [4/10], Step [550/725], Loss: 0.5087
+Epoch [4/10], Step [600/725], Loss: 0.5176
+Epoch [4/10], Step [650/725], Loss: 0.9299
+Epoch [4/10], Step [700/725], Loss: 0.4640
+
+Epoch [4/10] Summary:
+Train Loss   : 0.9779
+Train F1     : 0.0845
+Train Recall : 0.8750
+Train AUC    : 0.8325
+
+
+Validation Evaluation:
+Validation Loss   : 0.8799
+Validation F1     : 0.1025
+Validation Recall : 0.8077
+Validation AUC    : 0.8570
+Epoch [5/10], Step [50/725], Loss: 0.4904
+Epoch [5/10], Step [100/725], Loss: 0.8303
+Epoch [5/10], Step [150/725], Loss: 0.5053
+Epoch [5/10], Step [200/725], Loss: 1.2590
+Epoch [5/10], Step [250/725], Loss: 0.5240
+Epoch [5/10], Step [300/725], Loss: 0.6010
+Epoch [5/10], Step [350/725], Loss: 0.6215
+Epoch [5/10], Step [400/725], Loss: 0.6087
+Epoch [5/10], Step [450/725], Loss: 0.5167
+Epoch [5/10], Step [500/725], Loss: 0.7188
+Epoch [5/10], Step [550/725], Loss: 1.8972
+Epoch [5/10], Step [600/725], Loss: 0.9698
+Epoch [5/10], Step [650/725], Loss: 0.5238
+Epoch [5/10], Step [700/725], Loss: 0.5199
+
+Epoch [5/10] Summary:
+Train Loss   : 0.9475
+Train F1     : 0.0888
+Train Recall : 0.8585
+Train AUC    : 0.8416
+
+
+Validation Evaluation:
+Validation Loss   : 0.8599
+Validation F1     : 0.0720
+Validation Recall : 0.8974
+Validation AUC    : 0.8508
+Epoch [6/10], Step [50/725], Loss: 0.5727
+Epoch [6/10], Step [100/725], Loss: 1.7397
+Epoch [6/10], Step [150/725], Loss: 1.0428
+Epoch [6/10], Step [200/725], Loss: 1.2540
+Epoch [6/10], Step [250/725], Loss: 0.5867
+Epoch [6/10], Step [300/725], Loss: 0.5719
+Epoch [6/10], Step [350/725], Loss: 0.5316
+Epoch [6/10], Step [400/725], Loss: 0.4380
+Epoch [6/10], Step [450/725], Loss: 2.1089
+Epoch [6/10], Step [500/725], Loss: 0.8014
+Epoch [6/10], Step [550/725], Loss: 2.1950
+Epoch [6/10], Step [600/725], Loss: 0.8978
+Epoch [6/10], Step [650/725], Loss: 0.5313
+Epoch [6/10], Step [700/725], Loss: 0.5306
+
+Epoch [6/10] Summary:
+Train Loss   : 0.9734
+Train F1     : 0.0849
+Train Recall : 0.8585
+Train AUC    : 0.8340
+
+
+Validation Evaluation:
+Validation Loss   : 0.8872
+Validation F1     : 0.0821
+Validation Recall : 0.8333
+Validation AUC    : 0.8448
+Epoch [7/10], Step [50/725], Loss: 0.5699
+Epoch [7/10], Step [100/725], Loss: 1.6978
+Epoch [7/10], Step [150/725], Loss: 0.5479
+Epoch [7/10], Step [200/725], Loss: 0.5433
+Epoch [7/10], Step [250/725], Loss: 0.5108
+Epoch [7/10], Step [300/725], Loss: 0.5206
+Epoch [7/10], Step [350/725], Loss: 1.2048
+Epoch [7/10], Step [400/725], Loss: 0.6651
+Epoch [7/10], Step [450/725], Loss: 1.0111
+Epoch [7/10], Step [500/725], Loss: 2.0938
+Epoch [7/10], Step [550/725], Loss: 0.6730
+Epoch [7/10], Step [600/725], Loss: 0.6277
+Epoch [7/10], Step [650/725], Loss: 0.4930
+Epoch [7/10], Step [700/725], Loss: 0.5501
+
+Epoch [7/10] Summary:
+Train Loss   : 0.9441
+Train F1     : 0.0897
+Train Recall : 0.8892
+Train AUC    : 0.8460
+
+
+Validation Evaluation:
+Validation Loss   : 0.8347
+Validation F1     : 0.0767
+Validation Recall : 0.8718
+Validation AUC    : 0.8770
+Epoch [8/10], Step [50/725], Loss: 0.8948
+Epoch [8/10], Step [100/725], Loss: 0.6531
+Epoch [8/10], Step [150/725], Loss: 0.6040
+Epoch [8/10], Step [200/725], Loss: 2.3192
+Epoch [8/10], Step [250/725], Loss: 2.0979
+Epoch [8/10], Step [300/725], Loss: 0.5837
+Epoch [8/10], Step [350/725], Loss: 0.9274
+Epoch [8/10], Step [400/725], Loss: 0.5710
+Epoch [8/10], Step [450/725], Loss: 0.5632
+Epoch [8/10], Step [500/725], Loss: 2.2842
+Epoch [8/10], Step [550/725], Loss: 1.5237
+Epoch [8/10], Step [600/725], Loss: 0.4434
+Epoch [8/10], Step [650/725], Loss: 0.5110
+Epoch [8/10], Step [700/725], Loss: 0.5080
+
+Epoch [8/10] Summary:
+Train Loss   : 0.9192
+Train F1     : 0.0938
+Train Recall : 0.8656
+Train AUC    : 0.8564
+
+
+Validation Evaluation:
+Validation Loss   : 0.9564
+Validation F1     : 0.0976
+Validation Recall : 0.5641
+Validation AUC    : 0.8303
+Epoch [9/10], Step [50/725], Loss: 1.7330
+Epoch [9/10], Step [100/725], Loss: 0.7001
+Epoch [9/10], Step [150/725], Loss: 0.5006
+Epoch [9/10], Step [200/725], Loss: 0.6489
+Epoch [9/10], Step [250/725], Loss: 0.6024
+Epoch [9/10], Step [300/725], Loss: 0.4680
+Epoch [9/10], Step [350/725], Loss: 1.5568
+Epoch [9/10], Step [400/725], Loss: 0.5145
+Epoch [9/10], Step [450/725], Loss: 0.5506
+Epoch [9/10], Step [500/725], Loss: 2.2250
+Epoch [9/10], Step [550/725], Loss: 0.5735
+Epoch [9/10], Step [600/725], Loss: 0.5406
+Epoch [9/10], Step [650/725], Loss: 0.4996
+Epoch [9/10], Step [700/725], Loss: 0.4276
+
+Epoch [9/10] Summary:
+Train Loss   : 0.9312
+Train F1     : 0.0907
+Train Recall : 0.8467
+Train AUC    : 0.8494
+
+
+Validation Evaluation:
+Validation Loss   : 0.8541
+Validation F1     : 0.0821
+Validation Recall : 0.8846
+Validation AUC    : 0.8622
+Epoch [10/10], Step [50/725], Loss: 0.4090
+Epoch [10/10], Step [100/725], Loss: 2.2009
+Epoch [10/10], Step [150/725], Loss: 0.5261
+Epoch [10/10], Step [200/725], Loss: 0.5020
+Epoch [10/10], Step [250/725], Loss: 0.4754
+Epoch [10/10], Step [300/725], Loss: 0.5398
+Epoch [10/10], Step [350/725], Loss: 1.9953
+Epoch [10/10], Step [400/725], Loss: 0.6049
+Epoch [10/10], Step [450/725], Loss: 1.6169
+Epoch [10/10], Step [500/725], Loss: 0.4078
+Epoch [10/10], Step [550/725], Loss: 2.0338
+Epoch [10/10], Step [600/725], Loss: 3.1707
+Epoch [10/10], Step [650/725], Loss: 0.5695
+Epoch [10/10], Step [700/725], Loss: 0.5645
+
+Epoch [10/10] Summary:
+Train Loss   : 0.8964
+Train F1     : 0.0937
+Train Recall : 0.8679
+Train AUC    : 0.8615
+
+
+Validation Evaluation:
+Validation Loss   : 0.8884
+Validation F1     : 0.0787
+Validation Recall : 0.8718
+Validation AUC    : 0.8372
+Training ended at: 2025-05-05 16:02:30
+[INFO] Training plot saved to: Training_20250505_153039_data_sampling.png
+Model saved at: /user/HS401/kk01579/APML_PROJECT_KAMALS/saved_models/densenet121_samplying.pth
+Testing started at: 2025-05-05 16:02:33
+
+Test Evaluation:
+Test Loss   : 0.9696
+Test F1     : 0.0805
+Test Recall : 0.8537
+Test AUC    : 0.8263

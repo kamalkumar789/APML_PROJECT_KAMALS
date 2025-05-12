@@ -1,0 +1,90 @@
+Training started at: 2025-05-03 07:38:54
+Class 0 count: 99
+Class 1 count: 1
+Learning Rate      : 0.0001
+Batch Size   : 50
+Epochs : 10
+Threashold : 0.5
+Total Samples      : 100
+Training Samples   : 80
+Testing Samples : 20
+
+Epoch [1/10] Summary:
+Train Loss   : 1.4582
+Train F1     : 0.0323
+Train Recall : 1.0000
+Train AUC    : 0.4557
+
+
+Epoch [2/10] Summary:
+Train Loss   : 0.8874
+Train F1     : 0.0317
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [3/10] Summary:
+Train Loss   : 0.8849
+Train F1     : 0.0370
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [4/10] Summary:
+Train Loss   : 0.7466
+Train F1     : 0.0444
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [5/10] Summary:
+Train Loss   : 0.6694
+Train F1     : 0.0645
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [6/10] Summary:
+Train Loss   : 0.6076
+Train F1     : 0.1250
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [7/10] Summary:
+Train Loss   : 0.5306
+Train F1     : 0.3333
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [8/10] Summary:
+Train Loss   : 0.4599
+Train F1     : 0.6667
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [9/10] Summary:
+Train Loss   : 0.4596
+Train F1     : 0.3333
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+
+Epoch [10/10] Summary:
+Train Loss   : 0.3953
+Train F1     : 0.5000
+Train Recall : 1.0000
+Train AUC    : 1.0000
+
+Training ended at: 2025-05-03 07:39:33
+Model saved at: /home/kamal/APML_PROJECT/saved_models/densenet121_samplying.pth
+Testing started at: 2025-05-03 07:39:33
+
+Test Set Evaluation:
+Test Loss   : 0.5946
+Test F1     : 0.0000
+Test Recall : 0.0000
+Test AUC    : nan
+
