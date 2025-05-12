@@ -291,8 +291,6 @@ def init():
     data_csv = "/user/HS401/kk01579/archive/train.csv"
     data_folder = "/user/HS401/kk01579/archive/train"
 
-    # data_csv = "/home/kamal/archive/train.csv"
-    # data_folder = "/home/kamal/archive/train"
 
     transform_for_label_0 = A.Compose([
         A.Resize(256, 256),
