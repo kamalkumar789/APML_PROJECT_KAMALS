@@ -91,7 +91,6 @@ def duplicate_and_augment_dataset(dataset, label=1):
     original_data = []
     augmented_data = []
 
-    # Define 5 different augmentation pipelines
     augmentations = [
         A.Compose([A.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5)), A. ToTensorV2()]),
         A.Compose([A.VerticalFlip(p=1.0), ToTensorV2()]),
@@ -99,7 +98,6 @@ def duplicate_and_augment_dataset(dataset, label=1):
         A.Compose([A.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5)), A.Resize(256, 256), A. ToTensorV2()]),
     ]
 
-    # Simple tensor conversion (for original images)
     to_tensor_transform = A.Compose([ToTensorV2()])
 
     print(f"[INFO] Starting augmentation. Total original samples: {len(dataset)}")
