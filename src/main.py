@@ -120,7 +120,7 @@ def init(args):
 
     train_dataset, val_dataset, test_dataset = random_split(full_dataset, [train_size, val_size, test_size])
 
-    train_dataset = TransformedDataset(train_dataset, transform_for_label_0, transform_for_label_0)
+    train_dataset = TransformedDataset(train_dataset, transform_for_label_0, transform_for_label_1)
     val_dataset = TransformedDataset(val_dataset, transform_for_label_0, transform_for_label_0)
     test_dataset = TransformedDataset(test_dataset, transform_for_label_0, transform_for_label_0)
 

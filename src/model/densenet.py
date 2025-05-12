@@ -9,6 +9,7 @@ class DenseNet(nn.Module):
 
         # Add dropout before the final classifier
         self.densenet.classifier = nn.Sequential(
+            nn.dropout(0.50),
             nn.Linear(in_features, 1)  # For binary classification
         )
 
