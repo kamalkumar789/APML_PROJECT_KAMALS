@@ -94,9 +94,10 @@ def duplicate_and_augment_dataset(dataset, label=1):
     augmentations = [
         A.Compose([A.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5)), A. ToTensorV2()]),
         A.Compose([A.VerticalFlip(p=1.0), ToTensorV2()]),
-        A.Compose([A.HorizontalFlip(p=1.0), A.VerticalFlip(p=1.0), ToTensorV2()]),
-        A.Compose([A.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5)), A.Resize(256, 256), A. ToTensorV2()]),
-    ]
+        A.Compose([A.HorizontalFlip(p=1.0), A.VerticalFlip(p=1.0), ToTensorV2()]), A.Compose([
+        A.Rotate(limit=30, p=1.0), 
+        ToTensorV2()
+    ]),    ]
 
     to_tensor_transform = A.Compose([ToTensorV2()])
 
